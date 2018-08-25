@@ -1,0 +1,22 @@
+|semafaro
+clock => ~NO_FANOUT~
+reset => count[1].OUTPUTSELECT
+reset => count[0].OUTPUTSELECT
+reset => current_state.S0_182.PRESET
+reset => current_state.S1_175.ACLR
+reset => current_state.S2_168.ACLR
+reset => current_state.S3_161.ACLR
+reset => current_state.S4_154.ACLR
+reset => current_state.S5_147.ACLR
+reset => current_state.S6_140.ACLR
+reset => current_state.S7_133.ACLR
+lights[0] <= current_state.S6_140.DB_MAX_OUTPUT_PORT_TYPE
+lights[1] <= lights[1].DB_MAX_OUTPUT_PORT_TYPE
+lights[2] <= lights.DB_MAX_OUTPUT_PORT_TYPE
+lights[3] <= lights[3].DB_MAX_OUTPUT_PORT_TYPE
+lights[4] <= lights[4].DB_MAX_OUTPUT_PORT_TYPE
+lights[5] <= lights.DB_MAX_OUTPUT_PORT_TYPE
+lights[6] <= lights[6].DB_MAX_OUTPUT_PORT_TYPE
+lights[7] <= lights[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
