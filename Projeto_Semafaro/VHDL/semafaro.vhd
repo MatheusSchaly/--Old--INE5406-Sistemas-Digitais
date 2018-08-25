@@ -1,6 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_unsigned.all;
+use IEEE.numeric_std.all;
 
 entity semafaro is
 	port(
@@ -23,14 +24,14 @@ begin
 
 	Change_Cur_State: process (clock, reset) is
 	begin
-		count <= count + 1;
+		count <= std_logic_vector(unsigned(count) + 1); -- Nao funciona, por algum motivo...
 		if reset = '1' then
 			current_state <= S0;
 			count <= "00";
 		elsif count > sec1 then
 			if (current_state /= S0) or (current_state /= S3) or (current_state /= S6) then
 				current_state <= next_state;
-				count <= "00";
+			count <= "00";
 			end if;
 		elsif count > sec4 then
 			current_state <= next_state;

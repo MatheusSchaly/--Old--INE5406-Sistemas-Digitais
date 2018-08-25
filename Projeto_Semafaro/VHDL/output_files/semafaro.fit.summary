@@ -1,11 +1,11 @@
-Fitter Status : Successful - Sat Aug 25 14:06:12 2018
+Fitter Status : Successful - Sat Aug 25 14:52:18 2018
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : semafaro
 Top-level Entity Name : semafaro
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Preliminary
-Logic utilization (in ALMs) : 8 / 32,070 ( < 1 % )
+Logic utilization (in ALMs) : 7 / 32,070 ( < 1 % )
 Total registers : 0
 Total pins : 10 / 457 ( 2 % )
 Total virtual pins : 0
