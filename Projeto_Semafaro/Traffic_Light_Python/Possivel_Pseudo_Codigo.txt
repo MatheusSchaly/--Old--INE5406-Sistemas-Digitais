@@ -16,7 +16,7 @@ While (true) do:
 			count <- 40;
 			break;
 		}
-		if (mnt = 1):
+		If (mnt = 1):
 		{
 			cur_state <- S0;
 			next_state <- S1;
