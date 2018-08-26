@@ -36,24 +36,29 @@ def Traffic_Light_VHDL(clock, reset, mnt, init_helper):
                 cur_state = "S1"
                 next_state = "S2"
                 count = sec_40
-            else:
-                if count == sec_5: # 5 Seconds have passed
-                    # Checks if the current_state is a 5 seconds state
-                    if (cur_state == "S2") or (cur_state == "S3") or (cur_state == "S5") or (cur_state == "S6") or (cur_state == "S8"):     
-                        cur_state = next_state
-                        break # Leave the second while loop
-                    
-                if count == sec_25: # 25 Seconds have passed
-                    # Checks if the current_state is a 25 seconds state
-                    if (cur_state == "S7"):
-                        cur_state = next_state
-                        break # Leave the second while loop
+                break
+            # if mnt == 1:
+             #   cur_state = "S0"
+             #   next_state = "S1"
+             #   count = -1
+             #   break
+            if count == sec_5: # 5 Seconds have passed
+                # Checks if the current_state is a 5 seconds state
+                if (cur_state == "S2") or (cur_state == "S3") or (cur_state == "S5") or (cur_state == "S6") or (cur_state == "S8"):     
+                    cur_state = next_state
+                    break # Leave the second while loop
                 
-                if count == sec_40: # 40 Seconds have passed
-                    # Checks if the current_state is a 40 seconds state
-                    if (cur_state == "S1") or (cur_state == "S4"):
-                        cur_state = next_state
-                        break # Leave the second while loop
+            elif count == sec_25: # 25 Seconds have passed
+                # Checks if the current_state is a 25 seconds state
+                if (cur_state == "S7"):
+                    cur_state = next_state
+                    break # Leave the second while loop
+            
+            elif count == sec_40: # 40 Seconds have passed
+                # Checks if the current_state is a 40 seconds state
+                if (cur_state == "S1") or (cur_state == "S4"):
+                    cur_state = next_state
+                    break # Leave the second while loop
             count -= 1
 
 
