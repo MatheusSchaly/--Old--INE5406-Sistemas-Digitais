@@ -89,4 +89,10 @@ While (true) do:
 		next_state <- S1;
 		count <- 5;
 	{
+	else if (cur_state = S0):
+	{
+		lights <- 01001001;
+		next_state <- S1;
+		count <- -1;
+	}
 }
