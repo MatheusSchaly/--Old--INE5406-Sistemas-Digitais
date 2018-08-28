@@ -23,23 +23,23 @@ architecture semafaro_arch of semafaro is
 begin
 
 	Change_Cur_State: process (clock, reset) is
-		variable count: integer := 45;
+		variable count: integer := 45; -- Pode ser definido aqui?
 	begin
 		if reset = '1' then
 			current_state <= S1;
+			-- next_state <= S2; Por que não posso colocar isso?
 			count := 45;
 		end if;
 		if count = 0 then
-			if (current_state = S3) or (current_state = S8) then
+			if (current_state = S3) or (current_state = S8) then -- Se for algum estado antes de um estado verde de carros:
 				count := 45;
-			elsif (current_state = S6) then
+			elsif (current_state = S6) then -- Se for o estado antes do estado verde de pedestres:
 				count := 25;
-			else
+			else -- Se for qualquer estado que:
 				count := 5;
-			current_state <= next_state;
+			current_state <= next_state; -- Muda de estado (chama o procedure abaixo)
 			end if;
 		end if;
-		
 		count := count - 1;
 	end process;
 	
