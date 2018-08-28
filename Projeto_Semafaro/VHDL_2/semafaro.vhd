@@ -35,9 +35,9 @@ begin
 				count := 45;
 			elsif (current_state = S6) then -- Se for o estado antes do estado verde de pedestres:
 				count := 25;
-			else -- Se for qualquer estado que:
+			else -- Se for qualquer outro estado:
 				count := 5;
-			current_state <= next_state; -- Muda de estado (chama o procedure abaixo)
+			current_state <= next_state; -- Muda as luzes (chama o procedure abaixo)
 			end if;
 		end if;
 		count := count - 1;
