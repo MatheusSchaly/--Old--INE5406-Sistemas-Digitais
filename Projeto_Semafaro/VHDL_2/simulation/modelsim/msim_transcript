@@ -1,0 +1,202 @@
+# Reading E:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do semafaro_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying E:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied E:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/HsMatheus/Desktop/Duvidas/Atual/VHDL_2/semafaro.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity semafaro
+# -- Compiling architecture semafaro_arch of semafaro
+# 
+vsim work.semafaro(semafaro_arch)
+# vsim work.semafaro(semafaro_arch) 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.semafaro(semafaro_arch)
+# Reopencommand error: wrong # args: should be "::AbstractDataset::fromId id"
+# wrong # args: should be "::AbstractDataset::fromId id"
+#     (procedure "::AbstractDataset::fromId" body line 1)
+#     invoked from within
+# "AbstractDataset::fromId"
+#     ("uplevel" body line 1)
+#     invoked from within
+# "uplevel AbstractDataset::fromId $id"
+#     (procedure "AbstractDatasetCreate" line 2)
+#     invoked from within
+# "AbstractDatasetCreate [$w cget -window_data]"
+#     (procedure "QStructure::ReOpenWindow" line 11)
+#     invoked from within
+# "QStructure::ReOpenWindow .main_pane.structure"
+#     ("eval" body line 1)
+#     invoked from within
+# "eval [$windowobj cget -reopencommand] $windowobj "
+add wave -position end  sim:/semafaro/lights
+add wave -position 0  sim:/semafaro/sec45
+add wave -position 1  sim:/semafaro/sec5
+add wave -position 2  sim:/semafaro/reset
+add wave -position end  sim:/semafaro/next_state
+add wave -position end  sim:/semafaro/current_state
+add wave -position end  sim:/semafaro/clock
+force -freeze sim:/semafaro/clock 1 0
+force -freeze sim:/semafaro/clock 1 0, 0 {50 ps} -r 100
+force -freeze sim:/semafaro/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
