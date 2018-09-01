@@ -4,11 +4,11 @@
 unsigned short time = 0;
 
 void semaphore(std::string &NS, std::string &EW, std::string &P) {
-    if (time == 45) {
-        NS = "yellow";
+    if (time == 45) {   // after 45 seconds
+        NS = "yellow";  // changes north-south traffic light to yellow
     }
-    if (time == 50) {
-        NS = "red";
+    if (time == 50) {   // after 50 seconds
+        NS = "red";     // changes north-south traffic light to red
     }
     if (time == 55) {
         EW = "green";
@@ -25,19 +25,19 @@ void semaphore(std::string &NS, std::string &EW, std::string &P) {
     if (time == 135) {
         P = "red";
     }
-    if (time == 140) {
-        NS = "green";
-        time = 0;
+    if (time == 140) {  // after 140 seconds
+        NS = "green";   // changes north-south traffic light to green
+        time = 0;       // resets timer
     }
-    time ++;
+    time ++;            // increases one second
 }
 
 void simulate() {
-    std::string NS_light = "green", EW_light = "red", P_light = "red";
+    std::string NS_light = "green", EW_light = "red", P_light = "red"; // initialization
 
-    for (unsigned int i = 1; i < 290; i++) {
+    for (unsigned int i = 1; i < 290; i++) { // simulates 290 clock pulses
         semaphore(NS_light, EW_light, P_light);
-        std::cout << "Pulso " << i << ": " << NS_light << ", " << EW_light << ", " << P_light << std::endl;
+        std::cout << "Pulse " << i << ": " << NS_light << ", " << EW_light << ", " << P_light << std::endl;
     }
 }
 
