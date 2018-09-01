@@ -13,8 +13,10 @@ void semaphore(std::string &NS, std::string &EW, std::string &P, unsigned short 
     if (time == 45) {   // after 45 seconds
         NS = "yellow";  // changes north-south traffic light to yellow
     }
-    if (time == 50) {   // after 50 seconds
-        NS = "red";     // changes north-south traffic light to red
+    if (time == 50 || time == 105 || time == 135) {
+        NS = "red";
+        EW = "red";
+        P = "red";
     }
     if (time == 55) {
         EW = "green";
@@ -22,14 +24,8 @@ void semaphore(std::string &NS, std::string &EW, std::string &P, unsigned short 
     if (time == 100) {
         EW = "yellow";
     }
-    if (time == 105) {
-        EW = "red";
-    }
     if (time == 110) {
         P = "green";
-    }
-    if (time == 135) {
-        P = "red";
     }
     if (time == 140) {  // after 140 seconds
         NS = "green";   // changes north-south traffic light to green
