@@ -4,7 +4,6 @@
 unsigned short time = 0;
 
 void semaphore(std::string &NS, std::string &EW, std::string &P) {
-    time ++;
     if (time == 45) {
         NS = "yellow";
     }
@@ -30,6 +29,7 @@ void semaphore(std::string &NS, std::string &EW, std::string &P) {
         NS = "green";
         time = 0;
     }
+    time ++;
 }
 
 void simulate() {
