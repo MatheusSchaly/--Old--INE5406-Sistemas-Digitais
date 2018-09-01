@@ -1,36 +1,47 @@
 #include <iostream>
+#include <string>
 
-using namespace std;
+unsigned short time = 0;
 
-enum LAMP {
-    verde=0x01,
-    amarelo=0x02,
-    vermelho=0x04
-};
-unsigned short Intsem1=LAMP::verde, Intsem2=LAMP::vermelho, Intped1=LAMP::vermelho;
-unsigned short Intcont=0;
-void semaphore(unsigned short* sem1, unsigned short* sem2, unsigned short* ped1) {
-    Intcont++;
-    if (Intcont==10) {
-        Intsem1 = Intsem1<<1;
-        Intcont=0;
+void semaphore(std::string &NS, std::string &EW, std::string &P) {
+    time ++;
+    if (time == 45) {
+        NS = "yellow";
     }
-   *sem1 = Intsem1;
-   *sem2 = Intsem2;
-   *ped1 = Intped1;
+    if (time == 50) {
+        NS = "red";
+    }
+    if (time == 55) {
+        EW = "green";
+    }
+    if (time == 100) {
+        EW = "yellow";
+    }
+    if (time == 105) {
+        EW = "red";
+    }
+    if (time == 110) {
+        P = "green";
+    }
+    if (time == 135) {
+        P = "red";
+    }
+    if (time == 140) {
+        NS = "green";
+        time = 0;
+    }
 }
 
 void simulate() {
-    unsigned short sem1, sem2, ped1;
+    std::string NS_light = "green", EW_light = "red", P_light = "red";
 
-    for (unsigned int i=0; i< 3e1; i++) {
-        semaphore(&sem1, &sem2, &ped1);
-        std::cout << "pulso " << i << ": " << sem1 << ", " << sem2 << ", " << ped1 << std::endl;
+    for (unsigned int i = 1; i < 290; i++) {
+        semaphore(NS_light, EW_light, P_light);
+        std::cout << "Pulso " << i << ": " << NS_light << ", " << EW_light << ", " << P_light << std::endl;
     }
 }
 
-int main()
-{
+int main() {
     simulate();
     return 0;
 }
