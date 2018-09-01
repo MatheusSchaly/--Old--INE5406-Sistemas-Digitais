@@ -42,7 +42,7 @@ void simulate() {
     std::string NS_light = "green", EW_light = "red", P_light = "red"; // initialization
     unsigned short reset = 0;
 
-    for (unsigned int i = 1; i <= 420; i++)  // simulates 290 clock pulses
+    for (unsigned int i = 1; i <= 420; i++)  // simulates 420 clock pulses
         if (i == 65) {                       // simulates 5 consecutive resets after 65 clock pulses
             reset = 1;
         }
