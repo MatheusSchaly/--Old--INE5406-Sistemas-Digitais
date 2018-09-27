@@ -1,0 +1,33 @@
+----------------------------------------------------------------------------------
+-- Company:   Federal University of Santa Catarina
+-- Students:  Alan Djon Lüdke, Matheus Henrique Schaly
+-- 
+-- Create Date:    06/09/2018
+-- Design Name: 	 Multiplexador NxM
+-- Module Name:    mux_NxM - Behavioral 
+-- Project Name: 	 Traffic Light
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity mux_NxM is
+	generic(
+		n: integer := 3;
+		m: integer := 1
+	);
+	port(
+		inpt: in tpMatrix(lenght-1 downto 0, width-1 downto 0);
+		sel: in std_logic_vector(log2(lenght)-1 downto 0);
+		outp: out std_logic_vector(width-1 downto 0)
+	);
+end mux_NxM;
+
+architecture Behavioral of mux_NxM is
+begin
+	g1: for i in width-1 downto 0 generate
+		outp(i) <= inpt(to_integer(unsigned(sel)),i);
+	end generate;
+end Behavioral;
+
