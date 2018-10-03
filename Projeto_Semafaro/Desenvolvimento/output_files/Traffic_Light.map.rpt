@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Traffic_Light
-Thu Sep 06 11:44:31 2018
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Wed Oct  3 17:41:58 2018
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
 ---------------------
@@ -33,24 +33,24 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Sep 06 11:44:31 2018               ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
-; Revision Name                      ; Traffic_Light                                   ;
-; Top-level Entity Name              ; Traffic_Light                                   ;
-; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
-+------------------------------------+-------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Wed Oct  3 17:41:58 2018          ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; Traffic_Light                              ;
+; Top-level Entity Name              ; Traffic_Light                              ;
+; Family                             ; Cyclone II                                 ;
+; Total logic elements               ; N/A until Partition Merge                  ;
+;     Total combinational functions  ; N/A until Partition Merge                  ;
+;     Dedicated logic registers      ; N/A until Partition Merge                  ;
+; Total registers                    ; N/A until Partition Merge                  ;
+; Total pins                         ; N/A until Partition Merge                  ;
+; Total virtual pins                 ; N/A until Partition Merge                  ;
+; Total memory bits                  ; N/A until Partition Merge                  ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
+; Total PLLs                         ; N/A until Partition Merge                  ;
++------------------------------------+--------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -154,15 +154,45 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Sep 06 11:44:30 2018
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Wed Oct  3 17:41:57 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Traffic_Light -c Traffic_Light
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Error (10500): VHDL syntax error at mux_NxM.vhd(22) near text "-";  expecting ";", or ")" File: D:/GitRepo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/mux_NxM.vhd Line: 22
-Info (12021): Found 0 design units, including 0 entities, in source file mux_nxm.vhd
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4647 megabytes
-    Error: Processing ended: Thu Sep 06 11:44:31 2018
+Info (12021): Found 2 design units, including 1 entities, in source file adder_n_bits.vhd
+    Info (12022): Found design unit 1: adder_n_bits-archAdder
+    Info (12023): Found entity 1: adder_n_bits
+Info (12021): Found 2 design units, including 1 entities, in source file register_n_bits.vhd
+    Info (12022): Found design unit 1: register_n_bits-archRegister
+    Info (12023): Found entity 1: register_n_bits
+Info (12021): Found 2 design units, including 1 entities, in source file compareIfEqual_n_bits.vhd
+    Info (12022): Found design unit 1: compareIfEqual_n_bits-archCompareIfEqual
+    Info (12023): Found entity 1: compareIfEqual_n_bits
+Info (12021): Found 2 design units, including 1 entities, in source file traffic_light_top.vhd
+    Info (12022): Found design unit 1: traffic_light_top-archTop
+    Info (12023): Found entity 1: traffic_light_top
+Error (10500): VHDL syntax error at BC.vhd(23) near text "case";  expecting "end", or "(", or an identifier ("case" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 23
+Error (10500): VHDL syntax error at BC.vhd(37) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 37
+Error (10500): VHDL syntax error at BC.vhd(40) near text "if";  expecting "end", or "(", or an identifier ("if" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 40
+Error (10500): VHDL syntax error at BC.vhd(40) near text "then";  expecting "<=" File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 40
+Error (10500): VHDL syntax error at BC.vhd(42) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 42
+Error (10500): VHDL syntax error at BC.vhd(44) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 44
+Error (10500): VHDL syntax error at BC.vhd(44) near text "then";  expecting "<=" File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 44
+Error (10500): VHDL syntax error at BC.vhd(46) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 46
+Error (10500): VHDL syntax error at BC.vhd(48) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 48
+Error (10500): VHDL syntax error at BC.vhd(50) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 50
+Error (10500): VHDL syntax error at BC.vhd(52) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 52
+Error (10500): VHDL syntax error at BC.vhd(54) near text "if";  expecting ";", or an identifier ("if" is a reserved keyword), or "architecture" File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 54
+Error (10500): VHDL syntax error at BC.vhd(67) near text "if";  expecting "end", or "(", or an identifier ("if" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 67
+Error (10500): VHDL syntax error at BC.vhd(69) near text "else";  expecting "end", or "(", or an identifier ("else" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 69
+Error (10500): VHDL syntax error at BC.vhd(71) near text "if";  expecting ";", or an identifier ("if" is a reserved keyword), or "architecture" File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 71
+Error (10500): VHDL syntax error at BC.vhd(86) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 86
+Error (10500): VHDL syntax error at BC.vhd(99) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 99
+Error (10500): VHDL syntax error at BC.vhd(112) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 112
+Error (10500): VHDL syntax error at BC.vhd(125) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 125
+Info (12021): Found 0 design units, including 0 entities, in source file BC.vhd
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 19 errors, 1 warning
+    Error: Peak virtual memory: 604 megabytes
+    Error: Processing ended: Wed Oct  3 17:41:58 2018
     Error: Elapsed time: 00:00:01
     Error: Total CPU time (on all processors): 00:00:01
 
