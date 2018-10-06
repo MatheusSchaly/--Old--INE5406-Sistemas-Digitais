@@ -7,34 +7,34 @@ entity register_n_bits is
 		-- control inputs
 		clk, reset: in std_logic;
 		-- data inputs
-		input: in std_logic_vector(N-1 downto 0);
+		inpt: in std_logic_vector(N-1 downto 0);
 		-- control outputs
 		-- data outputs
-		output: out std_logic_vector(N-1 downto 0)
+		outpt: out std_logic_vector(N-1 downto 0)
 	);
 end entity;
 
-architecture arch_register of register_n_bits is
+architecture archRegister of register_n_bits is
 	subtype InternalState is std_logic_vector(N-1 downto 0); -- ...
-	signal next_state, curr_state: internal_state;
+	signal nextState, currentState: InternalState;
 begin
 	-- next state logic (combinatorial)
-	next_state <= input; -- nextState <=  ...
+	nextState <= inpt; -- nextState <=  ...
 	
 	-- memory element (sequential)
 	ME: process (clk, reset) is
 	begin
 		if reset='1' then 
-			curr_state <= (others => '0'); -- reset state
-			-- curr_state <= ...
+			currentState <= (others=>'0'); -- reset state
+			-- currentState <= ...
 		elsif rising_edge(clk) then
-			curr_state <= nextState;
+			currentState <= nextState;
 		end if;
 	end process;
 	
 	-- output logic (combinatorial)
-	output <= curr_state;
-	-- <output> <= ... curr_state ...
+	outpt <= currentState;
+	-- <output> <= ... currentState ...
 	
 end architecture;
 
