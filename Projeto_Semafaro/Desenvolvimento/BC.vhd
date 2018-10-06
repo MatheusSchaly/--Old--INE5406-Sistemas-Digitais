@@ -8,8 +8,9 @@ entity BC is
 		s1, s45, s50, s55, s100, s105, s110, s135, s140: in std_logic;
 
 		-- control outputs
-		ecktimer, rstcktimer, rsttime, etime, eNS, cMuxP, eP, eEW: out std_logic;
-		cMuxNS, cMuxEW: out std_logic_vector(1 downto 0)
+		ecktimer, rstcktimer, rsttime, etime, eNS, eP, eEW: out std_logic;
+		
+		cMuxP, cMuxNS, cMuxEW: out std_logic_vector(1 downto 0)
 	);
 end entity;
 
@@ -107,8 +108,8 @@ architecture archBC of BC  is
 				"01" when (currentState = S3) else
 				"10" when (currentState = S4);
 				 
-	cMuxP <= '1' when (currentState = init
-							or currentState = S4) else '0';
+	cMuxP <= "01" when (currentState = init
+							or currentState = S4) else "10";
 	
 	eP <= '1' when (currentState = init
 						or currentState = S4

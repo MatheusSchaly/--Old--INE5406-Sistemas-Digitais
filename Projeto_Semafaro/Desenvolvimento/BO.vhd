@@ -1,27 +1,41 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use IEEE.math_real.all;
+
 
 entity BO is
 	port(
 		-- operative inputs
 		clock, reset: in std_logic;
-		ecktimer, rstcktimer, rsttime, etime, eNS, cMuxP, eP, eEW: in std_logic;
-		cMuxNS, cMuxEW: in std_logic_vector(1 downto 0);
+		ecktimer, rstcktimer, rsttime, etime, eNS, eP, eEW: in std_logic;
+		cMuxP, cMuxNS, cMuxEW: in std_logic_vector(1 downto 0);
 
 		-- operative outputs
 		s1, s45, s50, s55, s100, s105, s110, s135, s140: out std_logic;
+		
+		-- data outputs
 		NS, EW: out std_logic_vector(2 downto 0);
 		P: out std_logic_vector(1 downto 0)
-		
 	);
 end entity;
 
 architecture archBO of BO is
+
 --components:
 --	register_n_bits            done!
 -- adder_n_bits               done!
 -- compareIfEqual_n_bits      done!
--- muxes                      done!
+-- mux_nxm                    done!
+-- clock_x                    done!
+
+component clock_x is
+	generic(maxValue: integer := 140);
+	port(
+		clock, reset, enable: in std_logic;
+		outpt: out std_logic_vector(integer(ceil(log2(real(maxValue))))-1 downto 0)
+	);
+end component;
 
 component adder_n_bits
 	generic(N: positive := 8);
@@ -60,30 +74,50 @@ component mux_nxm
 	);
 end component;
 
+--signal
+
+signal saicktimer, saisomacktimer: std_logic_vector (25 DOWNTO 0);
+signal saitime, saisomatime: std_logic_vector (7 DOWNTO 0);
+signal saimuxNS, saimuxEW, sairegNS, sairegEW: std_logic_vector (2 DOWNTO 0);
+signal saimuxP, sairegP: std_logic_vector (1 DOWNTO 0);
+
+signal clock_50: std_logic_vector (25 DOWNTO 0); -- talvez esteja errado
+signal clock_140: std_logic_vector (7 DOWNTO 0); -- talvez esteja errado
+
 begin
 
-	Rcktimer : register_n_bits PORT MAP(clock, reset, enable, inpt, outpt);
-	Acktimer : adder_n_bits PORT MAP(inpt0, inpt1, outpt);
-	Cs1 : compareIfEqual_n_bits PORT MAP(inpt0, inpt1, s1);
+	clocktimer : clock_x GENERIC MAP (50000000) PORT MAP(clock, reset, ecktimer, clock_50);
+	clocktime : clock_x GENERIC MAP (140) PORT MAP(clock, reset, etime, clock_140);
 	
-	Rtime : register_n_bits PORT MAP(clock, reset, enable, inpt, outpt);
-	Atime : adder_n_bits PORT MAP(inpt0, inpt1, outpt);
-	Cs45 : compareIfEqual_n_bits PORT MAP(inpt0, inpt1, s45);
-	Cs50 : compareIfEqual_n_bits PORT MAP(inpt0, inpt1, s50);
-	Cs55 : compareIfEqual_n_bits PORT MAP(inpt0, inpt1, s55);
-	Cs100 : compareIfEqual_n_bits PORT MAP(inpt0, inpt1, s100);
-	Cs105 : compareIfEqual_n_bits PORT MAP(inpt0, inpt1, s105);
-	Cs110 : compareIfEqual_n_bits PORT MAP(inpt0, inpt1, s110);
-	Cs135 : compareIfEqual_n_bits PORT MAP(inpt0, inpt1, s135);
-	Cs140 : compareIfEqual_n_bits PORT MAP(inpt0, inpt1, s140);
+	Rcktimer : register_n_bits GENERIC MAP (26) PORT MAP(clock, rstcktimer, ecktimer, saisomacktimer, saicktimer); -- talvez clock errado(clock_50 ao inves de clock)
+	Acktimer : adder_n_bits GENERIC MAP (26) PORT MAP(saicktimer, "00000000000000000000000001", saisomacktimer);
+	Cs1 : compareIfEqual_n_bits GENERIC MAP (26) PORT MAP(saicktimer, "10111110101111000010000000", s1);
 	
-	--MNS: mux PORT MAP();
-	RNS : register_n_bits PORT MAP(clock, reset, enable, inpt, outpt);
+	Rtime : register_n_bits PORT MAP(clock, rsttime, etime, saisomatime, saitime); -- talvez clock errado(clock_140 ao inves de clock)
+	Atime : adder_n_bits PORT MAP(saitime, "00000001", saisomatime);
+	Cs45 : compareIfEqual_n_bits PORT MAP(saitime, "00101101", s45);
+	Cs50 : compareIfEqual_n_bits PORT MAP(saitime, "00110010", s50);
+	Cs55 : compareIfEqual_n_bits PORT MAP(saitime, "00110111", s55);
+	Cs100 : compareIfEqual_n_bits PORT MAP(saitime, "01100100", s100);
+	Cs105 : compareIfEqual_n_bits PORT MAP(saitime, "01101001", s105);
+	Cs110 : compareIfEqual_n_bits PORT MAP(saitime, "01101110", s110);
+	Cs135 : compareIfEqual_n_bits PORT MAP(saitime, "10000111", s135);
+	Cs140 : compareIfEqual_n_bits PORT MAP(saitime, "10001100", s140);
 	
-	--MP: mux PORT MAP();
-	RP : register_n_bits PORT MAP(clock, reset, enable, inpt, outpt);
+	MNS: mux_nxm GENERIC MAP (3, 3) PORT MAP("100010011", cMuxNS, saiMuxNS);
+	RNS : register_n_bits GENERIC MAP (3) PORT MAP(clock, reset, eNS, saimuxNS, sairegNS);
 	
-	--MEW: mux PORT MAP();
-	REW : register_n_bits PORT MAP(clock, reset, enable, inpt, outpt);
+	--MP: mux_nxm GENERIC MAP (2, 2) PORT MAP("1001", cMuxP, saiMuxP); -- nao esta funcionando - a matriz fica com erro
+	MP: mux_nxm GENERIC MAP (2) PORT MAP("010001", cMuxP, saiMuxP);
+	RP : register_n_bits GENERIC MAP (2) PORT MAP(clock, reset, eP, saiMuxP, sairegP);
+	
+	MEW: mux_nxm GENERIC MAP (3, 3) PORT MAP("100010011", cMuxEW, saiMuxEW);
+	REW : register_n_bits GENERIC MAP (3) PORT MAP(clock, reset, eEW, saiMuxEW, sairegEW);
 
+	-- output logic
+	
+	NS <= sairegNS;
+	P <= sairegP;
+	EW <= sairegEW;
+	
 end architecture;
