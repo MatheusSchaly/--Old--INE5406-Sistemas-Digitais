@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Traffic_Light
-Sat Oct  6 20:12:33 2018
+Sat Oct  6 20:53:30 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -13,47 +13,49 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: clock_x:clocktimer
- 11. Parameter Settings for User Entity Instance: clock_x:clocktime
- 12. Parameter Settings for User Entity Instance: register_n_bits:Rcktimer
- 13. Parameter Settings for User Entity Instance: adder_n_bits:Acktimer
- 14. Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs1
- 15. Parameter Settings for User Entity Instance: register_n_bits:Rtime
- 16. Parameter Settings for User Entity Instance: adder_n_bits:Atime
- 17. Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs45
- 18. Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs50
- 19. Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs55
- 20. Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs100
- 21. Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs105
- 22. Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs110
- 23. Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs135
- 24. Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs140
- 25. Parameter Settings for User Entity Instance: mux_nxm:MNS
- 26. Parameter Settings for User Entity Instance: register_n_bits:RNS
- 27. Parameter Settings for User Entity Instance: mux_nxm:MP
- 28. Parameter Settings for User Entity Instance: register_n_bits:RP
- 29. Parameter Settings for User Entity Instance: mux_nxm:MEW
- 30. Parameter Settings for User Entity Instance: register_n_bits:REW
- 31. Port Connectivity Checks: "mux_nxm:MEW"
- 32. Port Connectivity Checks: "mux_nxm:MP"
- 33. Port Connectivity Checks: "mux_nxm:MNS"
- 34. Port Connectivity Checks: "compareIfEqual_n_bits:Cs140"
- 35. Port Connectivity Checks: "compareIfEqual_n_bits:Cs135"
- 36. Port Connectivity Checks: "compareIfEqual_n_bits:Cs110"
- 37. Port Connectivity Checks: "compareIfEqual_n_bits:Cs105"
- 38. Port Connectivity Checks: "compareIfEqual_n_bits:Cs100"
- 39. Port Connectivity Checks: "compareIfEqual_n_bits:Cs55"
- 40. Port Connectivity Checks: "compareIfEqual_n_bits:Cs50"
- 41. Port Connectivity Checks: "compareIfEqual_n_bits:Cs45"
- 42. Port Connectivity Checks: "adder_n_bits:Atime"
- 43. Port Connectivity Checks: "compareIfEqual_n_bits:Cs1"
- 44. Port Connectivity Checks: "adder_n_bits:Acktimer"
- 45. Port Connectivity Checks: "clock_x:clocktime"
- 46. Port Connectivity Checks: "clock_x:clocktimer"
- 47. Elapsed Time Per Partition
- 48. Analysis & Synthesis Messages
+  8. State Machine - |traffic_light_top|BC:bc_map|currentState
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: BO:bo_map|clock_x:clocktimer
+ 13. Parameter Settings for User Entity Instance: BO:bo_map|clock_x:clocktime
+ 14. Parameter Settings for User Entity Instance: BO:bo_map|register_n_bits:Rcktimer
+ 15. Parameter Settings for User Entity Instance: BO:bo_map|adder_n_bits:Acktimer
+ 16. Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs1
+ 17. Parameter Settings for User Entity Instance: BO:bo_map|register_n_bits:Rtime
+ 18. Parameter Settings for User Entity Instance: BO:bo_map|adder_n_bits:Atime
+ 19. Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs45
+ 20. Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs50
+ 21. Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs55
+ 22. Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs100
+ 23. Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs105
+ 24. Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs110
+ 25. Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs135
+ 26. Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs140
+ 27. Parameter Settings for User Entity Instance: BO:bo_map|mux_nxm:MNS
+ 28. Parameter Settings for User Entity Instance: BO:bo_map|register_n_bits:RNS
+ 29. Parameter Settings for User Entity Instance: BO:bo_map|mux_nxm:MP
+ 30. Parameter Settings for User Entity Instance: BO:bo_map|register_n_bits:RP
+ 31. Parameter Settings for User Entity Instance: BO:bo_map|mux_nxm:MEW
+ 32. Parameter Settings for User Entity Instance: BO:bo_map|register_n_bits:REW
+ 33. Port Connectivity Checks: "BO:bo_map|mux_nxm:MEW"
+ 34. Port Connectivity Checks: "BO:bo_map|mux_nxm:MP"
+ 35. Port Connectivity Checks: "BO:bo_map|mux_nxm:MNS"
+ 36. Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs140"
+ 37. Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs135"
+ 38. Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs110"
+ 39. Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs105"
+ 40. Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs100"
+ 41. Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs55"
+ 42. Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs50"
+ 43. Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs45"
+ 44. Port Connectivity Checks: "BO:bo_map|adder_n_bits:Atime"
+ 45. Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs1"
+ 46. Port Connectivity Checks: "BO:bo_map|adder_n_bits:Acktimer"
+ 47. Port Connectivity Checks: "BO:bo_map|clock_x:clocktime"
+ 48. Port Connectivity Checks: "BO:bo_map|clock_x:clocktimer"
+ 49. Elapsed Time Per Partition
+ 50. Analysis & Synthesis Messages
 
 
 
@@ -79,16 +81,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Oct  6 20:12:33 2018      ;
+; Analysis & Synthesis Status        ; Successful - Sat Oct  6 20:53:30 2018      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; Traffic_Light                              ;
-; Top-level Entity Name              ; BO                                         ;
+; Top-level Entity Name              ; traffic_light_top                          ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; 66                                         ;
-;     Total combinational functions  ; 66                                         ;
-;     Dedicated logic registers      ; 41                                         ;
-; Total registers                    ; 41                                         ;
-; Total pins                         ; 32                                         ;
+; Total logic elements               ; 77                                         ;
+;     Total combinational functions  ; 76                                         ;
+;     Dedicated logic registers      ; 50                                         ;
+; Total registers                    ; 50                                         ;
+; Total pins                         ; 10                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -102,7 +104,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; BO                 ; Traffic_Light      ;
+; Top-level entity name                                                      ; traffic_light_top  ; Traffic_Light      ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -197,12 +199,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                        ; Library ;
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------+---------+
+; traffic_light_top.vhd            ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/traffic_light_top.vhd     ;         ;
 ; BO.vhd                           ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BO.vhd                    ;         ;
-; clock_x.vhd                      ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/clock_x.vhd               ;         ;
 ; adder_n_bits.vhd                 ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/adder_n_bits.vhd          ;         ;
+; BC.vhd                           ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd                    ;         ;
 ; register_n_bits.vhd              ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/register_n_bits.vhd       ;         ;
-; compareIfEqual_n_bits.vhd        ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/compareIfEqual_n_bits.vhd ;         ;
 ; mux_nxm.vhd                      ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/mux_nxm.vhd               ;         ;
+; compareIfEqual_n_bits.vhd        ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/compareIfEqual_n_bits.vhd ;         ;
+; clock_x.vhd                      ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/clock_x.vhd               ;         ;
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -211,65 +215,79 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 66    ;
+; Estimated Total logic elements              ; 77    ;
 ;                                             ;       ;
-; Total combinational functions               ; 66    ;
+; Total combinational functions               ; 76    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 16    ;
-;     -- 3 input functions                    ; 9     ;
-;     -- <=2 input functions                  ; 41    ;
+;     -- 4 input functions                    ; 25    ;
+;     -- 3 input functions                    ; 13    ;
+;     -- <=2 input functions                  ; 38    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 36    ;
+;     -- normal mode                          ; 46    ;
 ;     -- arithmetic mode                      ; 30    ;
 ;                                             ;       ;
-; Total registers                             ; 41    ;
-;     -- Dedicated logic registers            ; 41    ;
+; Total registers                             ; 50    ;
+;     -- Dedicated logic registers            ; 50    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 32    ;
+; I/O pins                                    ; 10    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clock ;
-; Maximum fan-out                             ; 41    ;
-; Total fan-out                               ; 346   ;
-; Average fan-out                             ; 2.49  ;
+; Maximum fan-out                             ; 50    ;
+; Total fan-out                               ; 405   ;
+; Average fan-out                             ; 2.98  ;
 +---------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
-+----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+
-; Compilation Hierarchy Node       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Library Name ;
-+----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+
-; |BO                              ; 66 (0)            ; 41 (0)       ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |BO                             ;              ;
-;    |compareIfEqual_n_bits:Cs100| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BO|compareIfEqual_n_bits:Cs100 ;              ;
-;    |compareIfEqual_n_bits:Cs105| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BO|compareIfEqual_n_bits:Cs105 ;              ;
-;    |compareIfEqual_n_bits:Cs110| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BO|compareIfEqual_n_bits:Cs110 ;              ;
-;    |compareIfEqual_n_bits:Cs135| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BO|compareIfEqual_n_bits:Cs135 ;              ;
-;    |compareIfEqual_n_bits:Cs140| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BO|compareIfEqual_n_bits:Cs140 ;              ;
-;    |compareIfEqual_n_bits:Cs1|   ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BO|compareIfEqual_n_bits:Cs1   ;              ;
-;    |compareIfEqual_n_bits:Cs45|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BO|compareIfEqual_n_bits:Cs45  ;              ;
-;    |compareIfEqual_n_bits:Cs50|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BO|compareIfEqual_n_bits:Cs50  ;              ;
-;    |compareIfEqual_n_bits:Cs55|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BO|compareIfEqual_n_bits:Cs55  ;              ;
-;    |mux_nxm:MEW|                 ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BO|mux_nxm:MEW                 ;              ;
-;    |mux_nxm:MNS|                 ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BO|mux_nxm:MNS                 ;              ;
-;    |register_n_bits:REW|         ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BO|register_n_bits:REW         ;              ;
-;    |register_n_bits:RNS|         ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BO|register_n_bits:RNS         ;              ;
-;    |register_n_bits:RP|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BO|register_n_bits:RP          ;              ;
-;    |register_n_bits:Rcktimer|    ; 26 (26)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BO|register_n_bits:Rcktimer    ;              ;
-;    |register_n_bits:Rtime|       ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BO|register_n_bits:Rtime       ;              ;
-+----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                       ;
++-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
+; Compilation Hierarchy Node          ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                      ; Library Name ;
++-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
+; |traffic_light_top                  ; 76 (0)            ; 50 (0)       ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |traffic_light_top                                       ;              ;
+;    |BC:bc_map|                      ; 29 (29)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BC:bc_map                             ;              ;
+;    |BO:bo_map|                      ; 47 (0)            ; 41 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map                             ;              ;
+;       |compareIfEqual_n_bits:Cs110| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs110 ;              ;
+;       |compareIfEqual_n_bits:Cs140| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs140 ;              ;
+;       |compareIfEqual_n_bits:Cs45|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs45  ;              ;
+;       |compareIfEqual_n_bits:Cs55|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs55  ;              ;
+;       |mux_nxm:MNS|                 ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|mux_nxm:MNS                 ;              ;
+;       |register_n_bits:REW|         ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|register_n_bits:REW         ;              ;
+;       |register_n_bits:RNS|         ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|register_n_bits:RNS         ;              ;
+;       |register_n_bits:RP|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|register_n_bits:RP          ;              ;
+;       |register_n_bits:Rcktimer|    ; 26 (26)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|register_n_bits:Rcktimer    ;              ;
+;       |register_n_bits:Rtime|       ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|register_n_bits:Rtime       ;              ;
++-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; register_n_bits:RP|currentState[1]    ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 1 ;                                        ;
-+---------------------------------------+----------------------------------------+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |traffic_light_top|BC:bc_map|currentState                                                                                                                             ;
++-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-------------------+
+; Name              ; currentState.S8 ; currentState.S7 ; currentState.S6 ; currentState.S5 ; currentState.S4 ; currentState.S3 ; currentState.S2 ; currentState.S0 ; currentState.init ;
++-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-------------------+
+; currentState.init ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0                 ;
+; currentState.S0   ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 1                 ;
+; currentState.S2   ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 1                 ;
+; currentState.S3   ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 1                 ;
+; currentState.S4   ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 1                 ;
+; currentState.S5   ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 1                 ;
+; currentState.S6   ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                 ;
+; currentState.S7   ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                 ;
+; currentState.S8   ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                 ;
++-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++----------------------------------------------+----------------------------------------+
+; Register name                                ; Reason for Removal                     ;
++----------------------------------------------+----------------------------------------+
+; BO:bo_map|register_n_bits:RP|currentState[1] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1        ;                                        ;
++----------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -277,409 +295,418 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 41    ;
+; Total registers                              ; 50    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 41    ;
+; Number of registers using Asynchronous Clear ; 50    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 38    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: clock_x:clocktimer ;
-+----------------+----------+-------------------------------------+
-; Parameter Name ; Value    ; Type                                ;
-+----------------+----------+-------------------------------------+
-; maxvalue       ; 50000000 ; Signed Integer                      ;
-+----------------+----------+-------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; 9:1                ; 7 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |traffic_light_top|BC:bc_map|nextState.init ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|clock_x:clocktimer ;
++----------------+----------+-----------------------------------------------+
+; Parameter Name ; Value    ; Type                                          ;
++----------------+----------+-----------------------------------------------+
+; maxvalue       ; 50000000 ; Signed Integer                                ;
++----------------+----------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: clock_x:clocktime ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; maxvalue       ; 140   ; Signed Integer                        ;
-+----------------+-------+---------------------------------------+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|clock_x:clocktime ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; maxvalue       ; 140   ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: register_n_bits:Rcktimer ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; n              ; 26    ; Signed Integer                               ;
-+----------------+-------+----------------------------------------------+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|register_n_bits:Rcktimer ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; n              ; 26    ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|adder_n_bits:Acktimer ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 26    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs1 ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; n              ; 26    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|register_n_bits:Rtime ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; N              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|adder_n_bits:Atime ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; n              ; 8     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs45 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; N              ; 8     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs50 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; N              ; 8     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs55 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; N              ; 8     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs100 ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; N              ; 8     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs105 ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; N              ; 8     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs110 ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; N              ; 8     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs135 ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; N              ; 8     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|compareIfEqual_n_bits:Cs140 ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; N              ; 8     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +--------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: adder_n_bits:Acktimer ;
+; Parameter Settings for User Entity Instance: BO:bo_map|mux_nxm:MNS ;
 +----------------+-------+-------------------------------------------+
 ; Parameter Name ; Value ; Type                                      ;
 +----------------+-------+-------------------------------------------+
-; n              ; 26    ; Signed Integer                            ;
+; qtdInputs      ; 3     ; Signed Integer                            ;
+; lenght         ; 3     ; Signed Integer                            ;
 +----------------+-------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs1 ;
-+----------------+-------+-----------------------------------------------+
-; Parameter Name ; Value ; Type                                          ;
-+----------------+-------+-----------------------------------------------+
-; n              ; 26    ; Signed Integer                                ;
-+----------------+-------+-----------------------------------------------+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|register_n_bits:RNS ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; n              ; 3     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|mux_nxm:MP ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; qtdinputs      ; 2     ; Signed Integer                           ;
+; lenght         ; 3     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|register_n_bits:RP ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; n              ; 2     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +--------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: register_n_bits:Rtime ;
+; Parameter Settings for User Entity Instance: BO:bo_map|mux_nxm:MEW ;
 +----------------+-------+-------------------------------------------+
 ; Parameter Name ; Value ; Type                                      ;
 +----------------+-------+-------------------------------------------+
-; N              ; 8     ; Signed Integer                            ;
+; qtdInputs      ; 3     ; Signed Integer                            ;
+; lenght         ; 3     ; Signed Integer                            ;
 +----------------+-------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: adder_n_bits:Atime ;
-+----------------+-------+----------------------------------------+
-; Parameter Name ; Value ; Type                                   ;
-+----------------+-------+----------------------------------------+
-; n              ; 8     ; Signed Integer                         ;
-+----------------+-------+----------------------------------------+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:bo_map|register_n_bits:REW ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; n              ; 3     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs45 ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; N              ; 8     ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs50 ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; N              ; 8     ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs55 ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; N              ; 8     ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs100 ;
-+----------------+-------+-------------------------------------------------+
-; Parameter Name ; Value ; Type                                            ;
-+----------------+-------+-------------------------------------------------+
-; N              ; 8     ; Signed Integer                                  ;
-+----------------+-------+-------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs105 ;
-+----------------+-------+-------------------------------------------------+
-; Parameter Name ; Value ; Type                                            ;
-+----------------+-------+-------------------------------------------------+
-; N              ; 8     ; Signed Integer                                  ;
-+----------------+-------+-------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs110 ;
-+----------------+-------+-------------------------------------------------+
-; Parameter Name ; Value ; Type                                            ;
-+----------------+-------+-------------------------------------------------+
-; N              ; 8     ; Signed Integer                                  ;
-+----------------+-------+-------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs135 ;
-+----------------+-------+-------------------------------------------------+
-; Parameter Name ; Value ; Type                                            ;
-+----------------+-------+-------------------------------------------------+
-; N              ; 8     ; Signed Integer                                  ;
-+----------------+-------+-------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: compareIfEqual_n_bits:Cs140 ;
-+----------------+-------+-------------------------------------------------+
-; Parameter Name ; Value ; Type                                            ;
-+----------------+-------+-------------------------------------------------+
-; N              ; 8     ; Signed Integer                                  ;
-+----------------+-------+-------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mux_nxm:MNS ;
-+----------------+-------+---------------------------------+
-; Parameter Name ; Value ; Type                            ;
-+----------------+-------+---------------------------------+
-; qtdInputs      ; 3     ; Signed Integer                  ;
-; lenght         ; 3     ; Signed Integer                  ;
-+----------------+-------+---------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: register_n_bits:RNS ;
-+----------------+-------+-----------------------------------------+
-; Parameter Name ; Value ; Type                                    ;
-+----------------+-------+-----------------------------------------+
-; n              ; 3     ; Signed Integer                          ;
-+----------------+-------+-----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mux_nxm:MP ;
-+----------------+-------+--------------------------------+
-; Parameter Name ; Value ; Type                           ;
-+----------------+-------+--------------------------------+
-; qtdinputs      ; 2     ; Signed Integer                 ;
-; lenght         ; 3     ; Signed Integer                 ;
-+----------------+-------+--------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: register_n_bits:RP ;
-+----------------+-------+----------------------------------------+
-; Parameter Name ; Value ; Type                                   ;
-+----------------+-------+----------------------------------------+
-; n              ; 2     ; Signed Integer                         ;
-+----------------+-------+----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mux_nxm:MEW ;
-+----------------+-------+---------------------------------+
-; Parameter Name ; Value ; Type                            ;
-+----------------+-------+---------------------------------+
-; qtdInputs      ; 3     ; Signed Integer                  ;
-; lenght         ; 3     ; Signed Integer                  ;
-+----------------+-------+---------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: register_n_bits:REW ;
-+----------------+-------+-----------------------------------------+
-; Parameter Name ; Value ; Type                                    ;
-+----------------+-------+-----------------------------------------+
-; n              ; 3     ; Signed Integer                          ;
-+----------------+-------+-----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------+
-; Port Connectivity Checks: "mux_nxm:MEW"      ;
-+------------+-------+----------+--------------+
-; Port       ; Type  ; Severity ; Details      ;
-+------------+-------+----------+--------------+
-; inpt[1..0] ; Input ; Info     ; Stuck at VCC ;
-; inpt[7..5] ; Input ; Info     ; Stuck at GND ;
-; inpt[3..2] ; Input ; Info     ; Stuck at GND ;
-; inpt[8]    ; Input ; Info     ; Stuck at VCC ;
-; inpt[4]    ; Input ; Info     ; Stuck at VCC ;
-+------------+-------+----------+--------------+
-
-
-+----------------------------------------------+
-; Port Connectivity Checks: "mux_nxm:MP"       ;
-+------------+-------+----------+--------------+
-; Port       ; Type  ; Severity ; Details      ;
-+------------+-------+----------+--------------+
-; inpt[3..1] ; Input ; Info     ; Stuck at GND ;
-; inpt[5]    ; Input ; Info     ; Stuck at GND ;
-; inpt[4]    ; Input ; Info     ; Stuck at VCC ;
-; inpt[0]    ; Input ; Info     ; Stuck at VCC ;
-+------------+-------+----------+--------------+
-
-
-+----------------------------------------------+
-; Port Connectivity Checks: "mux_nxm:MNS"      ;
-+------------+-------+----------+--------------+
-; Port       ; Type  ; Severity ; Details      ;
-+------------+-------+----------+--------------+
-; inpt[1..0] ; Input ; Info     ; Stuck at VCC ;
-; inpt[7..5] ; Input ; Info     ; Stuck at GND ;
-; inpt[3..2] ; Input ; Info     ; Stuck at GND ;
-; inpt[8]    ; Input ; Info     ; Stuck at VCC ;
-; inpt[4]    ; Input ; Info     ; Stuck at VCC ;
-+------------+-------+----------+--------------+
-
-
-+---------------------------------------------------------+
-; Port Connectivity Checks: "compareIfEqual_n_bits:Cs140" ;
-+-------------+-------+----------+------------------------+
-; Port        ; Type  ; Severity ; Details                ;
-+-------------+-------+----------+------------------------+
-; inpt1[3..2] ; Input ; Info     ; Stuck at VCC           ;
-; inpt1[6..4] ; Input ; Info     ; Stuck at GND           ;
-; inpt1[1..0] ; Input ; Info     ; Stuck at GND           ;
-; inpt1[7]    ; Input ; Info     ; Stuck at VCC           ;
-+-------------+-------+----------+------------------------+
-
-
-+---------------------------------------------------------+
-; Port Connectivity Checks: "compareIfEqual_n_bits:Cs135" ;
-+-------------+-------+----------+------------------------+
-; Port        ; Type  ; Severity ; Details                ;
-+-------------+-------+----------+------------------------+
-; inpt1[2..0] ; Input ; Info     ; Stuck at VCC           ;
-; inpt1[6..3] ; Input ; Info     ; Stuck at GND           ;
-; inpt1[7]    ; Input ; Info     ; Stuck at VCC           ;
-+-------------+-------+----------+------------------------+
-
-
-+---------------------------------------------------------+
-; Port Connectivity Checks: "compareIfEqual_n_bits:Cs110" ;
-+-------------+-------+----------+------------------------+
-; Port        ; Type  ; Severity ; Details                ;
-+-------------+-------+----------+------------------------+
-; inpt1[6..5] ; Input ; Info     ; Stuck at VCC           ;
-; inpt1[3..1] ; Input ; Info     ; Stuck at VCC           ;
-; inpt1[7]    ; Input ; Info     ; Stuck at GND           ;
-; inpt1[4]    ; Input ; Info     ; Stuck at GND           ;
-; inpt1[0]    ; Input ; Info     ; Stuck at GND           ;
-+-------------+-------+----------+------------------------+
-
-
-+---------------------------------------------------------+
-; Port Connectivity Checks: "compareIfEqual_n_bits:Cs105" ;
-+-------------+-------+----------+------------------------+
-; Port        ; Type  ; Severity ; Details                ;
-+-------------+-------+----------+------------------------+
-; inpt1[6..5] ; Input ; Info     ; Stuck at VCC           ;
-; inpt1[2..1] ; Input ; Info     ; Stuck at GND           ;
-; inpt1[7]    ; Input ; Info     ; Stuck at GND           ;
-; inpt1[4]    ; Input ; Info     ; Stuck at GND           ;
-; inpt1[3]    ; Input ; Info     ; Stuck at VCC           ;
-; inpt1[0]    ; Input ; Info     ; Stuck at VCC           ;
-+-------------+-------+----------+------------------------+
-
-
-+---------------------------------------------------------+
-; Port Connectivity Checks: "compareIfEqual_n_bits:Cs100" ;
-+-------------+-------+----------+------------------------+
-; Port        ; Type  ; Severity ; Details                ;
-+-------------+-------+----------+------------------------+
-; inpt1[6..5] ; Input ; Info     ; Stuck at VCC           ;
-; inpt1[4..3] ; Input ; Info     ; Stuck at GND           ;
-; inpt1[1..0] ; Input ; Info     ; Stuck at GND           ;
-; inpt1[7]    ; Input ; Info     ; Stuck at GND           ;
-; inpt1[2]    ; Input ; Info     ; Stuck at VCC           ;
-+-------------+-------+----------+------------------------+
-
-
-+--------------------------------------------------------+
-; Port Connectivity Checks: "compareIfEqual_n_bits:Cs55" ;
-+-------------+-------+----------+-----------------------+
-; Port        ; Type  ; Severity ; Details               ;
-+-------------+-------+----------+-----------------------+
-; inpt1[5..4] ; Input ; Info     ; Stuck at VCC          ;
-; inpt1[2..0] ; Input ; Info     ; Stuck at VCC          ;
-; inpt1[7..6] ; Input ; Info     ; Stuck at GND          ;
-; inpt1[3]    ; Input ; Info     ; Stuck at GND          ;
-+-------------+-------+----------+-----------------------+
-
-
-+--------------------------------------------------------+
-; Port Connectivity Checks: "compareIfEqual_n_bits:Cs50" ;
-+-------------+-------+----------+-----------------------+
-; Port        ; Type  ; Severity ; Details               ;
-+-------------+-------+----------+-----------------------+
-; inpt1[5..4] ; Input ; Info     ; Stuck at VCC          ;
-; inpt1[7..6] ; Input ; Info     ; Stuck at GND          ;
-; inpt1[3..2] ; Input ; Info     ; Stuck at GND          ;
-; inpt1[1]    ; Input ; Info     ; Stuck at VCC          ;
-; inpt1[0]    ; Input ; Info     ; Stuck at GND          ;
-+-------------+-------+----------+-----------------------+
-
-
-+--------------------------------------------------------+
-; Port Connectivity Checks: "compareIfEqual_n_bits:Cs45" ;
-+-------------+-------+----------+-----------------------+
-; Port        ; Type  ; Severity ; Details               ;
-+-------------+-------+----------+-----------------------+
-; inpt1[3..2] ; Input ; Info     ; Stuck at VCC          ;
-; inpt1[7..6] ; Input ; Info     ; Stuck at GND          ;
-; inpt1[5]    ; Input ; Info     ; Stuck at VCC          ;
-; inpt1[4]    ; Input ; Info     ; Stuck at GND          ;
-; inpt1[1]    ; Input ; Info     ; Stuck at GND          ;
-; inpt1[0]    ; Input ; Info     ; Stuck at VCC          ;
-+-------------+-------+----------+-----------------------+
-
-
-+------------------------------------------------+
-; Port Connectivity Checks: "adder_n_bits:Atime" ;
-+-------------+-------+----------+---------------+
-; Port        ; Type  ; Severity ; Details       ;
-+-------------+-------+----------+---------------+
-; inpt1[7..1] ; Input ; Info     ; Stuck at GND  ;
-; inpt1[0]    ; Input ; Info     ; Stuck at VCC  ;
-+-------------+-------+----------+---------------+
-
-
-+-------------------------------------------------------+
-; Port Connectivity Checks: "compareIfEqual_n_bits:Cs1" ;
-+---------------+-------+----------+--------------------+
-; Port          ; Type  ; Severity ; Details            ;
-+---------------+-------+----------+--------------------+
-; inpt1[23..19] ; Input ; Info     ; Stuck at VCC       ;
-; inpt1[15..12] ; Input ; Info     ; Stuck at VCC       ;
-; inpt1[11..8]  ; Input ; Info     ; Stuck at GND       ;
-; inpt1[6..0]   ; Input ; Info     ; Stuck at GND       ;
-; inpt1[25]     ; Input ; Info     ; Stuck at VCC       ;
-; inpt1[24]     ; Input ; Info     ; Stuck at GND       ;
-; inpt1[18]     ; Input ; Info     ; Stuck at GND       ;
-; inpt1[17]     ; Input ; Info     ; Stuck at VCC       ;
-; inpt1[16]     ; Input ; Info     ; Stuck at GND       ;
-; inpt1[7]      ; Input ; Info     ; Stuck at VCC       ;
-+---------------+-------+----------+--------------------+
 
 
 +---------------------------------------------------+
-; Port Connectivity Checks: "adder_n_bits:Acktimer" ;
-+--------------+-------+----------+-----------------+
-; Port         ; Type  ; Severity ; Details         ;
-+--------------+-------+----------+-----------------+
-; inpt1[25..1] ; Input ; Info     ; Stuck at GND    ;
-; inpt1[0]     ; Input ; Info     ; Stuck at VCC    ;
-+--------------+-------+----------+-----------------+
+; Port Connectivity Checks: "BO:bo_map|mux_nxm:MEW" ;
++------------+-------+----------+-------------------+
+; Port       ; Type  ; Severity ; Details           ;
++------------+-------+----------+-------------------+
+; inpt[1..0] ; Input ; Info     ; Stuck at VCC      ;
+; inpt[7..5] ; Input ; Info     ; Stuck at GND      ;
+; inpt[3..2] ; Input ; Info     ; Stuck at GND      ;
+; inpt[8]    ; Input ; Info     ; Stuck at VCC      ;
+; inpt[4]    ; Input ; Info     ; Stuck at VCC      ;
++------------+-------+----------+-------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "BO:bo_map|mux_nxm:MP" ;
++------------+-------+----------+------------------+
+; Port       ; Type  ; Severity ; Details          ;
++------------+-------+----------+------------------+
+; inpt[3..1] ; Input ; Info     ; Stuck at GND     ;
+; inpt[5]    ; Input ; Info     ; Stuck at GND     ;
+; inpt[4]    ; Input ; Info     ; Stuck at VCC     ;
+; inpt[0]    ; Input ; Info     ; Stuck at VCC     ;
++------------+-------+----------+------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "BO:bo_map|mux_nxm:MNS" ;
++------------+-------+----------+-------------------+
+; Port       ; Type  ; Severity ; Details           ;
++------------+-------+----------+-------------------+
+; inpt[1..0] ; Input ; Info     ; Stuck at VCC      ;
+; inpt[7..5] ; Input ; Info     ; Stuck at GND      ;
+; inpt[3..2] ; Input ; Info     ; Stuck at GND      ;
+; inpt[8]    ; Input ; Info     ; Stuck at VCC      ;
+; inpt[4]    ; Input ; Info     ; Stuck at VCC      ;
++------------+-------+----------+-------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs140" ;
++-------------+-------+----------+----------------------------------+
+; Port        ; Type  ; Severity ; Details                          ;
++-------------+-------+----------+----------------------------------+
+; inpt1[3..2] ; Input ; Info     ; Stuck at VCC                     ;
+; inpt1[6..4] ; Input ; Info     ; Stuck at GND                     ;
+; inpt1[1..0] ; Input ; Info     ; Stuck at GND                     ;
+; inpt1[7]    ; Input ; Info     ; Stuck at VCC                     ;
++-------------+-------+----------+----------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs135" ;
++-------------+-------+----------+----------------------------------+
+; Port        ; Type  ; Severity ; Details                          ;
++-------------+-------+----------+----------------------------------+
+; inpt1[2..0] ; Input ; Info     ; Stuck at VCC                     ;
+; inpt1[6..3] ; Input ; Info     ; Stuck at GND                     ;
+; inpt1[7]    ; Input ; Info     ; Stuck at VCC                     ;
++-------------+-------+----------+----------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs110" ;
++-------------+-------+----------+----------------------------------+
+; Port        ; Type  ; Severity ; Details                          ;
++-------------+-------+----------+----------------------------------+
+; inpt1[6..5] ; Input ; Info     ; Stuck at VCC                     ;
+; inpt1[3..1] ; Input ; Info     ; Stuck at VCC                     ;
+; inpt1[7]    ; Input ; Info     ; Stuck at GND                     ;
+; inpt1[4]    ; Input ; Info     ; Stuck at GND                     ;
+; inpt1[0]    ; Input ; Info     ; Stuck at GND                     ;
++-------------+-------+----------+----------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs105" ;
++-------------+-------+----------+----------------------------------+
+; Port        ; Type  ; Severity ; Details                          ;
++-------------+-------+----------+----------------------------------+
+; inpt1[6..5] ; Input ; Info     ; Stuck at VCC                     ;
+; inpt1[2..1] ; Input ; Info     ; Stuck at GND                     ;
+; inpt1[7]    ; Input ; Info     ; Stuck at GND                     ;
+; inpt1[4]    ; Input ; Info     ; Stuck at GND                     ;
+; inpt1[3]    ; Input ; Info     ; Stuck at VCC                     ;
+; inpt1[0]    ; Input ; Info     ; Stuck at VCC                     ;
++-------------+-------+----------+----------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs100" ;
++-------------+-------+----------+----------------------------------+
+; Port        ; Type  ; Severity ; Details                          ;
++-------------+-------+----------+----------------------------------+
+; inpt1[6..5] ; Input ; Info     ; Stuck at VCC                     ;
+; inpt1[4..3] ; Input ; Info     ; Stuck at GND                     ;
+; inpt1[1..0] ; Input ; Info     ; Stuck at GND                     ;
+; inpt1[7]    ; Input ; Info     ; Stuck at GND                     ;
+; inpt1[2]    ; Input ; Info     ; Stuck at VCC                     ;
++-------------+-------+----------+----------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs55" ;
++-------------+-------+----------+---------------------------------+
+; Port        ; Type  ; Severity ; Details                         ;
++-------------+-------+----------+---------------------------------+
+; inpt1[5..4] ; Input ; Info     ; Stuck at VCC                    ;
+; inpt1[2..0] ; Input ; Info     ; Stuck at VCC                    ;
+; inpt1[7..6] ; Input ; Info     ; Stuck at GND                    ;
+; inpt1[3]    ; Input ; Info     ; Stuck at GND                    ;
++-------------+-------+----------+---------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs50" ;
++-------------+-------+----------+---------------------------------+
+; Port        ; Type  ; Severity ; Details                         ;
++-------------+-------+----------+---------------------------------+
+; inpt1[5..4] ; Input ; Info     ; Stuck at VCC                    ;
+; inpt1[7..6] ; Input ; Info     ; Stuck at GND                    ;
+; inpt1[3..2] ; Input ; Info     ; Stuck at GND                    ;
+; inpt1[1]    ; Input ; Info     ; Stuck at VCC                    ;
+; inpt1[0]    ; Input ; Info     ; Stuck at GND                    ;
++-------------+-------+----------+---------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs45" ;
++-------------+-------+----------+---------------------------------+
+; Port        ; Type  ; Severity ; Details                         ;
++-------------+-------+----------+---------------------------------+
+; inpt1[3..2] ; Input ; Info     ; Stuck at VCC                    ;
+; inpt1[7..6] ; Input ; Info     ; Stuck at GND                    ;
+; inpt1[5]    ; Input ; Info     ; Stuck at VCC                    ;
+; inpt1[4]    ; Input ; Info     ; Stuck at GND                    ;
+; inpt1[1]    ; Input ; Info     ; Stuck at GND                    ;
+; inpt1[0]    ; Input ; Info     ; Stuck at VCC                    ;
++-------------+-------+----------+---------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "BO:bo_map|adder_n_bits:Atime" ;
++-------------+-------+----------+-------------------------+
+; Port        ; Type  ; Severity ; Details                 ;
++-------------+-------+----------+-------------------------+
+; inpt1[7..1] ; Input ; Info     ; Stuck at GND            ;
+; inpt1[0]    ; Input ; Info     ; Stuck at VCC            ;
++-------------+-------+----------+-------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "BO:bo_map|compareIfEqual_n_bits:Cs1" ;
++---------------+-------+----------+------------------------------+
+; Port          ; Type  ; Severity ; Details                      ;
++---------------+-------+----------+------------------------------+
+; inpt1[23..19] ; Input ; Info     ; Stuck at VCC                 ;
+; inpt1[15..12] ; Input ; Info     ; Stuck at VCC                 ;
+; inpt1[11..8]  ; Input ; Info     ; Stuck at GND                 ;
+; inpt1[6..0]   ; Input ; Info     ; Stuck at GND                 ;
+; inpt1[25]     ; Input ; Info     ; Stuck at VCC                 ;
+; inpt1[24]     ; Input ; Info     ; Stuck at GND                 ;
+; inpt1[18]     ; Input ; Info     ; Stuck at GND                 ;
+; inpt1[17]     ; Input ; Info     ; Stuck at VCC                 ;
+; inpt1[16]     ; Input ; Info     ; Stuck at GND                 ;
+; inpt1[7]      ; Input ; Info     ; Stuck at VCC                 ;
++---------------+-------+----------+------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "BO:bo_map|adder_n_bits:Acktimer" ;
++--------------+-------+----------+---------------------------+
+; Port         ; Type  ; Severity ; Details                   ;
++--------------+-------+----------+---------------------------+
+; inpt1[25..1] ; Input ; Info     ; Stuck at GND              ;
+; inpt1[0]     ; Input ; Info     ; Stuck at VCC              ;
++--------------+-------+----------+---------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "clock_x:clocktime"                                                                   ;
+; Port Connectivity Checks: "BO:bo_map|clock_x:clocktime"                                                         ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port  ; Type   ; Severity ; Details                                                                             ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
@@ -688,7 +715,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "clock_x:clocktimer"                                                                  ;
+; Port Connectivity Checks: "BO:bo_map|clock_x:clocktimer"                                                        ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port  ; Type   ; Severity ; Details                                                                             ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
@@ -711,15 +738,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sat Oct  6 20:12:30 2018
+    Info: Processing started: Sat Oct  6 20:53:27 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Traffic_Light -c Traffic_Light
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file traffic_light_top.vhd
+    Info (12022): Found design unit 1: traffic_light_top-archTop
+    Info (12023): Found entity 1: traffic_light_top
 Info (12021): Found 2 design units, including 1 entities, in source file BO.vhd
     Info (12022): Found design unit 1: BO-archBO
     Info (12023): Found entity 1: BO
-Info (12021): Found 2 design units, including 1 entities, in source file clock_x.vhd
-    Info (12022): Found design unit 1: clock_x-archClock
-    Info (12023): Found entity 1: clock_x
 Info (12021): Found 2 design units, including 1 entities, in source file adder_n_bits.vhd
     Info (12022): Found design unit 1: adder_n_bits-archAdder
     Info (12023): Found entity 1: adder_n_bits
@@ -729,43 +756,49 @@ Info (12021): Found 2 design units, including 1 entities, in source file BC.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file register_n_bits.vhd
     Info (12022): Found design unit 1: register_n_bits-archRegister
     Info (12023): Found entity 1: register_n_bits
-Info (12021): Found 2 design units, including 1 entities, in source file compareIfEqual_n_bits.vhd
-    Info (12022): Found design unit 1: compareIfEqual_n_bits-archCompareIfEqual
-    Info (12023): Found entity 1: compareIfEqual_n_bits
-Info (12021): Found 2 design units, including 1 entities, in source file traffic_light_top.vhd
-    Info (12022): Found design unit 1: traffic_light_top-archTop
-    Info (12023): Found entity 1: traffic_light_top
 Info (12021): Found 2 design units, including 1 entities, in source file mux_nxm.vhd
     Info (12022): Found design unit 1: mux_nxm-Behavioral
     Info (12023): Found entity 1: mux_nxm
-Info (12127): Elaborating entity "BO" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at BO.vhd(81): object "clock_50" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at BO.vhd(82): object "clock_140" assigned a value but never read
-Info (12128): Elaborating entity "clock_x" for hierarchy "clock_x:clocktimer"
-Info (12128): Elaborating entity "clock_x" for hierarchy "clock_x:clocktime"
-Info (12128): Elaborating entity "register_n_bits" for hierarchy "register_n_bits:Rcktimer"
-Info (12128): Elaborating entity "adder_n_bits" for hierarchy "adder_n_bits:Acktimer"
-Info (12128): Elaborating entity "compareIfEqual_n_bits" for hierarchy "compareIfEqual_n_bits:Cs1"
-Info (12128): Elaborating entity "register_n_bits" for hierarchy "register_n_bits:Rtime"
-Info (12128): Elaborating entity "adder_n_bits" for hierarchy "adder_n_bits:Atime"
-Info (12128): Elaborating entity "compareIfEqual_n_bits" for hierarchy "compareIfEqual_n_bits:Cs45"
-Info (12128): Elaborating entity "mux_nxm" for hierarchy "mux_nxm:MNS"
-Info (12128): Elaborating entity "register_n_bits" for hierarchy "register_n_bits:RNS"
-Info (12128): Elaborating entity "mux_nxm" for hierarchy "mux_nxm:MP"
-Info (12128): Elaborating entity "register_n_bits" for hierarchy "register_n_bits:RP"
+Info (12021): Found 2 design units, including 1 entities, in source file compareIfEqual_n_bits.vhd
+    Info (12022): Found design unit 1: compareIfEqual_n_bits-archCompareIfEqual
+    Info (12023): Found entity 1: compareIfEqual_n_bits
+Info (12021): Found 2 design units, including 1 entities, in source file clock_x.vhd
+    Info (12022): Found design unit 1: clock_x-archClock
+    Info (12023): Found entity 1: clock_x
+Info (12127): Elaborating entity "traffic_light_top" for the top level hierarchy
+Info (12128): Elaborating entity "BC" for hierarchy "BC:bc_map"
+Warning (10492): VHDL Process Statement warning at BC.vhd(25): signal "currentState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at BC.vhd(26): signal "currentState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (10041): Inferred latch for "cMuxEW[0]" at BC.vhd(118)
+Info (10041): Inferred latch for "cMuxEW[1]" at BC.vhd(118)
+Info (10041): Inferred latch for "cMuxNS[0]" at BC.vhd(101)
+Info (10041): Inferred latch for "cMuxNS[1]" at BC.vhd(101)
+Info (12128): Elaborating entity "BO" for hierarchy "BO:bo_map"
+Warning (10036): Verilog HDL or VHDL warning at BO.vhd(84): object "clock_50" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at BO.vhd(85): object "clock_140" assigned a value but never read
+Info (12128): Elaborating entity "clock_x" for hierarchy "BO:bo_map|clock_x:clocktimer"
+Info (12128): Elaborating entity "clock_x" for hierarchy "BO:bo_map|clock_x:clocktime"
+Info (12128): Elaborating entity "register_n_bits" for hierarchy "BO:bo_map|register_n_bits:Rcktimer"
+Info (12128): Elaborating entity "adder_n_bits" for hierarchy "BO:bo_map|adder_n_bits:Acktimer"
+Info (12128): Elaborating entity "compareIfEqual_n_bits" for hierarchy "BO:bo_map|compareIfEqual_n_bits:Cs1"
+Info (12128): Elaborating entity "register_n_bits" for hierarchy "BO:bo_map|register_n_bits:Rtime"
+Info (12128): Elaborating entity "adder_n_bits" for hierarchy "BO:bo_map|adder_n_bits:Atime"
+Info (12128): Elaborating entity "compareIfEqual_n_bits" for hierarchy "BO:bo_map|compareIfEqual_n_bits:Cs45"
+Info (12128): Elaborating entity "mux_nxm" for hierarchy "BO:bo_map|mux_nxm:MNS"
+Info (12128): Elaborating entity "register_n_bits" for hierarchy "BO:bo_map|register_n_bits:RNS"
+Info (12128): Elaborating entity "mux_nxm" for hierarchy "BO:bo_map|mux_nxm:MP"
+Info (12128): Elaborating entity "register_n_bits" for hierarchy "BO:bo_map|register_n_bits:RP"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "P[1]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "cMuxP[1]"
-Info (21057): Implemented 98 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 17 output pins
-    Info (21061): Implemented 66 logic cells
+Info (21057): Implemented 89 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 79 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
     Info: Peak virtual memory: 629 megabytes
-    Info: Processing ended: Sat Oct  6 20:12:33 2018
+    Info: Processing ended: Sat Oct  6 20:53:30 2018
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 

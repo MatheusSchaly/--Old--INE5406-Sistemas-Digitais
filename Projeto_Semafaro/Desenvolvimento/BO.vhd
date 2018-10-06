@@ -3,7 +3,6 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use IEEE.math_real.all;
 
-
 entity BO is
 	port(
 		-- operative inputs
@@ -74,7 +73,8 @@ component mux_nxm
 	);
 end component;
 
---signal
+
+--signal declaration
 
 signal saicktimer, saisomacktimer: std_logic_vector (25 DOWNTO 0);
 signal saitime, saisomatime: std_logic_vector (7 DOWNTO 0);
@@ -104,14 +104,15 @@ begin
 	Cs135 : compareIfEqual_n_bits PORT MAP(saitime, "10000111", s135);
 	Cs140 : compareIfEqual_n_bits PORT MAP(saitime, "10001100", s140);
 	
-	MNS: mux_nxm GENERIC MAP (3, 3) PORT MAP("100010011", cMuxNS, saiMuxNS);
+	MNS: mux_nxm GENERIC MAP (qtdInputs => 3, lenght => 3) PORT MAP("100010011", cMuxNS, saiMuxNS);
 	RNS : register_n_bits GENERIC MAP (3) PORT MAP(clock, reset, eNS, saimuxNS, sairegNS);
 	
-	--MP: mux_nxm GENERIC MAP (2, 2) PORT MAP("1001", cMuxP, saiMuxP); -- nao esta funcionando - a matriz fica com erro
-	MP: mux_nxm GENERIC MAP (2) PORT MAP("010001", cMuxP, saiMuxP);
+	--MP: mux_nxm GENERIC MAP (qtdInputs => 2, lenght => 2) PORT MAP("1001", cMuxP, saiMuxP); --error: expression has 2 elements, but must have 1 elements
+	--parameter sel must have actual or default value
+	MP: mux_nxm GENERIC MAP (2) PORT MAP("010001", cMuxP, saiMuxP); -- esta errado
 	RP : register_n_bits GENERIC MAP (2) PORT MAP(clock, reset, eP, saiMuxP, sairegP);
 	
-	MEW: mux_nxm GENERIC MAP (3, 3) PORT MAP("100010011", cMuxEW, saiMuxEW);
+	MEW: mux_nxm GENERIC MAP (qtdInputs =>3, lenght => 3) PORT MAP("100010011", cMuxEW, saiMuxEW);
 	REW : register_n_bits GENERIC MAP (3) PORT MAP(clock, reset, eEW, saiMuxEW, sairegEW);
 
 	-- output logic
