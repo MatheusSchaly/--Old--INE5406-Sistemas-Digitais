@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Traffic_Light
-Wed Oct  3 17:41:58 2018
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Fri Oct 05 22:16:52 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -10,7 +10,15 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |BC|currentState
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -33,24 +41,24 @@ applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                    ;
-+------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Oct  3 17:41:58 2018          ;
-; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
-; Revision Name                      ; Traffic_Light                              ;
-; Top-level Entity Name              ; Traffic_Light                              ;
-; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; N/A until Partition Merge                  ;
-;     Total combinational functions  ; N/A until Partition Merge                  ;
-;     Dedicated logic registers      ; N/A until Partition Merge                  ;
-; Total registers                    ; N/A until Partition Merge                  ;
-; Total pins                         ; N/A until Partition Merge                  ;
-; Total virtual pins                 ; N/A until Partition Merge                  ;
-; Total memory bits                  ; N/A until Partition Merge                  ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
-; Total PLLs                         ; N/A until Partition Merge                  ;
-+------------------------------------+--------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Oct 05 22:16:52 2018           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Traffic_Light                                   ;
+; Top-level Entity Name              ; BC                                              ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 32                                              ;
+;     Total combinational functions  ; 31                                              ;
+;     Dedicated logic registers      ; 9                                               ;
+; Total registers                    ; 9                                               ;
+; Total pins                         ; 23                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -59,7 +67,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; Traffic_Light      ; Traffic_Light      ;
+; Top-level entity name                                                      ; BC                 ; Traffic_Light      ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -149,51 +157,177 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                    ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
+; BC.vhd                           ; yes             ; User VHDL File  ; C:/Users/HsMatheus/Desktop/SD/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 32          ;
+;                                             ;             ;
+; Total combinational functions               ; 31          ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 8           ;
+;     -- 3 input functions                    ; 17          ;
+;     -- <=2 input functions                  ; 6           ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 31          ;
+;     -- arithmetic mode                      ; 0           ;
+;                                             ;             ;
+; Total registers                             ; 9           ;
+;     -- Dedicated logic registers            ; 9           ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 23          ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+; Maximum fan-out node                        ; Selector0~0 ;
+; Maximum fan-out                             ; 11          ;
+; Total fan-out                               ; 132         ;
+; Average fan-out                             ; 2.10        ;
++---------------------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |BC                        ; 31 (31)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |BC                 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |BC|currentState                                                                                                                                                      ;
++-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-------------------+
+; Name              ; currentState.S8 ; currentState.S7 ; currentState.S6 ; currentState.S5 ; currentState.S4 ; currentState.S3 ; currentState.S2 ; currentState.S0 ; currentState.init ;
++-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-------------------+
+; currentState.init ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0                 ;
+; currentState.S0   ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 1                 ;
+; currentState.S2   ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 1                 ;
+; currentState.S3   ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 1                 ;
+; currentState.S4   ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 1                 ;
+; currentState.S5   ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 1                 ;
+; currentState.S6   ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                 ;
+; currentState.S7   ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                 ;
+; currentState.S8   ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                 ;
++-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; ecktimer$latch                                      ; GND                 ; yes                    ;
+; rstcktimer$latch                                    ; Selector0           ; yes                    ;
+; rsttime$latch                                       ; Selector0           ; yes                    ;
+; etime$latch                                         ; Selector0           ; yes                    ;
+; eNS$latch                                           ; Selector0           ; yes                    ;
+; cMuxP$latch                                         ; Selector0           ; yes                    ;
+; eP$latch                                            ; Selector0           ; yes                    ;
+; eEW$latch                                           ; Selector0           ; yes                    ;
+; cMuxNS[0]$latch                                     ; Selector0           ; yes                    ;
+; cMuxNS[1]$latch                                     ; Selector0           ; yes                    ;
+; cMuxEW[0]$latch                                     ; Selector0           ; yes                    ;
+; cMuxEW[1]$latch                                     ; Selector0           ; yes                    ;
+; Number of user-specified and inferred latches = 12  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 9     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 9     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 9:1                ; 7 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |BC|nextState.init         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Wed Oct  3 17:41:57 2018
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Oct 05 22:16:50 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Traffic_Light -c Traffic_Light
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 1 entities, in source file adder_n_bits.vhd
-    Info (12022): Found design unit 1: adder_n_bits-archAdder
-    Info (12023): Found entity 1: adder_n_bits
-Info (12021): Found 2 design units, including 1 entities, in source file register_n_bits.vhd
-    Info (12022): Found design unit 1: register_n_bits-archRegister
-    Info (12023): Found entity 1: register_n_bits
-Info (12021): Found 2 design units, including 1 entities, in source file compareIfEqual_n_bits.vhd
-    Info (12022): Found design unit 1: compareIfEqual_n_bits-archCompareIfEqual
-    Info (12023): Found entity 1: compareIfEqual_n_bits
-Info (12021): Found 2 design units, including 1 entities, in source file traffic_light_top.vhd
-    Info (12022): Found design unit 1: traffic_light_top-archTop
-    Info (12023): Found entity 1: traffic_light_top
-Error (10500): VHDL syntax error at BC.vhd(23) near text "case";  expecting "end", or "(", or an identifier ("case" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 23
-Error (10500): VHDL syntax error at BC.vhd(37) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 37
-Error (10500): VHDL syntax error at BC.vhd(40) near text "if";  expecting "end", or "(", or an identifier ("if" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 40
-Error (10500): VHDL syntax error at BC.vhd(40) near text "then";  expecting "<=" File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 40
-Error (10500): VHDL syntax error at BC.vhd(42) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 42
-Error (10500): VHDL syntax error at BC.vhd(44) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 44
-Error (10500): VHDL syntax error at BC.vhd(44) near text "then";  expecting "<=" File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 44
-Error (10500): VHDL syntax error at BC.vhd(46) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 46
-Error (10500): VHDL syntax error at BC.vhd(48) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 48
-Error (10500): VHDL syntax error at BC.vhd(50) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 50
-Error (10500): VHDL syntax error at BC.vhd(52) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 52
-Error (10500): VHDL syntax error at BC.vhd(54) near text "if";  expecting ";", or an identifier ("if" is a reserved keyword), or "architecture" File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 54
-Error (10500): VHDL syntax error at BC.vhd(67) near text "if";  expecting "end", or "(", or an identifier ("if" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 67
-Error (10500): VHDL syntax error at BC.vhd(69) near text "else";  expecting "end", or "(", or an identifier ("else" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 69
-Error (10500): VHDL syntax error at BC.vhd(71) near text "if";  expecting ";", or an identifier ("if" is a reserved keyword), or "architecture" File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 71
-Error (10500): VHDL syntax error at BC.vhd(86) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 86
-Error (10500): VHDL syntax error at BC.vhd(99) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 99
-Error (10500): VHDL syntax error at BC.vhd(112) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 112
-Error (10500): VHDL syntax error at BC.vhd(125) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a concurrent statement File: /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd Line: 125
-Info (12021): Found 0 design units, including 0 entities, in source file BC.vhd
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 19 errors, 1 warning
-    Error: Peak virtual memory: 604 megabytes
-    Error: Processing ended: Wed Oct  3 17:41:58 2018
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Info (12021): Found 2 design units, including 1 entities, in source file bc.vhd
+    Info (12022): Found design unit 1: BC-archBC
+    Info (12023): Found entity 1: BC
+Info (12127): Elaborating entity "BC" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at BC.vhd(23): signal "currentState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at BC.vhd(24): signal "currentState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at BC.vhd(20): inferring latch(es) for signal or variable "ecktimer", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at BC.vhd(20): inferring latch(es) for signal or variable "rstcktimer", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at BC.vhd(20): inferring latch(es) for signal or variable "rsttime", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at BC.vhd(20): inferring latch(es) for signal or variable "etime", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at BC.vhd(20): inferring latch(es) for signal or variable "eNS", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at BC.vhd(20): inferring latch(es) for signal or variable "cMuxNS", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at BC.vhd(20): inferring latch(es) for signal or variable "cMuxP", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at BC.vhd(20): inferring latch(es) for signal or variable "eP", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at BC.vhd(20): inferring latch(es) for signal or variable "cMuxEW", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at BC.vhd(20): inferring latch(es) for signal or variable "eEW", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "eEW" at BC.vhd(20)
+Info (10041): Inferred latch for "cMuxEW[0]" at BC.vhd(20)
+Info (10041): Inferred latch for "cMuxEW[1]" at BC.vhd(20)
+Info (10041): Inferred latch for "eP" at BC.vhd(20)
+Info (10041): Inferred latch for "cMuxP" at BC.vhd(20)
+Info (10041): Inferred latch for "cMuxNS[0]" at BC.vhd(20)
+Info (10041): Inferred latch for "cMuxNS[1]" at BC.vhd(20)
+Info (10041): Inferred latch for "eNS" at BC.vhd(20)
+Info (10041): Inferred latch for "etime" at BC.vhd(20)
+Info (10041): Inferred latch for "rsttime" at BC.vhd(20)
+Info (10041): Inferred latch for "rstcktimer" at BC.vhd(20)
+Info (10041): Inferred latch for "ecktimer" at BC.vhd(20)
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "cMuxEW[1]$latch" merged with LATCH primitive "cMuxP$latch"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 55 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 12 output pins
+    Info (21061): Implemented 32 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 4653 megabytes
+    Info: Processing ended: Fri Oct 05 22:16:52 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 
