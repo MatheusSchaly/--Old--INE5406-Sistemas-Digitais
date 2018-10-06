@@ -21,7 +21,7 @@ architecture archBO of BO is
 --	register_n_bits            done!
 -- adder_n_bits               done!
 -- compareIfEqual_n_bits      done!
--- muxes                      xxxx
+-- muxes                      done!
 
 component adder_n_bits
 	generic(N: positive := 8);
@@ -48,8 +48,16 @@ component compareIfEqual_n_bits
 	);
 end component;
 
-component mux
-	
+component mux_nxm
+	generic(
+		qtdInputs: integer := 3;
+		lenght: integer := 3
+	);
+	port(
+		inpt: in std_logic_vector(qtdInputs*lenght-1 downto 0); 
+		sel: in std_logic_vector(integer(ceil(log2(real(lenght))))-1 downto 0);
+		outpt: out std_logic_vector(qtdInputs-1 downto 0)
+	);
 end component;
 
 begin
@@ -69,13 +77,13 @@ begin
 	Cs135 : compareIfEqual_n_bits PORT MAP(inpt0, inpt1, s135);
 	Cs140 : compareIfEqual_n_bits PORT MAP(inpt0, inpt1, s140);
 	
-	MNS: mux PORT MAP();
+	--MNS: mux PORT MAP();
 	RNS : register_n_bits PORT MAP(clock, reset, enable, inpt, outpt);
 	
-	MP: mux PORT MAP();
+	--MP: mux PORT MAP();
 	RP : register_n_bits PORT MAP(clock, reset, enable, inpt, outpt);
 	
-	MEW: mux PORT MAP();
+	--MEW: mux PORT MAP();
 	REW : register_n_bits PORT MAP(clock, reset, enable, inpt, outpt);
 
 end architecture;
