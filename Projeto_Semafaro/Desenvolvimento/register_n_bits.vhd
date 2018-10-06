@@ -5,29 +5,27 @@ entity register_n_bits is
 	generic (N: positive := 8);
 	port(
 		-- control inputs
-		clk, reset: in std_logic;
+		clock, reset: in std_logic;
 		-- data inputs
 		inpt: in std_logic_vector(N-1 downto 0);
-		-- control outputs
 		-- data outputs
 		outpt: out std_logic_vector(N-1 downto 0)
 	);
 end entity;
 
 architecture archRegister of register_n_bits is
-	subtype InternalState is std_logic_vector(N-1 downto 0); -- ...
+	subtype InternalState is std_logic_vector(N-1 downto 0);
 	signal nextState, currentState: InternalState;
 begin
 	-- next state logic (combinatorial)
 	nextState <= inpt; -- nextState <=  ...
 	
 	-- memory element (sequential)
-	ME: process (clk, reset) is
+	ME: process (clock, reset) is
 	begin
 		if reset='1' then 
 			currentState <= (others=>'0'); -- reset state
-			-- currentState <= ...
-		elsif rising_edge(clk) then
+		elsif rising_edge(clock) then
 			currentState <= nextState;
 		end if;
 	end process;
