@@ -18,53 +18,20 @@ architecture archBC of BC  is
 	signal nextState, currentState: InternalState;
 	begin
 	NSL: process(s1, s45, s50, s55, s100, s105, s110, s135, s140) is
+	
 	-- next-state logic (combinatorial)
 	begin
 		nextState <= currentState;
 		case currentState is
 			when init =>
-				ecktimer <= '0';
-				rstcktimer <= '1';
-				rsttime <= '1';
-				etime <= '0';
-				eNS <= '1';
-				cMuxNS <= "00";
-				cMuxP <= '1';
-				eP <= '1';
-				cMuxEW <= "10";
-				eEW <= '1';
-
 				nextState <= S0;
 			when S0 =>
 				if(s1='1') then
-					 nextState <= S2;
+					nextState <= S2;
 				else
-					 ecktimer <= '1';
-					 rstcktimer <= '0';
-					 rsttime <= '0';
-					 etime <= '0';
-					 eNS <= '0';
-					 cMuxNS <= "00";
-					 cMuxP <= '0';
-					 eP <= '0';
-					 cMuxEW <= "00";
-					 eEW <= '0';
-
 					nextState <= S0;
 				end if;
-
 			when S2 =>
-			  ecktimer <= '0';
-			  rstcktimer <= '1';
-			  rsttime <= '0';
-			  etime <= '1';
-			  eNS <= '0';
-			  cMuxNS <= "00";
-			  cMuxP <= '0';
-			  eP <= '0';
-			  cMuxEW <= "00";
-			  eEW <= '0';
-
 			  if not(s45='1' and s50='1' and s55='1' and s100='1' and s105='1' and s110='1' and s135='1' and s140='1') then
 				 nextState <= S0;
 			  end if;
@@ -86,94 +53,23 @@ architecture archBC of BC  is
 			  if s140='1' then
 				 nextState <= S8;
 			  end if;
-
 			when S3 =>
-				ecktimer <= '0';
-				rstcktimer <= '0';
-				rsttime <= '0';
-				etime <= '0';
-				eNS <= '1';
-				cMuxNS <= "01";
-				cMuxP <= '0';
-				eP <= '0';
-				cMuxEW <= "00";
-				eEW <= '0';
-
 				nextState <= S0;
-
 			when S4 =>
-				ecktimer <= '0';
-				rstcktimer <= '0';
-				rsttime <= '0';
-				etime <= '0';
-				eNS <= '1';
-				cMuxNS <= "10";
-				cMuxP <= '1';
-				eP <= '1';
-				cMuxEW <= "10";
-				eEW <= '1';
-
 				nextState <= S0;
-
 			when S5 =>
-				ecktimer <= '0';
-				rstcktimer <= '0';
-				rsttime <= '0';
-				etime <= '0';
-				eNS <= '0';
-				cMuxNS <= "00";
-				cMuxP <= '0';
-				eP <= '0';
-				cMuxEW <= "00";
-				eEW <= '1';
-
 				nextState <= S0;
-
 			when S6 =>
-				ecktimer <= '0';
-				rstcktimer <= '0';
-				rsttime <= '0';
-				etime <= '0';
-				eNS <= '0';
-				cMuxNS <= "00";
-				cMuxP <= '0';
-				eP <= '0';
-				cMuxEW <= "01";
-				eEW <= '1';
-
 				nextState <= S0;
-
 			when S7 =>
-				ecktimer <= '0';
-				rstcktimer <= '0';
-				rsttime <= '0';
-				etime <= '0';
-				eNS <= '0';
-				cMuxNS <= "00";
-				cMuxP <= '0';
-				eP <= '1';
-				cMuxEW <= "00";
-				eEW <= '0';
-
 				nextState <= S0;
-
 			when S8 =>
-				ecktimer <= '0';
-				rstcktimer <= '1';
-				rsttime <= '1';
-				etime <= '0';
-				eNS <= '1';
-				cMuxNS <= "00";
-				cMuxP <= '0';
-				eP <= '0';
-				cMuxEW <= "00";
-				eEW <= '0';
-
 				nextState <= S0;
 		end case;
 	end process;
 
 	-- memory element (sequential)
+	
 	process(clock, reset) is
 	begin
 		if reset='1' then
@@ -184,16 +80,53 @@ architecture archBC of BC  is
 	end process;
 
 	-- output-logic
-	-- s1 <= '1' when currentState = S2;
-	-- s45 <= '1' when currentState = S3;
--- 
-	-- s50 <= '1' when currentState = S4;
-	-- s105 <= '1' when currentState = S4;
-	-- s135 <= '1' when currentState = S4;
--- 
-	-- s55 <= '1' when currentState = S5;
-	-- s100 <= '1' when currentState = S6;
-	-- s110 <= '1' when currentState = S7;
-	-- s140 <= '1' when currentState = S8;
+	
+	ecktimer <= '1' when (currentState = S0) else '0';
+	
+	rstcktimer <= '1' when (currentState = init 
+								or currentState = S2
+								or currentState = S8) else '0';
+	
+	rsttime <= '1' when (currentState = init
+							or currentState = S8) else '0';
+	
+	etime <= '1' when (currentState = S2) else '0';
+	
+	eNS <= '1' when (currentState = init
+						or currentState = S3
+						or currentState = S4
+						or currentState = S8) else '0';
+	
+	cMuxNS <= "00" when (currentState = init
+							or currentState = S0
+							or currentState = S2
+							or currentState = S5
+							or currentState = S6
+							or currentState = S7
+							or currentState = S8) else
+				"01" when (currentState = S3) else
+				"10" when (currentState = S4);
+				 
+	cMuxP <= '1' when (currentState = init
+							or currentState = S4) else '0';
+	
+	eP <= '1' when (currentState = init
+						or currentState = S4
+						or currentState = S7) else '0';
+	
+	cMuxEW <= "00" when (currentState = S0
+							or currentState = S2
+							or currentState = S3
+							or currentState = S5
+							or currentState = S7
+							or currentState = S8) else
+							"01" when (currentState = S6) else
+							"10" when (currentState = init
+										or currentState = S4);      
+				 
+	eEW <= '1' when (currentState = init
+						or currentState = S4
+						or currentState = S5
+						or currentState = S6) else '0';
 
 end architecture;
