@@ -1,0 +1,739 @@
+# Reading E:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Traffic_Light_run_msim_gate_vhdl.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Copying E:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied E:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {Traffic_Light.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity traffic_light_top
+# -- Compiling architecture structure of traffic_light_top
+# 
+vsim rtl_work.clock_x
+# vsim rtl_work.clock_x 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading rtl_work.clock_x(archclock)
+add wave -position end  sim:/clock_x/maxValue
+add wave -position end  sim:/clock_x/clock
+add wave -position end  sim:/clock_x/reset
+add wave -position end  sim:/clock_x/enable
+add wave -position end  sim:/clock_x/outpt
+add wave -position end  sim:/clock_x/currentState
+add wave -position end  sim:/clock_x/nextState
+force sim:/register_n_bits/clock 1 0, 0 {25 ps} -r 50
+# ** Error: (vish-4008) Object 'sim:/register_n_bits/clock' not found.
+# 
+force sim:/register_n_bits/reset 0 0 
+# ** Error: (vish-4008) Object 'sim:/register_n_bits/reset' not found.
+# 
+force sim:/register_n_bits/enable 0 0
+# ** Error: (vish-4008) Object 'sim:/register_n_bits/enable' not found.
+# 
+force sim:/register_n_bits/inpt 11110000 0
+# ** Error: (vish-4008) Object 'sim:/register_n_bits/inpt' not found.
+# 
+force sim:/register_n_bits/reset 0 100
+# ** Error: (vish-4008) Object 'sim:/register_n_bits/reset' not found.
+# 
+force sim:/register_n_bits/enable 1 100
+# ** Error: (vish-4008) Object 'sim:/register_n_bits/enable' not found.
+# 
+force sim:/register_n_bits/inpt 00001111 100
+# ** Error: (vish-4008) Object 'sim:/register_n_bits/inpt' not found.
+# 
+force sim:/register_n_bits/inpt 10101010 200
+# ** Error: (vish-4008) Object 'sim:/register_n_bits/inpt' not found.
+# 
+force sim:/register_n_bits/reset 1 300
+# ** Error: (vish-4008) Object 'sim:/register_n_bits/reset' not found.
+# 
+force sim:/register_n_bits/enable 1 300
+# ** Error: (vish-4008) Object 'sim:/register_n_bits/enable' not found.
+# 
+force sim:/register_n_bits/inpt 01010101 300
+# ** Error: (vish-4008) Object 'sim:/register_n_bits/inpt' not found.
+# 
+reset -f
+# reset: unknown option -- f
+# Usage: tset [options] [terminal]
+# 
+# Options:
+#   -c          set control characters
+#   -e ch       erase character
+#   -I          no initialization strings
+#   -i ch       interrupt character
+#   -k ch       kill character
+#   -m mapping  map identifier to type
+#   -Q          do not output control key settings
+#   -r          display term on stderr
+#   -s          output TERM set command
+#   -V          print curses-version
+#   -w          set window-size
+# 
+reset -f
+# reset: unknown option -- f
+# Usage: tset [options] [terminal]
+# 
+# Options:
+#   -c          set control characters
+#   -e ch       erase character
+#   -I          no initialization strings
+#   -i ch       interrupt character
+#   -k ch       kill character
+#   -m mapping  map identifier to type
+#   -Q          do not output control key settings
+#   -r          display term on stderr
+#   -s          output TERM set command
+#   -V          print curses-version
+#   -w          set window-size
+# 
+restart -f
+force sim:/clock_x/clock 1 0, 0 {25 ps} -r 50
+force sim:/clock_x/reset 0 0 
+force sim:/clock_x/enable 0 0
+force sim:/clock_x/inpt 11110000 0
+# ** Error: (vish-4008) Object 'sim:/clock_x/inpt' not found.
+# 
+force sim:/clock_x/reset 0 100
+force sim:/clock_x/enable 1 100
+force sim:/clock_x/inpt 00001111 100
+# ** Error: (vish-4008) Object 'sim:/clock_x/inpt' not found.
+# 
+force sim:/clock_x/inpt 10101010 200
+# ** Error: (vish-4008) Object 'sim:/clock_x/inpt' not found.
+# 
+force sim:/clock_x/reset 1 300
+force sim:/clock_x/enable 1 300
+force sim:/clock_x/inpt 01010101 300
+# ** Error: (vish-4008) Object 'sim:/clock_x/inpt' not found.
+# 
+restart -f
+force sim:/clock_x/clock 1 0, 0 {25 ps} -r 50
+force sim:/clock_x/reset 0 0 
+force sim:/clock_x/enable 0 0
+force sim:/clock_x/reset 0 100
+force sim:/clock_x/enable 1 100
+force sim:/clock_x/reset 1 300
+force sim:/clock_x/enable 1 300
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /clock_x
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 100 ps  Iteration: 0  Instance: /clock_x
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 1  Instance: /clock_x
+run
+run
+run
+run
+run
+restart -f
+force sim:/clock_x/clock 1 0, 0 {25 ps} -r 50
+force sim:/clock_x/reset 0 0 
+force sim:/clock_x/enable 0 0
+force sim:/clock_x/reset 0 100
+force sim:/clock_x/enable 1 100
+force sim:/clock_x/reset 1 300
+force sim:/clock_x/enable 1 300
+force sim:/clock_x/reset 0 400
+force sim:/clock_x/enable 1 400
+force sim:/clock_x/reset 0 500
+force sim:/clock_x/enable 1 500
+force sim:/clock_x/reset 0 600
+force sim:/clock_x/enable 1 600
+
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /clock_x
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 100 ps  Iteration: 0  Instance: /clock_x
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 1  Instance: /clock_x
+run
+run
+run
+run
+run
+run
+run
+run
+# WARNING: No extended dataflow license exists
+restart -f
+force sim:/clock_x/clock 1 0, 0 {25 ps} -r 50
+force sim:/clock_x/reset 0 0 
+force sim:/clock_x/enable 0 0
+force sim:/clock_x/reset 0 100
+force sim:/clock_x/enable 1 100
+force sim:/clock_x/reset 1 300
+force sim:/clock_x/enable 1 300
+force sim:/clock_x/reset 0 400
+force sim:/clock_x/enable 1 400
+force sim:/clock_x/reset 0 500
+force sim:/clock_x/enable 1 500
+force sim:/clock_x/reset 0 600
+force sim:/clock_x/enable 1 600
+
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /clock_x
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 100 ps  Iteration: 0  Instance: /clock_x
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 1  Instance: /clock_x
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart -f
+force sim:/clock_x/clock 1 0, 0 {25 ps} -r 50
+force sim:/clock_x/reset 0 0 
+force sim:/clock_x/enable 0 0
+force sim:/clock_x/reset 0 100
+force sim:/clock_x/enable 1 100
+force sim:/clock_x/reset 1 300
+force sim:/clock_x/enable 1 300
+force sim:/clock_x/reset 0 400
+force sim:/clock_x/enable 1 400
+force sim:/clock_x/reset 0 500
+force sim:/clock_x/enable 1 500
+force sim:/clock_x/reset 1 600
+force sim:/clock_x/enable 1 600
+
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /clock_x
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 100 ps  Iteration: 0  Instance: /clock_x
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 1  Instance: /clock_x
+run
+run
+run
+run
+run
+run
+vsim rtl_work.traffic_light_top
+# vsim rtl_work.traffic_light_top 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading rtl_work.traffic_light_top(archtop)
+# Loading rtl_work.bc(archbc)
+# Loading ieee.math_real(body)
+# Loading rtl_work.bo(archbo)
+# Loading rtl_work.clock_x(archclock)
+# Loading rtl_work.register_n_bits(archregister)
+# Loading rtl_work.adder_n_bits(archadder)
+# Loading rtl_work.compareifequal_n_bits(archcompareifequal)
+# Loading rtl_work.mux_nxm(behavioral)
+# WARNING: No extended dataflow license exists
+vsim rtl_work.clock_x
+# vsim rtl_work.clock_x 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading rtl_work.clock_x(archclock)
+# WARNING: No extended dataflow license exists
+add wave -position end  sim:/clock_x/clock
+add wave -position end  sim:/clock_x/reset
+add wave -position end  sim:/clock_x/enable
+add wave -position end  sim:/clock_x/outpt
+add wave -position end  sim:/clock_x/currentState
+add wave -position end  sim:/clock_x/nextState
+force sim:/clock_x/clock 1 0, 0 {25 ps} -r 50
+force sim:/clock_x/reset 0 0 
+force sim:/clock_x/enable 0 0
+force sim:/clock_x/enable 1 100
+force sim:/clock_x/reset 1 300
+force sim:/clock_x/reset 0 400
+force sim:/clock_x/reset 1 600
+
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /clock_x
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 100 ps  Iteration: 0  Instance: /clock_x
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 1  Instance: /clock_x
+run
+run
+run
+run
+run
+run
+run
+force sim:/clock_x/clock 1 0, 0 {25 ps} -r 50
+force sim:/clock_x/reset 0 0 
+force sim:/clock_x/enable 0 0
+force sim:/clock_x/enable 1 100
+force sim:/clock_x/reset 1 300
+force sim:/clock_x/reset 0 400
+force sim:/clock_x/reset 1 600
+
+restart -f
+force sim:/clock_x/clock 1 0, 0 {25 ps} -r 50
+force sim:/clock_x/reset 0 0 
+force sim:/clock_x/enable 0 0
+force sim:/clock_x/enable 1 100
+force sim:/clock_x/reset 1 300
+force sim:/clock_x/reset 0 400
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /clock_x
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 100 ps  Iteration: 0  Instance: /clock_x
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ps  Iteration: 1  Instance: /clock_x
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run -continue
+run
+run
+run
+run
+run -all
+vsim rtl_work.bc
+# vsim rtl_work.bc 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading rtl_work.bc(archbc)
+# WARNING: No extended dataflow license exists
+vsim rtl_work.traffic_light_top
+# vsim rtl_work.traffic_light_top 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading rtl_work.traffic_light_top(archtop)
+# Loading rtl_work.bc(archbc)
+# Loading ieee.math_real(body)
+# Loading rtl_work.bo(archbo)
+# Loading rtl_work.clock_x(archclock)
+# Loading rtl_work.register_n_bits(archregister)
+# Loading rtl_work.adder_n_bits(archadder)
+# Loading rtl_work.compareifequal_n_bits(archcompareifequal)
+# Loading rtl_work.mux_nxm(behavioral)
+# WARNING: No extended dataflow license exists
+add wave -position end  sim:/traffic_light_top/reset
+add wave -position end  sim:/traffic_light_top/clock
+add wave -position end  sim:/traffic_light_top/NS
+add wave -position end  sim:/traffic_light_top/EW
+add wave -position end  sim:/traffic_light_top/P
+add wave -position end  sim:/traffic_light_top/sig_s1
+add wave -position end  sim:/traffic_light_top/sig_s45
+add wave -position end  sim:/traffic_light_top/sig_s50
+add wave -position end  sim:/traffic_light_top/sig_s55
+add wave -position end  sim:/traffic_light_top/sig_s100
+add wave -position end  sim:/traffic_light_top/sig_s105
+add wave -position end  sim:/traffic_light_top/sig_s110
+add wave -position end  sim:/traffic_light_top/sig_s135
+add wave -position end  sim:/traffic_light_top/sig_s140
+add wave -position end  sim:/traffic_light_top/sig_ecktimer
+add wave -position end  sim:/traffic_light_top/sig_rstcktimer
+add wave -position end  sim:/traffic_light_top/sig_rsttime
+add wave -position end  sim:/traffic_light_top/sig_etime
+add wave -position end  sim:/traffic_light_top/sig_eNS
+add wave -position end  sim:/traffic_light_top/sig_eP
+add wave -position end  sim:/traffic_light_top/sig_eEW
+add wave -position end  sim:/traffic_light_top/sig_cMuxP
+add wave -position end  sim:/traffic_light_top/sig_cMuxNS
+add wave -position end  sim:/traffic_light_top/sig_cMuxEW
+add wave -position end  sim:/traffic_light_top/sig_NS
+add wave -position end  sim:/traffic_light_top/sig_EW
+add wave -position end  sim:/traffic_light_top/sig_P
+force sim:/traffic_light_top/reset 0 0 
+force sim:/traffic_light_top/enable 1 0
+# ** Error: (vish-4008) Object 'sim:/traffic_light_top/enable' not found.
+# 
+
+force sim:/traffic_light_top/clock 1 0, 0 {25 ps} -r 50
+force sim:/traffic_light_top/reset 0 0 
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Region: /traffic_light_top/bo_map/MEW/V(0)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Region: /traffic_light_top/bo_map/MEW/V(1)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Region: /traffic_light_top/bo_map/MEW/V(2)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Region: /traffic_light_top/bo_map/MP/V(0)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Region: /traffic_light_top/bo_map/MP/V(1)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Region: /traffic_light_top/bo_map/MNS/V(0)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Region: /traffic_light_top/bo_map/MNS/V(1)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Region: /traffic_light_top/bo_map/MNS/V(2)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /traffic_light_top/bo_map/clocktime
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /traffic_light_top/bo_map/clocktimer
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ps  Iteration: 2  Instance: /traffic_light_top/bo_map/clocktimer
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 100 ps  Iteration: 1  Instance: /traffic_light_top/bo_map/clocktimer
+run
+run
+run
+run
+run -all
+vsim rtl_work.bc
+# vsim rtl_work.bc 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading rtl_work.bc(archbc)
+add wave -position end  sim:/bc/clock
+add wave -position end  sim:/bc/reset
+add wave -position end  sim:/bc/s1
+add wave -position end  sim:/bc/s45
+add wave -position end  sim:/bc/s50
+add wave -position end  sim:/bc/s55
+add wave -position end  sim:/bc/s100
+add wave -position end  sim:/bc/s105
+add wave -position end  sim:/bc/s110
+add wave -position end  sim:/bc/s135
+add wave -position end  sim:/bc/s140
+add wave -position end  sim:/bc/ecktimer
+add wave -position end  sim:/bc/rstcktimer
+add wave -position end  sim:/bc/rsttime
+add wave -position end  sim:/bc/etime
+add wave -position end  sim:/bc/eNS
+add wave -position end  sim:/bc/eP
+add wave -position end  sim:/bc/eEW
+add wave -position end  sim:/bc/cMuxP
+add wave -position end  sim:/bc/cMuxNS
+add wave -position end  sim:/bc/cMuxEW
+add wave -position end  sim:/bc/nextState
+add wave -position end  sim:/bc/currentState
+force sim:/bc/clock 1 0, 0 {25 ps} -r 50
+force sim:/bc/reset 0 0 
+force sim:/bc/s1 0 0
+force sim:/bc/s45 0 0
+force sim:/bc/s50 0 0
+force sim:/bc/s100 0 0
+force sim:/bc/s105 0 0
+force sim:/bc/s110 0 0
+force sim:/bc/s135 0 0
+force sim:/bc/s140 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run -all
+restart -f
+force sim:/bc/clock 1 0, 0 {25 ps} -r 50
+force sim:/bc/reset 0 0 
+force sim:/bc/s1 0 0
+force sim:/bc/s45 0 0
+force sim:/bc/s50 0 0
+force sim:/bc/s100 0 0
+force sim:/bc/s105 0 0
+force sim:/bc/s110 0 0
+force sim:/bc/s135 0 0
+force sim:/bc/s140 0 0
+
+force sim:/bc/s1 1 100
+force sim:/bc/s1 0 300
+
+force sim:/bc/s45 1 300
+force sim:/bc/s45 0 500
+
+force sim:/bc/s50 1 500
+force sim:/bc/s50 0 700
+
+force sim:/bc/s100 1 700
+force sim:/bc/s100 0 900
+
+force sim:/bc/s105 1 900
+force sim:/bc/s105 0 1100
+
+force sim:/bc/s110 1 1100
+force sim:/bc/s110 0 1300
+
+force sim:/bc/s135 1 1300
+force sim:/bc/s135 0 1500
+
+force sim:/bc/s140 1 1500
+force sim:/bc/s140 0 1700
+
+force sim:/bc/s1 1 1700
+
+run -all
+restart -f
+force sim:/bc/clock 1 0, 0 {25 ps} -r 50
+force sim:/bc/reset 0 0 
+force sim:/bc/s1 0 0
+force sim:/bc/s45 0 0
+force sim:/bc/s50 0 0
+force sim:/bc/s100 0 0
+force sim:/bc/s105 0 0
+force sim:/bc/s110 0 0
+force sim:/bc/s135 0 0
+force sim:/bc/s140 0 0
+
+force sim:/bc/s1 1 100
+force sim:/bc/s1 0 300
+
+force sim:/bc/s45 1 325
+force sim:/bc/s45 0 500
+
+force sim:/bc/s50 1 525
+force sim:/bc/s50 0 700
+
+force sim:/bc/s100 1 725
+force sim:/bc/s100 0 900
+
+force sim:/bc/s105 1 925
+force sim:/bc/s105 0 1100
+
+force sim:/bc/s110 1 1125
+force sim:/bc/s110 0 1300
+
+force sim:/bc/s135 1 1325
+force sim:/bc/s135 0 1500
+
+force sim:/bc/s140 1 1525
+force sim:/bc/s140 0 1700
+
+force sim:/bc/s1 1 1725
+force sim:/bc/s1 0 1900
+run -all
+force sim:/bc/clock 1 0, 0 {25 ps} -r 50
+force sim:/bc/reset 0 0 
+force sim:/bc/s1 0 0
+force sim:/bc/s45 0 0
+force sim:/bc/s50 0 0
+force sim:/bc/s100 0 0
+force sim:/bc/s105 0 0
+force sim:/bc/s110 0 0
+force sim:/bc/s135 0 0
+force sim:/bc/s140 0 0
+
+force sim:/bc/s1 1 100
+force sim:/bc/s1 0 300
+
+force sim:/bc/s45 1 325
+force sim:/bc/s45 0 500
+
+force sim:/bc/s50 1 525
+force sim:/bc/s50 0 700
+
+force sim:/bc/s50 1 725
+force sim:/bc/s50 0 900
+
+force sim:/bc/s100 1 925
+force sim:/bc/s100 0 1100
+
+force sim:/bc/s105 1 1125
+force sim:/bc/s105 0 1300
+
+force sim:/bc/s110 1 1325
+force sim:/bc/s110 0 1500
+
+force sim:/bc/s135 1 1525
+force sim:/bc/s135 0 1700
+
+force sim:/bc/s140 1 1725
+force sim:/bc/s140 0 1900
+
+force sim:/bc/s1 1 1925
+force sim:/bc/s1 0 2100
+restart -f
+force sim:/bc/clock 1 0, 0 {25 ps} -r 50
+force sim:/bc/reset 0 0 
+force sim:/bc/s1 0 0
+force sim:/bc/s45 0 0
+force sim:/bc/s50 0 0
+force sim:/bc/s100 0 0
+force sim:/bc/s105 0 0
+force sim:/bc/s110 0 0
+force sim:/bc/s135 0 0
+force sim:/bc/s140 0 0
+
+force sim:/bc/s1 1 100
+force sim:/bc/s1 0 300
+
+force sim:/bc/s45 1 325
+force sim:/bc/s45 0 500
+
+force sim:/bc/s50 1 525
+force sim:/bc/s50 0 700
+
+force sim:/bc/s50 1 725
+force sim:/bc/s50 0 900
+
+force sim:/bc/s100 1 925
+force sim:/bc/s100 0 1100
+
+force sim:/bc/s105 1 1125
+force sim:/bc/s105 0 1300
+
+force sim:/bc/s110 1 1325
+force sim:/bc/s110 0 1500
+
+force sim:/bc/s135 1 1525
+force sim:/bc/s135 0 1700
+
+force sim:/bc/s140 1 1725
+force sim:/bc/s140 0 1900
+
+force sim:/bc/s1 1 1925
+force sim:/bc/s1 0 2100
+run -all
+-restart -f
+# invalid command name "-restart"
+restart -f
+force sim:/bc/clock 1 0, 0 {25 ps} -r 50
+force sim:/bc/reset 0 0 
+force sim:/bc/s1 0 0
+force sim:/bc/s45 0 0
+force sim:/bc/s50 0 0
+force sim:/bc/s100 0 0
+force sim:/bc/s105 0 0
+force sim:/bc/s110 0 0
+force sim:/bc/s135 0 0
+force sim:/bc/s140 0 0
+
+force sim:/bc/s1 1 100
+force sim:/bc/s1 0 300
+
+force sim:/bc/s45 1 325
+force sim:/bc/s1 1 350
+force sim:/bc/s1 0 390
+force sim:/bc/s45 0 500
+
+force sim:/bc/s50 1 525
+force sim:/bc/s50 0 700
+
+force sim:/bc/s50 1 725
+force sim:/bc/s50 0 900
+
+force sim:/bc/s100 1 925
+force sim:/bc/s100 0 1100
+
+force sim:/bc/s105 1 1125
+force sim:/bc/s105 0 1300
+
+force sim:/bc/s110 1 1325
+force sim:/bc/s110 0 1500
+
+force sim:/bc/s135 1 1525
+force sim:/bc/s135 0 1700
+
+run -all
+
+force sim:/bc/s140 1 1725
+restart -f
+force sim:/bc/clock 1 0, 0 {25 ps} -r 50
+force sim:/bc/reset 0 0 
+force sim:/bc/s1 0 0
+force sim:/bc/s45 0 0
+force sim:/bc/s50 0 0
+force sim:/bc/s100 0 0
+force sim:/bc/s105 0 0
+force sim:/bc/s110 0 0
+force sim:/bc/s135 0 0
+force sim:/bc/s140 0 0
+
+force sim:/bc/s1 1 100
+force sim:/bc/s1 0 300
+
+force sim:/bc/s45 1 325
+force sim:/bc/s45 0 400
+force sim:/bc/s1 1 400
+force sim:/bc/s1 0 475
+
+force sim:/bc/s50 1 525
+force sim:/bc/s50 0 700
+
+force sim:/bc/s50 1 725
+force sim:/bc/s50 0 900
+
+force sim:/bc/s100 1 925
+force sim:/bc/s100 0 1100
+
+force sim:/bc/s105 1 1125
+force sim:/bc/s105 0 1300
+
+force sim:/bc/s110 1 1325
+force sim:/bc/s110 0 1500
+
+force sim:/bc/s135 1 1525
+force sim:/bc/s135 0 1700
+
+force sim:/bc/s140 1 1725
+force sim:/bc/s140 0 1900
+
+force sim:/bc/s1 1 1925
+force sim:/bc/s1 0 2100
+run -all

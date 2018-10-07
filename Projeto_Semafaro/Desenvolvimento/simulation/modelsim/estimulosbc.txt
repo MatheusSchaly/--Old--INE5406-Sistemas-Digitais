@@ -1,0 +1,42 @@
+force sim:/bc/clock 1 0, 0 {25 ps} -r 50
+force sim:/bc/reset 0 0 
+force sim:/bc/s1 0 0
+force sim:/bc/s45 0 0
+force sim:/bc/s50 0 0
+force sim:/bc/s100 0 0
+force sim:/bc/s105 0 0
+force sim:/bc/s110 0 0
+force sim:/bc/s135 0 0
+force sim:/bc/s140 0 0
+
+force sim:/bc/s1 1 100
+force sim:/bc/s1 0 300
+
+force sim:/bc/s45 1 325
+force sim:/bc/s45 0 400
+force sim:/bc/s1 1 400
+force sim:/bc/s1 0 475
+
+force sim:/bc/s50 1 525
+force sim:/bc/s50 0 700
+
+force sim:/bc/s50 1 725
+force sim:/bc/s50 0 900
+
+force sim:/bc/s100 1 925
+force sim:/bc/s100 0 1100
+
+force sim:/bc/s105 1 1125
+force sim:/bc/s105 0 1300
+
+force sim:/bc/s110 1 1325
+force sim:/bc/s110 0 1500
+
+force sim:/bc/s135 1 1525
+force sim:/bc/s135 0 1700
+
+force sim:/bc/s140 1 1725
+force sim:/bc/s140 0 1900
+
+force sim:/bc/s1 1 1925
+force sim:/bc/s1 0 2100

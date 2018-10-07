@@ -1,0 +1,11 @@
+force sim:/register_n_bits/clock 1 0, 0 {25 ps} -r 50
+force sim:/register_n_bits/reset 0 0 
+force sim:/register_n_bits/enable 0 0
+force sim:/register_n_bits/inpt 11110000 0
+force sim:/register_n_bits/reset 0 100
+force sim:/register_n_bits/enable 1 100
+force sim:/register_n_bits/inpt 00001111 100
+force sim:/register_n_bits/inpt 10101010 200
+force sim:/register_n_bits/reset 1 300
+force sim:/register_n_bits/enable 1 300
+force sim:/register_n_bits/inpt 01010101 300

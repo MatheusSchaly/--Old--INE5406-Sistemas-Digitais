@@ -14,9 +14,9 @@
 
 -- VENDOR "Altera"
 -- PROGRAM "Quartus II 64-Bit"
--- VERSION "Version 13.0.0 Build 156 04/24/2013 SJ Web Edition"
+-- VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
--- DATE "10/06/2018 20:53:48"
+-- DATE "10/07/2018 17:11:40"
 
 -- 
 -- Device: Altera EP2C35F672C6 Package FBGA672
@@ -193,11 +193,11 @@ SIGNAL \bo_map|REW|currentState[1]~0_combout\ : std_logic;
 SIGNAL \bc_map|nextState.S7~0_combout\ : std_logic;
 SIGNAL \bc_map|currentState.S7~regout\ : std_logic;
 SIGNAL \bo_map|RP|currentState[0]~0_combout\ : std_logic;
-SIGNAL \bo_map|REW|currentState\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \bo_map|Rcktimer|currentState\ : std_logic_vector(25 DOWNTO 0);
 SIGNAL \bo_map|Rtime|currentState\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \bo_map|RNS|currentState\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \bo_map|RP|currentState\ : std_logic_vector(1 DOWNTO 0);
+SIGNAL \bo_map|REW|currentState\ : std_logic_vector(2 DOWNTO 0);
 
 BEGIN
 
