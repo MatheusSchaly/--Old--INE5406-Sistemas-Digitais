@@ -1,6 +1,6 @@
 TimeQuest Timing Analyzer report for Traffic_Light
-Mon Oct 08 14:47:17 2018
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Mon Oct  8 17:27:26 2018
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
 ---------------------
@@ -16,36 +16,23 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   8. Slow Model Recovery Summary
   9. Slow Model Removal Summary
  10. Slow Model Minimum Pulse Width Summary
- 11. Slow Model Setup: 'clock'
- 12. Slow Model Hold: 'clock'
- 13. Slow Model Minimum Pulse Width: 'clock'
- 14. Setup Times
- 15. Hold Times
- 16. Clock to Output Times
- 17. Minimum Clock to Output Times
- 18. Fast Model Setup Summary
- 19. Fast Model Hold Summary
- 20. Fast Model Recovery Summary
- 21. Fast Model Removal Summary
- 22. Fast Model Minimum Pulse Width Summary
- 23. Fast Model Setup: 'clock'
- 24. Fast Model Hold: 'clock'
- 25. Fast Model Minimum Pulse Width: 'clock'
- 26. Setup Times
- 27. Hold Times
- 28. Clock to Output Times
- 29. Minimum Clock to Output Times
- 30. Multicorner Timing Analysis Summary
- 31. Setup Times
- 32. Hold Times
- 33. Clock to Output Times
- 34. Minimum Clock to Output Times
- 35. Setup Transfers
- 36. Hold Transfers
- 37. Report TCCS
- 38. Report RSKM
- 39. Unconstrained Paths
- 40. TimeQuest Timing Analyzer Messages
+ 11. Propagation Delay
+ 12. Minimum Propagation Delay
+ 13. Fast Model Setup Summary
+ 14. Fast Model Hold Summary
+ 15. Fast Model Recovery Summary
+ 16. Fast Model Removal Summary
+ 17. Fast Model Minimum Pulse Width Summary
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Multicorner Timing Analysis Summary
+ 21. Progagation Delay
+ 22. Minimum Progagation Delay
+ 23. Clock Transfers
+ 24. Report TCCS
+ 25. Report RSKM
+ 26. Unconstrained Paths
+ 27. TimeQuest Timing Analyzer Messages
 
 
 
@@ -68,17 +55,17 @@ applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------------+
-; TimeQuest Timing Analyzer Summary                                                      ;
-+--------------------+-------------------------------------------------------------------+
-; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
-; Revision Name      ; Traffic_Light                                                     ;
-; Device Family      ; Cyclone II                                                        ;
-; Device Name        ; EP2C35F672C6                                                      ;
-; Timing Models      ; Final                                                             ;
-; Delay Model        ; Combined                                                          ;
-; Rise/Fall Delays   ; Unavailable                                                       ;
-+--------------------+-------------------------------------------------------------------+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name      ; Traffic_Light                                      ;
+; Device Family      ; Cyclone II                                         ;
+; Device Name        ; EP2C35F672C6                                       ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
 
 
 Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
@@ -92,41 +79,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clocks                                                                                                                                                                            ;
-+------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
-; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
-+------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
-; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock } ;
-+------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+----------
+; Clocks ;
+----------
+No clocks to report.
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Slow Model Fmax Summary                                                                                   ;
-+------------+-----------------+------------+---------------------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
-+------------+-----------------+------------+---------------------------------------------------------------+
-; 526.32 MHz ; 420.17 MHz      ; clock      ; limit due to minimum period restriction (max I/O toggle rate) ;
-+------------+-----------------+------------+---------------------------------------------------------------+
-This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+---------------------------
+; Slow Model Fmax Summary ;
+---------------------------
+No paths to report.
 
 
-+--------------------------------+
-; Slow Model Setup Summary       ;
-+-------+--------+---------------+
-; Clock ; Slack  ; End Point TNS ;
-+-------+--------+---------------+
-; clock ; -0.900 ; -4.403        ;
-+-------+--------+---------------+
+----------------------------
+; Slow Model Setup Summary ;
+----------------------------
+No paths to report.
 
 
-+-------------------------------+
-; Slow Model Hold Summary       ;
-+-------+-------+---------------+
-; Clock ; Slack ; End Point TNS ;
-+-------+-------+---------------+
-; clock ; 0.391 ; 0.000         ;
-+-------+-------+---------------+
+---------------------------
+; Slow Model Hold Summary ;
+---------------------------
+No paths to report.
 
 
 -------------------------------
@@ -141,216 +115,50 @@ No paths to report.
 No paths to report.
 
 
-+----------------------------------------+
+------------------------------------------
 ; Slow Model Minimum Pulse Width Summary ;
-+-------+--------+-----------------------+
-; Clock ; Slack  ; End Point TNS         ;
-+-------+--------+-----------------------+
-; clock ; -1.380 ; -9.380                ;
-+-------+--------+-----------------------+
+------------------------------------------
+No paths to report.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Setup: 'clock'                                                                                                                                    ;
-+--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; -0.900 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.936      ;
-; -0.861 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.897      ;
-; -0.829 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.865      ;
-; -0.790 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.826      ;
-; -0.768 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.804      ;
-; -0.758 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.794      ;
-; -0.719 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.755      ;
-; -0.697 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.733      ;
-; -0.687 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.723      ;
-; -0.648 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.684      ;
-; -0.646 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.682      ;
-; -0.626 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.662      ;
-; -0.624 ; register_n_bits:Rtime|currentState[4] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.660      ;
-; -0.616 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.652      ;
-; -0.577 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.613      ;
-; -0.575 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.611      ;
-; -0.555 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.591      ;
-; -0.553 ; register_n_bits:Rtime|currentState[4] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.589      ;
-; -0.545 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.581      ;
-; -0.506 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.542      ;
-; -0.504 ; register_n_bits:Rtime|currentState[5] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.540      ;
-; -0.504 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.540      ;
-; -0.487 ; register_n_bits:Rtime|currentState[6] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.523      ;
-; -0.484 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.520      ;
-; -0.482 ; register_n_bits:Rtime|currentState[4] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.518      ;
-; -0.433 ; register_n_bits:Rtime|currentState[5] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.469      ;
-; -0.433 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.469      ;
-; -0.101 ; register_n_bits:Rtime|currentState[6] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.137      ;
-; -0.098 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.134      ;
-; -0.096 ; register_n_bits:Rtime|currentState[4] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.132      ;
-; -0.068 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.104      ;
-; -0.050 ; register_n_bits:Rtime|currentState[5] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.086      ;
-; -0.050 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.086      ;
-; -0.031 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.067      ;
-; 0.223  ; register_n_bits:Rtime|currentState[7] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.813      ;
-; 0.379  ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[0] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
-+--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; inpt0[0]   ; outpt[0]    ; 5.121 ;       ;       ; 5.121 ;
+; inpt0[1]   ; outpt[1]    ; 9.442 ;       ;       ; 9.442 ;
+; inpt1[0]   ; outpt[0]    ; 5.394 ;       ;       ; 5.394 ;
+; inpt1[1]   ; outpt[1]    ; 9.426 ;       ;       ; 9.426 ;
+; sel        ; outpt[0]    ; 9.473 ; 9.473 ; 9.473 ; 9.473 ;
+; sel        ; outpt[1]    ; 9.488 ; 9.488 ; 9.488 ; 9.488 ;
++------------+-------------+-------+-------+-------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Hold: 'clock'                                                                                                                                    ;
-+-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.391 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
-; 0.547 ; register_n_bits:Rtime|currentState[7] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.813      ;
-; 0.801 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.067      ;
-; 0.820 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.086      ;
-; 0.820 ; register_n_bits:Rtime|currentState[5] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.086      ;
-; 0.838 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.104      ;
-; 0.866 ; register_n_bits:Rtime|currentState[4] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.132      ;
-; 0.868 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.134      ;
-; 0.871 ; register_n_bits:Rtime|currentState[6] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.137      ;
-; 1.203 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.469      ;
-; 1.203 ; register_n_bits:Rtime|currentState[5] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.469      ;
-; 1.252 ; register_n_bits:Rtime|currentState[4] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.518      ;
-; 1.254 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.520      ;
-; 1.257 ; register_n_bits:Rtime|currentState[6] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.523      ;
-; 1.274 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.540      ;
-; 1.274 ; register_n_bits:Rtime|currentState[5] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.540      ;
-; 1.276 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.542      ;
-; 1.315 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.581      ;
-; 1.323 ; register_n_bits:Rtime|currentState[4] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.589      ;
-; 1.325 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.591      ;
-; 1.345 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.611      ;
-; 1.347 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.613      ;
-; 1.386 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.652      ;
-; 1.394 ; register_n_bits:Rtime|currentState[4] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.660      ;
-; 1.396 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.662      ;
-; 1.416 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.682      ;
-; 1.418 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.684      ;
-; 1.457 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.723      ;
-; 1.467 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.733      ;
-; 1.489 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.755      ;
-; 1.528 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.794      ;
-; 1.538 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.804      ;
-; 1.560 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.826      ;
-; 1.599 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.865      ;
-; 1.631 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.897      ;
-; 1.670 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.936      ;
-+-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; inpt0[0]   ; outpt[0]    ; 5.121 ;       ;       ; 5.121 ;
+; inpt0[1]   ; outpt[1]    ; 9.442 ;       ;       ; 9.442 ;
+; inpt1[0]   ; outpt[0]    ; 5.394 ;       ;       ; 5.394 ;
+; inpt1[1]   ; outpt[1]    ; 9.426 ;       ;       ; 9.426 ;
+; sel        ; outpt[0]    ; 9.473 ; 9.473 ; 9.473 ; 9.473 ;
+; sel        ; outpt[1]    ; 9.488 ; 9.488 ; 9.488 ; 9.488 ;
++------------+-------------+-------+-------+-------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Minimum Pulse Width: 'clock'                                                                                ;
-+--------+--------------+----------------+------------------+-------+------------+---------------------------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                ;
-+--------+--------------+----------------+------------------+-------+------------+---------------------------------------+
-; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                                 ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; register_n_bits:Rtime|currentState[0] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; register_n_bits:Rtime|currentState[0] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; register_n_bits:Rtime|currentState[1] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; register_n_bits:Rtime|currentState[1] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; register_n_bits:Rtime|currentState[2] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; register_n_bits:Rtime|currentState[2] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; register_n_bits:Rtime|currentState[3] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; register_n_bits:Rtime|currentState[3] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; register_n_bits:Rtime|currentState[4] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; register_n_bits:Rtime|currentState[4] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; register_n_bits:Rtime|currentState[5] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; register_n_bits:Rtime|currentState[5] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; register_n_bits:Rtime|currentState[6] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; register_n_bits:Rtime|currentState[6] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; register_n_bits:Rtime|currentState[7] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; register_n_bits:Rtime|currentState[7] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; Rtime|currentState[0]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; Rtime|currentState[0]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; Rtime|currentState[1]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; Rtime|currentState[1]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; Rtime|currentState[2]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; Rtime|currentState[2]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; Rtime|currentState[3]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; Rtime|currentState[3]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; Rtime|currentState[4]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; Rtime|currentState[4]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; Rtime|currentState[5]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; Rtime|currentState[5]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; Rtime|currentState[6]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; Rtime|currentState[6]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; Rtime|currentState[7]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; Rtime|currentState[7]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout                         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout                         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|inclk[0]                ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|inclk[0]                ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|outclk                  ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|outclk                  ;
-+--------+--------------+----------------+------------------+-------+------------+---------------------------------------+
+----------------------------
+; Fast Model Setup Summary ;
+----------------------------
+No paths to report.
 
 
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; etime     ; clock      ; 3.574 ; 3.574 ; Rise       ; clock           ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+-------------------------------------------------------------------------+
-; Hold Times                                                              ;
-+-----------+------------+--------+--------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+--------+------------+-----------------+
-; etime     ; clock      ; -2.936 ; -2.936 ; Rise       ; clock           ;
-+-----------+------------+--------+--------+------------+-----------------+
-
-
-+-----------------------------------------------------------------------+
-; Clock to Output Times                                                 ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; s45       ; clock      ; 7.929 ; 7.929 ; Rise       ; clock           ;
-; s50       ; clock      ; 7.760 ; 7.760 ; Rise       ; clock           ;
-; s55       ; clock      ; 7.750 ; 7.750 ; Rise       ; clock           ;
-; s100      ; clock      ; 7.910 ; 7.910 ; Rise       ; clock           ;
-; s105      ; clock      ; 8.143 ; 8.143 ; Rise       ; clock           ;
-; s110      ; clock      ; 7.923 ; 7.923 ; Rise       ; clock           ;
-; s135      ; clock      ; 8.801 ; 8.801 ; Rise       ; clock           ;
-; s140      ; clock      ; 8.165 ; 8.165 ; Rise       ; clock           ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; s45       ; clock      ; 7.081 ; 7.081 ; Rise       ; clock           ;
-; s50       ; clock      ; 7.070 ; 7.070 ; Rise       ; clock           ;
-; s55       ; clock      ; 7.064 ; 7.064 ; Rise       ; clock           ;
-; s100      ; clock      ; 7.055 ; 7.055 ; Rise       ; clock           ;
-; s105      ; clock      ; 7.301 ; 7.301 ; Rise       ; clock           ;
-; s110      ; clock      ; 7.065 ; 7.065 ; Rise       ; clock           ;
-; s135      ; clock      ; 6.965 ; 6.965 ; Rise       ; clock           ;
-; s140      ; clock      ; 7.025 ; 7.025 ; Rise       ; clock           ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+-------------------------------+
-; Fast Model Setup Summary      ;
-+-------+-------+---------------+
-; Clock ; Slack ; End Point TNS ;
-+-------+-------+---------------+
-; clock ; 0.138 ; 0.000         ;
-+-------+-------+---------------+
-
-
-+-------------------------------+
-; Fast Model Hold Summary       ;
-+-------+-------+---------------+
-; Clock ; Slack ; End Point TNS ;
-+-------+-------+---------------+
-; clock ; 0.215 ; 0.000         ;
-+-------+-------+---------------+
+---------------------------
+; Fast Model Hold Summary ;
+---------------------------
+No paths to report.
 
 
 -------------------------------
@@ -365,280 +173,82 @@ No paths to report.
 No paths to report.
 
 
-+----------------------------------------+
+------------------------------------------
 ; Fast Model Minimum Pulse Width Summary ;
-+-------+--------+-----------------------+
-; Clock ; Slack  ; End Point TNS         ;
-+-------+--------+-----------------------+
-; clock ; -1.380 ; -9.380                ;
-+-------+--------+-----------------------+
+------------------------------------------
+No paths to report.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Setup: 'clock'                                                                                                                                   ;
-+-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.138 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.894      ;
-; 0.154 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.878      ;
-; 0.173 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.859      ;
-; 0.189 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.843      ;
-; 0.208 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.824      ;
-; 0.212 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.820      ;
-; 0.224 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.808      ;
-; 0.243 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.789      ;
-; 0.247 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.785      ;
-; 0.259 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.773      ;
-; 0.269 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.763      ;
-; 0.278 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.754      ;
-; 0.281 ; register_n_bits:Rtime|currentState[4] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.751      ;
-; 0.282 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.750      ;
-; 0.294 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.738      ;
-; 0.304 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.728      ;
-; 0.313 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.719      ;
-; 0.316 ; register_n_bits:Rtime|currentState[4] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.716      ;
-; 0.317 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.715      ;
-; 0.329 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.703      ;
-; 0.337 ; register_n_bits:Rtime|currentState[5] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.695      ;
-; 0.339 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.693      ;
-; 0.349 ; register_n_bits:Rtime|currentState[6] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.683      ;
-; 0.351 ; register_n_bits:Rtime|currentState[4] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.681      ;
-; 0.352 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.680      ;
-; 0.372 ; register_n_bits:Rtime|currentState[5] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.660      ;
-; 0.374 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.658      ;
-; 0.489 ; register_n_bits:Rtime|currentState[6] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.543      ;
-; 0.491 ; register_n_bits:Rtime|currentState[4] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.541      ;
-; 0.492 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.540      ;
-; 0.507 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.525      ;
-; 0.510 ; register_n_bits:Rtime|currentState[5] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.522      ;
-; 0.512 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.520      ;
-; 0.519 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.513      ;
-; 0.625 ; register_n_bits:Rtime|currentState[7] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.407      ;
-; 0.665 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[0] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
-+-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; inpt0[0]   ; outpt[0]    ; 2.684 ;       ;       ; 2.684 ;
+; inpt0[1]   ; outpt[1]    ; 5.283 ;       ;       ; 5.283 ;
+; inpt1[0]   ; outpt[0]    ; 2.803 ;       ;       ; 2.803 ;
+; inpt1[1]   ; outpt[1]    ; 5.267 ;       ;       ; 5.267 ;
+; sel        ; outpt[0]    ; 5.267 ; 5.267 ; 5.267 ; 5.267 ;
+; sel        ; outpt[1]    ; 5.279 ; 5.279 ; 5.279 ; 5.279 ;
++------------+-------------+-------+-------+-------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Hold: 'clock'                                                                                                                                    ;
-+-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.215 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
-; 0.255 ; register_n_bits:Rtime|currentState[7] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.407      ;
-; 0.361 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.513      ;
-; 0.368 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.520      ;
-; 0.370 ; register_n_bits:Rtime|currentState[5] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.522      ;
-; 0.373 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.525      ;
-; 0.388 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.540      ;
-; 0.389 ; register_n_bits:Rtime|currentState[4] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.541      ;
-; 0.391 ; register_n_bits:Rtime|currentState[6] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.543      ;
-; 0.506 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.658      ;
-; 0.508 ; register_n_bits:Rtime|currentState[5] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.660      ;
-; 0.528 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.680      ;
-; 0.529 ; register_n_bits:Rtime|currentState[4] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.681      ;
-; 0.531 ; register_n_bits:Rtime|currentState[6] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.683      ;
-; 0.541 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.693      ;
-; 0.543 ; register_n_bits:Rtime|currentState[5] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.695      ;
-; 0.551 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.703      ;
-; 0.563 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.715      ;
-; 0.564 ; register_n_bits:Rtime|currentState[4] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.716      ;
-; 0.567 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.719      ;
-; 0.576 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.728      ;
-; 0.586 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.738      ;
-; 0.598 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.750      ;
-; 0.599 ; register_n_bits:Rtime|currentState[4] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.751      ;
-; 0.602 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.754      ;
-; 0.611 ; register_n_bits:Rtime|currentState[3] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.763      ;
-; 0.621 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.773      ;
-; 0.633 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.785      ;
-; 0.637 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.789      ;
-; 0.656 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.808      ;
-; 0.668 ; register_n_bits:Rtime|currentState[2] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.820      ;
-; 0.672 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[5] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.824      ;
-; 0.691 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.843      ;
-; 0.707 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[6] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.859      ;
-; 0.726 ; register_n_bits:Rtime|currentState[1] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.878      ;
-; 0.742 ; register_n_bits:Rtime|currentState[0] ; register_n_bits:Rtime|currentState[7] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.894      ;
-+-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; inpt0[0]   ; outpt[0]    ; 2.684 ;       ;       ; 2.684 ;
+; inpt0[1]   ; outpt[1]    ; 5.283 ;       ;       ; 5.283 ;
+; inpt1[0]   ; outpt[0]    ; 2.803 ;       ;       ; 2.803 ;
+; inpt1[1]   ; outpt[1]    ; 5.267 ;       ;       ; 5.267 ;
+; sel        ; outpt[0]    ; 5.267 ; 5.267 ; 5.267 ; 5.267 ;
+; sel        ; outpt[1]    ; 5.279 ; 5.279 ; 5.279 ; 5.279 ;
++------------+-------------+-------+-------+-------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Minimum Pulse Width: 'clock'                                                                                ;
-+--------+--------------+----------------+------------------+-------+------------+---------------------------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                ;
-+--------+--------------+----------------+------------------+-------+------------+---------------------------------------+
-; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                                 ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; register_n_bits:Rtime|currentState[0] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; register_n_bits:Rtime|currentState[0] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; register_n_bits:Rtime|currentState[1] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; register_n_bits:Rtime|currentState[1] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; register_n_bits:Rtime|currentState[2] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; register_n_bits:Rtime|currentState[2] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; register_n_bits:Rtime|currentState[3] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; register_n_bits:Rtime|currentState[3] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; register_n_bits:Rtime|currentState[4] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; register_n_bits:Rtime|currentState[4] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; register_n_bits:Rtime|currentState[5] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; register_n_bits:Rtime|currentState[5] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; register_n_bits:Rtime|currentState[6] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; register_n_bits:Rtime|currentState[6] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; register_n_bits:Rtime|currentState[7] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; register_n_bits:Rtime|currentState[7] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; Rtime|currentState[0]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; Rtime|currentState[0]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; Rtime|currentState[1]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; Rtime|currentState[1]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; Rtime|currentState[2]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; Rtime|currentState[2]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; Rtime|currentState[3]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; Rtime|currentState[3]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; Rtime|currentState[4]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; Rtime|currentState[4]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; Rtime|currentState[5]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; Rtime|currentState[5]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; Rtime|currentState[6]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; Rtime|currentState[6]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; Rtime|currentState[7]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; Rtime|currentState[7]|clk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout                         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout                         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|inclk[0]                ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|inclk[0]                ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|outclk                  ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|outclk                  ;
-+--------+--------------+----------------+------------------+-------+------------+---------------------------------------+
++----------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                        ;
++------------------+-------+------+----------+---------+---------------------+
+; Clock            ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-------+------+----------+---------+---------------------+
+; Worst-case Slack ; N/A   ; N/A  ; N/A      ; N/A     ; N/A                 ;
+; Design-wide TNS  ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; 0.0                 ;
++------------------+-------+------+----------+---------+---------------------+
 
 
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; etime     ; clock      ; 1.973 ; 1.973 ; Rise       ; clock           ;
-+-----------+------------+-------+-------+------------+-----------------+
++----------------------------------------------------------+
+; Progagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; inpt0[0]   ; outpt[0]    ; 5.121 ;       ;       ; 5.121 ;
+; inpt0[1]   ; outpt[1]    ; 9.442 ;       ;       ; 9.442 ;
+; inpt1[0]   ; outpt[0]    ; 5.394 ;       ;       ; 5.394 ;
+; inpt1[1]   ; outpt[1]    ; 9.426 ;       ;       ; 9.426 ;
+; sel        ; outpt[0]    ; 9.473 ; 9.473 ; 9.473 ; 9.473 ;
+; sel        ; outpt[1]    ; 9.488 ; 9.488 ; 9.488 ; 9.488 ;
++------------+-------------+-------+-------+-------+-------+
 
 
-+-------------------------------------------------------------------------+
-; Hold Times                                                              ;
-+-----------+------------+--------+--------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+--------+------------+-----------------+
-; etime     ; clock      ; -1.585 ; -1.585 ; Rise       ; clock           ;
-+-----------+------------+--------+--------+------------+-----------------+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; inpt0[0]   ; outpt[0]    ; 2.684 ;       ;       ; 2.684 ;
+; inpt0[1]   ; outpt[1]    ; 5.283 ;       ;       ; 5.283 ;
+; inpt1[0]   ; outpt[0]    ; 2.803 ;       ;       ; 2.803 ;
+; inpt1[1]   ; outpt[1]    ; 5.267 ;       ;       ; 5.267 ;
+; sel        ; outpt[0]    ; 5.267 ; 5.267 ; 5.267 ; 5.267 ;
+; sel        ; outpt[1]    ; 5.279 ; 5.279 ; 5.279 ; 5.279 ;
++------------+-------------+-------+-------+-------+-------+
 
 
-+-----------------------------------------------------------------------+
-; Clock to Output Times                                                 ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; s45       ; clock      ; 4.336 ; 4.336 ; Rise       ; clock           ;
-; s50       ; clock      ; 4.272 ; 4.272 ; Rise       ; clock           ;
-; s55       ; clock      ; 4.253 ; 4.253 ; Rise       ; clock           ;
-; s100      ; clock      ; 4.328 ; 4.328 ; Rise       ; clock           ;
-; s105      ; clock      ; 4.437 ; 4.437 ; Rise       ; clock           ;
-; s110      ; clock      ; 4.339 ; 4.339 ; Rise       ; clock           ;
-; s135      ; clock      ; 4.712 ; 4.712 ; Rise       ; clock           ;
-; s140      ; clock      ; 4.436 ; 4.436 ; Rise       ; clock           ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; s45       ; clock      ; 3.963 ; 3.963 ; Rise       ; clock           ;
-; s50       ; clock      ; 3.952 ; 3.952 ; Rise       ; clock           ;
-; s55       ; clock      ; 3.956 ; 3.956 ; Rise       ; clock           ;
-; s100      ; clock      ; 3.937 ; 3.937 ; Rise       ; clock           ;
-; s105      ; clock      ; 4.035 ; 4.035 ; Rise       ; clock           ;
-; s110      ; clock      ; 3.973 ; 3.973 ; Rise       ; clock           ;
-; s135      ; clock      ; 3.894 ; 3.894 ; Rise       ; clock           ;
-; s140      ; clock      ; 3.948 ; 3.948 ; Rise       ; clock           ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                          ;
-+------------------+--------+-------+----------+---------+---------------------+
-; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -0.900 ; 0.215 ; N/A      ; N/A     ; -1.380              ;
-;  clock           ; -0.900 ; 0.215 ; N/A      ; N/A     ; -1.380              ;
-; Design-wide TNS  ; -4.403 ; 0.0   ; 0.0      ; 0.0     ; -9.38               ;
-;  clock           ; -4.403 ; 0.000 ; N/A      ; N/A     ; -9.380              ;
-+------------------+--------+-------+----------+---------+---------------------+
-
-
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; etime     ; clock      ; 3.574 ; 3.574 ; Rise       ; clock           ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+-------------------------------------------------------------------------+
-; Hold Times                                                              ;
-+-----------+------------+--------+--------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+--------+------------+-----------------+
-; etime     ; clock      ; -1.585 ; -1.585 ; Rise       ; clock           ;
-+-----------+------------+--------+--------+------------+-----------------+
-
-
-+-----------------------------------------------------------------------+
-; Clock to Output Times                                                 ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; s45       ; clock      ; 7.929 ; 7.929 ; Rise       ; clock           ;
-; s50       ; clock      ; 7.760 ; 7.760 ; Rise       ; clock           ;
-; s55       ; clock      ; 7.750 ; 7.750 ; Rise       ; clock           ;
-; s100      ; clock      ; 7.910 ; 7.910 ; Rise       ; clock           ;
-; s105      ; clock      ; 8.143 ; 8.143 ; Rise       ; clock           ;
-; s110      ; clock      ; 7.923 ; 7.923 ; Rise       ; clock           ;
-; s135      ; clock      ; 8.801 ; 8.801 ; Rise       ; clock           ;
-; s140      ; clock      ; 8.165 ; 8.165 ; Rise       ; clock           ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; s45       ; clock      ; 3.963 ; 3.963 ; Rise       ; clock           ;
-; s50       ; clock      ; 3.952 ; 3.952 ; Rise       ; clock           ;
-; s55       ; clock      ; 3.956 ; 3.956 ; Rise       ; clock           ;
-; s100      ; clock      ; 3.937 ; 3.937 ; Rise       ; clock           ;
-; s105      ; clock      ; 4.035 ; 4.035 ; Rise       ; clock           ;
-; s110      ; clock      ; 3.973 ; 3.973 ; Rise       ; clock           ;
-; s135      ; clock      ; 3.894 ; 3.894 ; Rise       ; clock           ;
-; s140      ; clock      ; 3.948 ; 3.948 ; Rise       ; clock           ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+-------------------------------------------------------------------+
-; Setup Transfers                                                   ;
-+------------+----------+----------+----------+----------+----------+
-; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+------------+----------+----------+----------+----------+----------+
-; clock      ; clock    ; 36       ; 0        ; 0        ; 0        ;
-+------------+----------+----------+----------+----------+----------+
-Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
-
-
-+-------------------------------------------------------------------+
-; Hold Transfers                                                    ;
-+------------+----------+----------+----------+----------+----------+
-; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+------------+----------+----------+----------+----------+----------+
-; clock      ; clock    ; 36       ; 0        ; 0        ; 0        ;
-+------------+----------+----------+----------+----------+----------+
-Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+-------------------
+; Clock Transfers ;
+-------------------
+Nothing to report.
 
 
 ---------------
@@ -660,10 +270,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 2     ; 2    ;
-; Unconstrained Input Port Paths  ; 16    ; 16   ;
-; Unconstrained Output Ports      ; 8     ; 8    ;
-; Unconstrained Output Port Paths ; 64    ; 64   ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 6     ; 6    ;
+; Unconstrained Output Ports      ; 2     ; 2    ;
+; Unconstrained Output Port Paths ; 6     ; 6    ;
 +---------------------------------+-------+------+
 
 
@@ -672,8 +282,8 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +------------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Oct 08 14:47:16 2018
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Mon Oct  8 17:27:26 2018
 Info: Command: quartus_sta Traffic_Light -c Traffic_Light
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -681,49 +291,34 @@ Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'Traffic_Light.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332105): Deriving Clocks
-    Info (332105): create_clock -period 1.000 -name clock clock
+Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Warning (332068): No clocks defined in design.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info (332159): No clocks to report
 Info: Analyzing Slow Model
-Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -0.900
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):    -0.900        -4.403 clock 
-Info (332146): Worst-case hold slack is 0.391
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):     0.391         0.000 clock 
+Info (332140): No fmax paths to report
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -1.380
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):    -1.380        -9.380 clock 
+Info (332140): No Minimum Pulse Width paths to report
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
-Info (332146): Worst-case setup slack is 0.138
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):     0.138         0.000 clock 
-Info (332146): Worst-case hold slack is 0.215
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):     0.215         0.000 clock 
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Warning (332068): No clocks defined in design.
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case minimum pulse width slack is -1.380
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):    -1.380        -9.380 clock 
+Info (332140): No Minimum Pulse Width paths to report
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4556 megabytes
-    Info: Processing ended: Mon Oct 08 14:47:17 2018
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 499 megabytes
+    Info: Processing ended: Mon Oct  8 17:27:26 2018
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 
