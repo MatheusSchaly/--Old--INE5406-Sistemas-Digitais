@@ -20,11 +20,11 @@
 # -- Loading package VITAL_Primitives
 # -- Loading package cycloneii_atom_pack
 # -- Loading package cycloneii_components
-# -- Compiling entity BO
-# -- Compiling architecture structure of BO
+# -- Compiling entity traffic_light_top
+# -- Compiling architecture structure of traffic_light_top
 # 
-vsim +altera -do Traffic_Light_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp /=C:/Users/HsMatheus/Desktop/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/simulation/modelsim/Traffic_Light_vhd.sdo work.bo
-# vsim +altera -do Traffic_Light_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp /=C:/Users/HsMatheus/Desktop/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/simulation/modelsim/Traffic_Light_vhd.sdo work.bo 
+vsim work.traffic_light_top(structure)
+# vsim work.traffic_light_top(structure) 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -32,9 +32,10 @@ vsim +altera -do Traffic_Light_run_msim_gate_vhdl.do -l msim_transcript -gui -sd
 # Loading ieee.vital_primitives(body)
 # Loading cycloneii.cycloneii_atom_pack(body)
 # Loading cycloneii.cycloneii_components
-# Loading work.bo(structure)
-# SDF 10.1d Compiler 2012.11 Nov  2 2012
-# 
+# Loading work.traffic_light_top(structure)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
 # Loading ieee.std_logic_arith(body)
 # Loading cycloneii.cycloneii_io(structure)
 # Loading cycloneii.cycloneii_mux21(altvital)
@@ -42,30 +43,24 @@ vsim +altera -do Traffic_Light_run_msim_gate_vhdl.do -l msim_transcript -gui -sd
 # Loading cycloneii.cycloneii_asynch_io(behave)
 # Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
 # Loading cycloneii.cycloneii_ena_reg(behave)
-# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
-# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
-# Loading cycloneii.cycloneii_and1(altvital)
-# Loading instances from C:/Users/HsMatheus/Desktop/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/simulation/modelsim/Traffic_Light_vhd.sdo
-# Loading timing data from C:/Users/HsMatheus/Desktop/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/simulation/modelsim/Traffic_Light_vhd.sdo
-# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
-#    Time: 0 ps  Iteration: 0  Instance: /bo File: Traffic_Light.vho
-# do Traffic_Light_run_msim_gate_vhdl.do 
-# if {[file exists gate_work]} {
-# 	vdel -lib gate_work -all
-# }
-# vlib gate_work
-# vmap work gate_work
-# Modifying modelsim.ini
-# 
-# vcom -93 -work work {Traffic_Light.vho}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package VITAL_Timing
-# -- Loading package VITAL_Primitives
-# -- Loading package cycloneii_atom_pack
-# -- Loading package cycloneii_components
-# -- Compiling entity BO
-# -- Compiling architecture structure of BO
-# 
+# ** Warning: Design size of 2 instances exceeds ModelSim ALTERA recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim Altera version. Expect performance to be adversely affected.
+# Load canceled
+# Load canceled
+add wave -position insertpoint  \
+sim:/traffic_light_top/reset \
+sim:/traffic_light_top/clock \
+sim:/traffic_light_top/NS \
+sim:/traffic_light_top/EW \
+sim:/traffic_light_top/P
+force -freeze sim:/traffic_light_top/reset 0 0
+force -freeze sim:/traffic_light_top/clock 1 0, 0 {50 ps} -r 100
+run
+run -all
+force -freeze sim:/traffic_light_top/reset 1 0
+run
+run
+force -freeze sim:/traffic_light_top/reset 0 0
+run
+run

@@ -91,12 +91,14 @@ begin
 	Cs135 : compareIfEqual_n_bits PORT MAP(saitime, "10000111", s135);
 	Cs140 : compareIfEqual_n_bits PORT MAP(saitime, "10001100", s140);
 	
+	--MNS: mux4x1_n_bits GENERIC MAP (3) PORT MAP("000", "001", "010", "100", cMuxNS, saiMuxNS);
 	MNS: mux4x1_n_bits GENERIC MAP (3) PORT MAP("100", "010", "001", "000", cMuxNS, saiMuxNS);
 	RNS : register_n_bits GENERIC MAP (3) PORT MAP(clock, reset, eNS, saimuxNS, NS);
 	
 	MP: mux2x1_n_bits GENERIC MAP (2) PORT MAP("10", "01", cMuxP, saiMuxP);
 	RP : register_n_bits GENERIC MAP (2) PORT MAP(clock, reset, eP, saiMuxP, P);
 	
+	--MEW: mux4x1_n_bits GENERIC MAP (3) PORT MAP("000", "001", "010", "100",  cMuxEW, saiMuxEW);	
 	MEW: mux4x1_n_bits GENERIC MAP (3) PORT MAP("100", "010", "001", "000",  cMuxEW, saiMuxEW);																			  --10  01  00			
 	REW : register_n_bits GENERIC MAP (3) PORT MAP(clock, reset, eEW, saiMuxEW, EW);
 	
