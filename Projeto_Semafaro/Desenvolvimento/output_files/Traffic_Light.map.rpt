@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Traffic_Light
-Sun Oct 07 21:27:15 2018
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Mon Oct  8 11:55:43 2018
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
 ---------------------
@@ -74,24 +74,24 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Oct 07 21:27:15 2018           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
-; Revision Name                      ; Traffic_Light                                   ;
-; Top-level Entity Name              ; traffic_light_top                               ;
-; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 77                                              ;
-;     Total combinational functions  ; 74                                              ;
-;     Dedicated logic registers      ; 50                                              ;
-; Total registers                    ; 50                                              ;
-; Total pins                         ; 10                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
-+------------------------------------+-------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Oct  8 11:55:43 2018      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; Traffic_Light                              ;
+; Top-level Entity Name              ; traffic_light_top                          ;
+; Family                             ; Cyclone II                                 ;
+; Total logic elements               ; 80                                         ;
+;     Total combinational functions  ; 79                                         ;
+;     Dedicated logic registers      ; 50                                         ;
+; Total registers                    ; 50                                         ;
+; Total pins                         ; 10                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -190,19 +190,19 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                              ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                       ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------+---------+
-; traffic_light_top.vhd            ; yes             ; User VHDL File  ; C:/Users/HsMatheus/Desktop/SD/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/traffic_light_top.vhd     ;         ;
-; BO.vhd                           ; yes             ; User VHDL File  ; C:/Users/HsMatheus/Desktop/SD/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BO.vhd                    ;         ;
-; BC.vhd                           ; yes             ; User VHDL File  ; C:/Users/HsMatheus/Desktop/SD/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd                    ;         ;
-; adder_n_bits.vhd                 ; yes             ; User VHDL File  ; C:/Users/HsMatheus/Desktop/SD/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/adder_n_bits.vhd          ;         ;
-; register_n_bits.vhd              ; yes             ; User VHDL File  ; C:/Users/HsMatheus/Desktop/SD/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/register_n_bits.vhd       ;         ;
-; mux_nxm.vhd                      ; yes             ; User VHDL File  ; C:/Users/HsMatheus/Desktop/SD/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/mux_nxm.vhd               ;         ;
-; compareIfEqual_n_bits.vhd        ; yes             ; User VHDL File  ; C:/Users/HsMatheus/Desktop/SD/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/compareIfEqual_n_bits.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                                                  ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; traffic_light_top.vhd            ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/traffic_light_top.vhd     ;         ;
+; BO.vhd                           ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BO.vhd                    ;         ;
+; BC.vhd                           ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/BC.vhd                    ;         ;
+; adder_n_bits.vhd                 ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/adder_n_bits.vhd          ;         ;
+; register_n_bits.vhd              ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/register_n_bits.vhd       ;         ;
+; mux_nxm.vhd                      ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/mux_nxm.vhd               ;         ;
+; compareIfEqual_n_bits.vhd        ; yes             ; User VHDL File  ; /home/allu/cco/ProjetoSemaforo/INE5406-Sistemas-Digitais/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/compareIfEqual_n_bits.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -210,16 +210,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 77    ;
+; Estimated Total logic elements              ; 80    ;
 ;                                             ;       ;
-; Total combinational functions               ; 74    ;
+; Total combinational functions               ; 79    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 25    ;
-;     -- 3 input functions                    ; 10    ;
-;     -- <=2 input functions                  ; 39    ;
+;     -- 4 input functions                    ; 29    ;
+;     -- 3 input functions                    ; 9     ;
+;     -- <=2 input functions                  ; 41    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 44    ;
+;     -- normal mode                          ; 49    ;
 ;     -- arithmetic mode                      ; 30    ;
 ;                                             ;       ;
 ; Total registers                             ; 50    ;
@@ -230,8 +230,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clock ;
 ; Maximum fan-out                             ; 50    ;
-; Total fan-out                               ; 400   ;
-; Average fan-out                             ; 2.99  ;
+; Total fan-out                               ; 417   ;
+; Average fan-out                             ; 3.00  ;
 +---------------------------------------------+-------+
 
 
@@ -240,20 +240,21 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node          ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                      ; Library Name ;
 +-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
-; |traffic_light_top                  ; 74 (0)            ; 50 (0)       ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |traffic_light_top                                       ; work         ;
-;    |BC:bc_map|                      ; 27 (27)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BC:bc_map                             ; work         ;
-;    |BO:bo_map|                      ; 47 (0)            ; 41 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map                             ; work         ;
-;       |compareIfEqual_n_bits:Cs110| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs110 ; work         ;
-;       |compareIfEqual_n_bits:Cs140| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs140 ; work         ;
-;       |compareIfEqual_n_bits:Cs45|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs45  ; work         ;
-;       |compareIfEqual_n_bits:Cs55|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs55  ; work         ;
-;       |mux_nxm:MEW|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|mux_nxm:MEW                 ; work         ;
-;       |mux_nxm:MNS|                 ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|mux_nxm:MNS                 ; work         ;
-;       |register_n_bits:REW|         ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|register_n_bits:REW         ; work         ;
-;       |register_n_bits:RNS|         ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|register_n_bits:RNS         ; work         ;
-;       |register_n_bits:RP|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|register_n_bits:RP          ; work         ;
-;       |register_n_bits:Rcktimer|    ; 26 (26)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|register_n_bits:Rcktimer    ; work         ;
-;       |register_n_bits:Rtime|       ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|register_n_bits:Rtime       ; work         ;
+; |traffic_light_top                  ; 79 (0)            ; 50 (0)       ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |traffic_light_top                                       ;              ;
+;    |BC:bc_map|                      ; 31 (31)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BC:bc_map                             ;              ;
+;    |BO:bo_map|                      ; 48 (0)            ; 41 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map                             ;              ;
+;       |compareIfEqual_n_bits:Cs100| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs100 ;              ;
+;       |compareIfEqual_n_bits:Cs110| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs110 ;              ;
+;       |compareIfEqual_n_bits:Cs140| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs140 ;              ;
+;       |compareIfEqual_n_bits:Cs45|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs45  ;              ;
+;       |compareIfEqual_n_bits:Cs55|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs55  ;              ;
+;       |mux_nxm:MEW|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|mux_nxm:MEW                 ;              ;
+;       |mux_nxm:MNS|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|mux_nxm:MNS                 ;              ;
+;       |register_n_bits:REW|         ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|register_n_bits:REW         ;              ;
+;       |register_n_bits:RNS|         ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|register_n_bits:RNS         ;              ;
+;       |register_n_bits:RP|          ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|register_n_bits:RP          ;              ;
+;       |register_n_bits:Rcktimer|    ; 26 (26)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|register_n_bits:Rcktimer    ;              ;
+;       |register_n_bits:Rtime|       ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |traffic_light_top|BO:bo_map|register_n_bits:Rtime       ;              ;
 +-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -281,7 +282,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+----------------------------------------+
 ; Register name                                ; Reason for Removal                     ;
 +----------------------------------------------+----------------------------------------+
-; BO:bo_map|register_n_bits:RP|currentState[1] ; Stuck at GND due to stuck port data_in ;
+; BO:bo_map|register_n_bits:RP|currentState[0] ; Stuck at GND due to stuck port data_in ;
 ; Total Number of Removed Registers = 1        ;                                        ;
 +----------------------------------------------+----------------------------------------+
 
@@ -508,11 +509,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+-------+----------+-------------------+
 ; Port       ; Type  ; Severity ; Details           ;
 +------------+-------+----------+-------------------+
-; inpt[7..5] ; Input ; Info     ; Stuck at GND      ;
-; inpt[3..1] ; Input ; Info     ; Stuck at GND      ;
-; inpt[8]    ; Input ; Info     ; Stuck at VCC      ;
+; inpt[8..7] ; Input ; Info     ; Stuck at GND      ;
+; inpt[1..0] ; Input ; Info     ; Stuck at GND      ;
+; inpt[6]    ; Input ; Info     ; Stuck at VCC      ;
+; inpt[5]    ; Input ; Info     ; Stuck at GND      ;
 ; inpt[4]    ; Input ; Info     ; Stuck at VCC      ;
-; inpt[0]    ; Input ; Info     ; Stuck at VCC      ;
+; inpt[3]    ; Input ; Info     ; Stuck at GND      ;
+; inpt[2]    ; Input ; Info     ; Stuck at VCC      ;
 +------------+-------+----------+-------------------+
 
 
@@ -521,10 +524,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+-------+----------+------------------+
 ; Port       ; Type  ; Severity ; Details          ;
 +------------+-------+----------+------------------+
-; inpt[3..1] ; Input ; Info     ; Stuck at GND     ;
-; inpt[5]    ; Input ; Info     ; Stuck at GND     ;
-; inpt[4]    ; Input ; Info     ; Stuck at VCC     ;
-; inpt[0]    ; Input ; Info     ; Stuck at VCC     ;
+; inpt[5..4] ; Input ; Info     ; Stuck at GND     ;
+; inpt[2..0] ; Input ; Info     ; Stuck at GND     ;
+; inpt[3]    ; Input ; Info     ; Stuck at VCC     ;
 +------------+-------+----------+------------------+
 
 
@@ -533,11 +535,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+-------+----------+-------------------+
 ; Port       ; Type  ; Severity ; Details           ;
 +------------+-------+----------+-------------------+
-; inpt[7..5] ; Input ; Info     ; Stuck at GND      ;
-; inpt[3..1] ; Input ; Info     ; Stuck at GND      ;
-; inpt[8]    ; Input ; Info     ; Stuck at VCC      ;
+; inpt[8..7] ; Input ; Info     ; Stuck at GND      ;
+; inpt[1..0] ; Input ; Info     ; Stuck at GND      ;
+; inpt[6]    ; Input ; Info     ; Stuck at VCC      ;
+; inpt[5]    ; Input ; Info     ; Stuck at GND      ;
 ; inpt[4]    ; Input ; Info     ; Stuck at VCC      ;
-; inpt[0]    ; Input ; Info     ; Stuck at VCC      ;
+; inpt[3]    ; Input ; Info     ; Stuck at GND      ;
+; inpt[2]    ; Input ; Info     ; Stuck at VCC      ;
 +------------+-------+----------+-------------------+
 
 
@@ -695,17 +699,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Oct 07 21:27:10 2018
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Mon Oct  8 11:55:41 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Traffic_Light -c Traffic_Light
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file traffic_light_top.vhd
     Info (12022): Found design unit 1: traffic_light_top-archTop
     Info (12023): Found entity 1: traffic_light_top
-Info (12021): Found 2 design units, including 1 entities, in source file bo.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file BO.vhd
     Info (12022): Found design unit 1: BO-archBO
     Info (12023): Found entity 1: BO
-Info (12021): Found 2 design units, including 1 entities, in source file bc.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file BC.vhd
     Info (12022): Found design unit 1: BC-archBC
     Info (12023): Found entity 1: BC
 Info (12021): Found 2 design units, including 1 entities, in source file adder_n_bits.vhd
@@ -717,7 +721,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file registe
 Info (12021): Found 2 design units, including 1 entities, in source file mux_nxm.vhd
     Info (12022): Found design unit 1: mux_nxm-Behavioral
     Info (12023): Found entity 1: mux_nxm
-Info (12021): Found 2 design units, including 1 entities, in source file compareifequal_n_bits.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file compareIfEqual_n_bits.vhd
     Info (12022): Found design unit 1: compareIfEqual_n_bits-archCompareIfEqual
     Info (12023): Found entity 1: compareIfEqual_n_bits
 Info (12021): Found 2 design units, including 1 entities, in source file clock_x.vhd
@@ -727,8 +731,8 @@ Info (12127): Elaborating entity "traffic_light_top" for the top level hierarchy
 Info (12128): Elaborating entity "BC" for hierarchy "BC:bc_map"
 Warning (10492): VHDL Process Statement warning at BC.vhd(25): signal "currentState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at BC.vhd(26): signal "currentState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (10041): Inferred latch for "cMuxEW[0]" at BC.vhd(118)
-Info (10041): Inferred latch for "cMuxEW[1]" at BC.vhd(118)
+Info (10041): Inferred latch for "cMuxEW[0]" at BC.vhd(119)
+Info (10041): Inferred latch for "cMuxEW[1]" at BC.vhd(119)
 Info (10041): Inferred latch for "cMuxNS[0]" at BC.vhd(101)
 Info (10041): Inferred latch for "cMuxNS[1]" at BC.vhd(101)
 Info (12128): Elaborating entity "BO" for hierarchy "BO:bo_map"
@@ -743,17 +747,17 @@ Info (12128): Elaborating entity "register_n_bits" for hierarchy "BO:bo_map|regi
 Info (12128): Elaborating entity "mux_nxm" for hierarchy "BO:bo_map|mux_nxm:MP"
 Info (12128): Elaborating entity "register_n_bits" for hierarchy "BO:bo_map|register_n_bits:RP"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "P[1]" is stuck at GND
+    Warning (13410): Pin "P[0]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 88 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 92 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 78 logic cells
+    Info (21061): Implemented 82 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4672 megabytes
-    Info: Processing ended: Sun Oct 07 21:27:15 2018
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 637 megabytes
+    Info: Processing ended: Mon Oct  8 11:55:43 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

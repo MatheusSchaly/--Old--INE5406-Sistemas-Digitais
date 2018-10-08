@@ -101,15 +101,18 @@ begin
 	Cs135 : compareIfEqual_n_bits PORT MAP(saitime, "10000111", s135);
 	Cs140 : compareIfEqual_n_bits PORT MAP(saitime, "10001100", s140);
 	
-	MNS: mux_nxm GENERIC MAP (qtdInputs => 3, lenght => 3) PORT MAP("100010001", cMuxNS, saiMuxNS);
+	MNS: mux_nxm GENERIC MAP (qtdInputs => 3, lenght => 3) PORT MAP("001010100", cMuxNS, saiMuxNS);
+																						--10  01  00				
 	RNS : register_n_bits GENERIC MAP (3) PORT MAP(clock, reset, eNS, saimuxNS, sairegNS);
 	
-	--MP: mux_nxm GENERIC MAP (qtdInputs => 2, lenght => 2) PORT MAP("1001", cMuxP, saiMuxP); --error: expression has 2 elements, but must have 1 elements
+	--MP: mux_nxm GENERIC MAP (qtdInputs => 2, lenght => 2) PORT MAP("0100", cMuxP, saiMuxP); --error: expression has 2 elements, but must have 1 elements
 	--parameter sel must have actual or default value
-	MP: mux_nxm GENERIC MAP (qtdInputs => 2) PORT MAP("010001", cMuxP, saiMuxP); --error: expression has 2 elements, but must have 1 elements
+	MP: mux_nxm GENERIC MAP (qtdInputs => 2) PORT MAP("001000", cMuxP, saiMuxP); --error: expression has 2 elements, but must have 1 elements
 	RP : register_n_bits GENERIC MAP (2) PORT MAP(clock, reset, eP, saiMuxP, sairegP);
 	
-	MEW: mux_nxm GENERIC MAP (qtdInputs =>3, lenght => 3) PORT MAP("100010001", cMuxEW, saiMuxEW);
+	MEW: mux_nxm GENERIC MAP (qtdInputs =>3, lenght => 3) PORT MAP("001010100", cMuxEW, saiMuxEW);
+																						--10  01  00				
+
 	REW : register_n_bits GENERIC MAP (3) PORT MAP(clock, reset, eEW, saiMuxEW, sairegEW);
 
 	-- output logic

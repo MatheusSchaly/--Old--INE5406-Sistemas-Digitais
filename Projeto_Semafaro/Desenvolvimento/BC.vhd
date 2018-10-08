@@ -101,15 +101,16 @@ architecture archBC of BC  is
 	cMuxNS <= "00" when (currentState = init
 							or currentState = S0
 							or currentState = S2
-							or currentState = S5
-							or currentState = S6
-							or currentState = S7
 							or currentState = S8) else
 				"01" when (currentState = S3) else
-				"10" when (currentState = S4);
+				"10" when (currentState = S4
+							or currentState = S5
+							or currentState = S6
+							or currentState = S7);
 				 
-	cMuxP <= "01" when (currentState = init
-							or currentState = S4) else "10";
+	cMuxP <= "00" when (currentState = S0
+							or currentState = S2
+							or currentState = S7) else "01";
 	
 	eP <= '1' when (currentState = init
 						or currentState = S4
@@ -117,13 +118,13 @@ architecture archBC of BC  is
 	
 	cMuxEW <= "00" when (currentState = S0
 							or currentState = S2
-							or currentState = S3
-							or currentState = S5
-							or currentState = S7
-							or currentState = S8) else
+							or currentState = S5) else
 							"01" when (currentState = S6) else
 							"10" when (currentState = init
-										or currentState = S4);      
+							or currentState = S3
+							or currentState = S4
+							or currentState = S7
+							or currentState = S8);      
 				 
 	eEW <= '1' when (currentState = init
 						or currentState = S4
