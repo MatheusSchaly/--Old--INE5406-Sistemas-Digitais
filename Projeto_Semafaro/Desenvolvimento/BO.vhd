@@ -81,13 +81,10 @@ signal saitime, saisomatime: std_logic_vector (7 DOWNTO 0);
 signal saimuxNS, saimuxEW, sairegNS, sairegEW: std_logic_vector (2 DOWNTO 0);
 signal saimuxP, sairegP: std_logic_vector (1 DOWNTO 0);
 
-signal clock_50: std_logic_vector (25 DOWNTO 0); -- talvez esteja errado
-signal clock_140: std_logic_vector (7 DOWNTO 0); -- talvez esteja errado
+-- signal clock_50: std_logic_vector (25 DOWNTO 0); -- talvez esteja errado
+-- signal clock_140: std_logic_vector (7 DOWNTO 0); -- talvez esteja errado
 
 begin
-
-	clocktimer : clock_x GENERIC MAP (50000000) PORT MAP(clock, reset, ecktimer, clock_50);
-	clocktime : clock_x GENERIC MAP (140) PORT MAP(clock, reset, etime, clock_140);
 	
 	Rcktimer : register_n_bits GENERIC MAP (26) PORT MAP(clock, rstcktimer, ecktimer, saisomacktimer, saicktimer); -- talvez clock errado(clock_50 ao inves de clock)
 	Acktimer : adder_n_bits GENERIC MAP (26) PORT MAP(saicktimer, "00000000000000000000000001", saisomacktimer);
@@ -104,15 +101,15 @@ begin
 	Cs135 : compareIfEqual_n_bits PORT MAP(saitime, "10000111", s135);
 	Cs140 : compareIfEqual_n_bits PORT MAP(saitime, "10001100", s140);
 	
-	MNS: mux_nxm GENERIC MAP (qtdInputs => 3, lenght => 3) PORT MAP("100010011", cMuxNS, saiMuxNS);
+	MNS: mux_nxm GENERIC MAP (qtdInputs => 3, lenght => 3) PORT MAP("100010001", cMuxNS, saiMuxNS);
 	RNS : register_n_bits GENERIC MAP (3) PORT MAP(clock, reset, eNS, saimuxNS, sairegNS);
 	
 	--MP: mux_nxm GENERIC MAP (qtdInputs => 2, lenght => 2) PORT MAP("1001", cMuxP, saiMuxP); --error: expression has 2 elements, but must have 1 elements
 	--parameter sel must have actual or default value
-	MP: mux_nxm GENERIC MAP (2) PORT MAP("010001", cMuxP, saiMuxP); -- esta errado
+	MP: mux_nxm GENERIC MAP (qtdInputs => 2) PORT MAP("010001", cMuxP, saiMuxP); --error: expression has 2 elements, but must have 1 elements
 	RP : register_n_bits GENERIC MAP (2) PORT MAP(clock, reset, eP, saiMuxP, sairegP);
 	
-	MEW: mux_nxm GENERIC MAP (qtdInputs =>3, lenght => 3) PORT MAP("100010011", cMuxEW, saiMuxEW);
+	MEW: mux_nxm GENERIC MAP (qtdInputs =>3, lenght => 3) PORT MAP("100010001", cMuxEW, saiMuxEW);
 	REW : register_n_bits GENERIC MAP (3) PORT MAP(clock, reset, eEW, saiMuxEW, sairegEW);
 
 	-- output logic

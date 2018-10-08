@@ -36,22 +36,22 @@ architecture archBC of BC  is
 			  if not(s45='1' and s50='1' and s55='1' and s100='1' and s105='1' and s110='1' and s135='1' and s140='1') then
 				 nextState <= S0;
 			  end if;
-			  if s45='1' then
+			  if s45='1' and not(s50='1' or s55='1' or s100='1' or s105='1' or s110='1' or s135='1' or s140='1') then
 				 nextState <= S3;
 			  end if;
-			  if ((s50='1') or (s105='1') or (s135='1')) then
+			  if ((s50='1') or (s105='1') or (s135='1')) and not(s45='1' or s55='1' or s100='1' or s110='1' or s140='1') then
 				 nextState <= S4;
 			  end if;
-			  if s55='1' then
+			  if s55='1' and not(s45='1' or s50='1' or s100='1' or s105='1' or s110='1' or s135='1' or s140='1') then
 				 nextState <= S5;
 			  end if;
-			  if s100='1' then
+			  if s100='1' and not(s45='1' or s50='1' or s55='1' or s105='1' or s110='1' or s135='1' or s140='1') then
 				 nextState <= S6;
 			  end if;
-			  if s110='1' then
+			  if s110='1' and not(s45='1' or s50='1' or s55='1' or s100='1' or s105='1' or s135='1' or s140='1') then
 				 nextState <= S7;
 			  end if;
-			  if s140='1' then
+			  if s140='1' and not(s45='1' or s50='1' or s55='1' or s100='1' or s105='1' or s110='1' or s135='1') then
 				 nextState <= S8;
 			  end if;
 			when S3 =>
