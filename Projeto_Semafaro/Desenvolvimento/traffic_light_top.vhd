@@ -9,7 +9,7 @@ port(
 	P: out std_logic_vector(1 downto 0)
 );
 end entity;
-
+--
 architecture archTop of traffic_light_top is
 	
 	component BC is
@@ -63,5 +63,5 @@ architecture archTop of traffic_light_top is
 							sig_s1, sig_s45, sig_s50, sig_s55, sig_s100, sig_s105, sig_s110, sig_s135, sig_s140,
 							NS, EW,
 							P);
-	
+
 end architecture;
