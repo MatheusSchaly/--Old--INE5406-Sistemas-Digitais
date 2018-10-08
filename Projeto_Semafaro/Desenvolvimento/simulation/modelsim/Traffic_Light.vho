@@ -14,9 +14,9 @@
 
 -- VENDOR "Altera"
 -- PROGRAM "Quartus II 64-Bit"
--- VERSION "Version 13.0.0 Build 156 04/24/2013 SJ Web Edition"
+-- VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
--- DATE "10/08/2018 11:56:02"
+-- DATE "10/08/2018 14:47:18"
 
 -- 
 -- Device: Altera EP2C35F672C6 Package FBGA672
@@ -31,30 +31,70 @@ LIBRARY IEEE;
 USE CYCLONEII.CYCLONEII_COMPONENTS.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY 	traffic_light_top IS
+ENTITY 	BO IS
     PORT (
-	reset : IN std_logic;
 	clock : IN std_logic;
+	reset : IN std_logic;
+	ecktimer : IN std_logic;
+	rstcktimer : IN std_logic;
+	rsttime : IN std_logic;
+	etime : IN std_logic;
+	eNS : IN std_logic;
+	eP : IN std_logic;
+	eEW : IN std_logic;
+	cMuxNS : IN std_logic_vector(1 DOWNTO 0);
+	cMuxEW : IN std_logic_vector(1 DOWNTO 0);
+	cMuxP : IN std_logic_vector(0 DOWNTO 0);
+	s1 : OUT std_logic;
+	s45 : OUT std_logic;
+	s50 : OUT std_logic;
+	s55 : OUT std_logic;
+	s100 : OUT std_logic;
+	s105 : OUT std_logic;
+	s110 : OUT std_logic;
+	s135 : OUT std_logic;
+	s140 : OUT std_logic;
 	NS : OUT std_logic_vector(2 DOWNTO 0);
 	EW : OUT std_logic_vector(2 DOWNTO 0);
 	P : OUT std_logic_vector(1 DOWNTO 0)
 	);
-END traffic_light_top;
+END BO;
 
 -- Design Ports Information
--- NS[0]	=>  Location: PIN_G16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
--- NS[1]	=>  Location: PIN_B18,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
--- NS[2]	=>  Location: PIN_G15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
--- EW[0]	=>  Location: PIN_F15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
--- EW[1]	=>  Location: PIN_A17,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
--- EW[2]	=>  Location: PIN_H16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
--- P[0]	=>  Location: PIN_C5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
--- P[1]	=>  Location: PIN_F16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- reset	=>  Location: PIN_C13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- ecktimer	=>  Location: PIN_D13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- rstcktimer	=>  Location: PIN_H10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- eNS	=>  Location: PIN_J6,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- eP	=>  Location: PIN_K23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- eEW	=>  Location: PIN_Y23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- cMuxNS[0]	=>  Location: PIN_AC9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- cMuxNS[1]	=>  Location: PIN_H1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- cMuxEW[0]	=>  Location: PIN_AB4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- cMuxEW[1]	=>  Location: PIN_G10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- cMuxP[0]	=>  Location: PIN_J2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- s1	=>  Location: PIN_AC22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- s45	=>  Location: PIN_E15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- s50	=>  Location: PIN_A17,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- s55	=>  Location: PIN_G15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- s100	=>  Location: PIN_H16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- s105	=>  Location: PIN_D15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- s110	=>  Location: PIN_D16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- s135	=>  Location: PIN_H15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- s140	=>  Location: PIN_B17,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- NS[0]	=>  Location: PIN_AF17,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- NS[1]	=>  Location: PIN_AC16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- NS[2]	=>  Location: PIN_F26,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- EW[0]	=>  Location: PIN_C8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- EW[1]	=>  Location: PIN_T23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- EW[2]	=>  Location: PIN_AF13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- P[0]	=>  Location: PIN_AA16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- P[1]	=>  Location: PIN_B22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 -- clock	=>  Location: PIN_P2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- reset	=>  Location: PIN_P1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- rsttime	=>  Location: PIN_P1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- etime	=>  Location: PIN_F15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 
 
-ARCHITECTURE structure OF traffic_light_top IS
+ARCHITECTURE structure OF BO IS
 SIGNAL gnd : std_logic := '0';
 SIGNAL vcc : std_logic := '1';
 SIGNAL unknown : std_logic := 'X';
@@ -64,146 +104,91 @@ SIGNAL devpor : std_logic := '1';
 SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
-SIGNAL ww_reset : std_logic;
 SIGNAL ww_clock : std_logic;
+SIGNAL ww_reset : std_logic;
+SIGNAL ww_ecktimer : std_logic;
+SIGNAL ww_rstcktimer : std_logic;
+SIGNAL ww_rsttime : std_logic;
+SIGNAL ww_etime : std_logic;
+SIGNAL ww_eNS : std_logic;
+SIGNAL ww_eP : std_logic;
+SIGNAL ww_eEW : std_logic;
+SIGNAL ww_cMuxNS : std_logic_vector(1 DOWNTO 0);
+SIGNAL ww_cMuxEW : std_logic_vector(1 DOWNTO 0);
+SIGNAL ww_cMuxP : std_logic_vector(0 DOWNTO 0);
+SIGNAL ww_s1 : std_logic;
+SIGNAL ww_s45 : std_logic;
+SIGNAL ww_s50 : std_logic;
+SIGNAL ww_s55 : std_logic;
+SIGNAL ww_s100 : std_logic;
+SIGNAL ww_s105 : std_logic;
+SIGNAL ww_s110 : std_logic;
+SIGNAL ww_s135 : std_logic;
+SIGNAL ww_s140 : std_logic;
 SIGNAL ww_NS : std_logic_vector(2 DOWNTO 0);
 SIGNAL ww_EW : std_logic_vector(2 DOWNTO 0);
 SIGNAL ww_P : std_logic_vector(1 DOWNTO 0);
 SIGNAL \clock~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \reset~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \bo_map|Rcktimer|currentState[3]~30_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[5]~34_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[16]~56_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[18]~60_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[19]~62_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[24]~73\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[25]~74_combout\ : std_logic;
-SIGNAL \bc_map|Selector0~1_combout\ : std_logic;
-SIGNAL \bc_map|Selector0~5_combout\ : std_logic;
-SIGNAL \bc_map|NSL~1_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[0]~25_combout\ : std_logic;
+SIGNAL \rsttime~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \clock~combout\ : std_logic;
 SIGNAL \clock~clkctrl_outclk\ : std_logic;
-SIGNAL \bo_map|Rtime|currentState[0]~13_combout\ : std_logic;
-SIGNAL \bc_map|currentState.init~feeder_combout\ : std_logic;
-SIGNAL \reset~combout\ : std_logic;
-SIGNAL \reset~clkctrl_outclk\ : std_logic;
-SIGNAL \bc_map|currentState.init~regout\ : std_logic;
-SIGNAL \bc_map|rstcktimer~0_combout\ : std_logic;
-SIGNAL \bo_map|Rtime|currentState[1]~7_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[1]~26_combout\ : std_logic;
-SIGNAL \bc_map|rstcktimer~combout\ : std_logic;
-SIGNAL \bo_map|Rtime|currentState[4]~15\ : std_logic;
-SIGNAL \bo_map|Rtime|currentState[5]~17\ : std_logic;
-SIGNAL \bo_map|Rtime|currentState[6]~18_combout\ : std_logic;
-SIGNAL \bo_map|Rtime|currentState[2]~9_combout\ : std_logic;
-SIGNAL \bo_map|Cs55|Equal0~0_combout\ : std_logic;
-SIGNAL \bo_map|Rtime|currentState[6]~19\ : std_logic;
-SIGNAL \bo_map|Rtime|currentState[7]~20_combout\ : std_logic;
-SIGNAL \bo_map|Rtime|currentState[5]~16_combout\ : std_logic;
-SIGNAL \bo_map|Cs100|Equal0~0_combout\ : std_logic;
-SIGNAL \bo_map|Cs55|Equal0~1_combout\ : std_logic;
-SIGNAL \bo_map|Cs110|Equal0~0_combout\ : std_logic;
-SIGNAL \bc_map|Selector0~10_combout\ : std_logic;
-SIGNAL \bo_map|Cs45|Equal0~1_combout\ : std_logic;
-SIGNAL \bc_map|NSL~0_combout\ : std_logic;
-SIGNAL \bc_map|NSL~2_combout\ : std_logic;
-SIGNAL \bc_map|NSL~3_combout\ : std_logic;
-SIGNAL \bo_map|Rtime|currentState[3]~11_combout\ : std_logic;
-SIGNAL \bo_map|Cs45|Equal0~0_combout\ : std_logic;
-SIGNAL \bc_map|Selector0~9_combout\ : std_logic;
-SIGNAL \bc_map|Selector0~11_combout\ : std_logic;
-SIGNAL \bc_map|currentState.S0~regout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[1]~27\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[2]~29\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[3]~31\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[4]~32_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[4]~33\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[5]~35\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[6]~36_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[6]~37\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[7]~38_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[7]~39\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[8]~40_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[8]~41\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[9]~43\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[10]~44_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[10]~45\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[11]~46_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[11]~47\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[12]~48_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[12]~49\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[13]~50_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[13]~51\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[14]~52_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[14]~53\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[15]~54_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[15]~55\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[16]~57\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[17]~58_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[17]~59\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[18]~61\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[19]~63\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[20]~64_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[20]~65\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[21]~67\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[22]~68_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[22]~69\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[23]~70_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[23]~71\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[24]~72_combout\ : std_logic;
-SIGNAL \bc_map|Selector0~7_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[21]~66_combout\ : std_logic;
-SIGNAL \bc_map|Selector0~6_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[9]~42_combout\ : std_logic;
-SIGNAL \bc_map|Selector0~2_combout\ : std_logic;
-SIGNAL \bo_map|Rcktimer|currentState[2]~28_combout\ : std_logic;
-SIGNAL \bc_map|Selector0~0_combout\ : std_logic;
-SIGNAL \bc_map|Selector0~3_combout\ : std_logic;
-SIGNAL \bc_map|Selector0~4_combout\ : std_logic;
-SIGNAL \bc_map|Selector0~8_combout\ : std_logic;
-SIGNAL \bc_map|currentState.S2~regout\ : std_logic;
-SIGNAL \bo_map|Rtime|currentState[1]~8\ : std_logic;
-SIGNAL \bo_map|Rtime|currentState[2]~10\ : std_logic;
-SIGNAL \bo_map|Rtime|currentState[3]~12\ : std_logic;
-SIGNAL \bo_map|Rtime|currentState[4]~14_combout\ : std_logic;
-SIGNAL \bo_map|Cs140|Equal0~0_combout\ : std_logic;
-SIGNAL \bo_map|Cs140|Equal0~1_combout\ : std_logic;
-SIGNAL \bc_map|nextState.S8~0_combout\ : std_logic;
-SIGNAL \bc_map|currentState.S8~regout\ : std_logic;
-SIGNAL \bc_map|cMuxNS~0_combout\ : std_logic;
-SIGNAL \bo_map|MNS|Mux2~0_combout\ : std_logic;
-SIGNAL \bc_map|nextState.S3~0_combout\ : std_logic;
-SIGNAL \bc_map|currentState.S3~regout\ : std_logic;
-SIGNAL \bc_map|eNS~0_combout\ : std_logic;
-SIGNAL \bc_map|cMuxNS[0]~1_combout\ : std_logic;
-SIGNAL \bo_map|Cs100|Equal0~1_combout\ : std_logic;
-SIGNAL \bo_map|Cs100|Equal0~2_combout\ : std_logic;
-SIGNAL \bc_map|nextState.S6~0_combout\ : std_logic;
-SIGNAL \bc_map|currentState.S6~regout\ : std_logic;
-SIGNAL \bo_map|MEW|Mux2~0_combout\ : std_logic;
-SIGNAL \bc_map|nextState.S4~0_combout\ : std_logic;
-SIGNAL \bc_map|currentState.S4~regout\ : std_logic;
-SIGNAL \bc_map|eEW~0_combout\ : std_logic;
-SIGNAL \bc_map|cMuxEW[0]~0_combout\ : std_logic;
-SIGNAL \bc_map|nextState.S5~0_combout\ : std_logic;
-SIGNAL \bc_map|currentState.S5~regout\ : std_logic;
-SIGNAL \bc_map|cMuxEW~1_combout\ : std_logic;
-SIGNAL \bo_map|RP|currentState[1]~0_combout\ : std_logic;
-SIGNAL \bc_map|nextState.S7~0_combout\ : std_logic;
-SIGNAL \bc_map|currentState.S7~regout\ : std_logic;
-SIGNAL \bc_map|eP~combout\ : std_logic;
-SIGNAL \bo_map|RP|currentState[1]~1_combout\ : std_logic;
-SIGNAL \bo_map|REW|currentState\ : std_logic_vector(2 DOWNTO 0);
-SIGNAL \bo_map|Rcktimer|currentState\ : std_logic_vector(25 DOWNTO 0);
-SIGNAL \bo_map|Rtime|currentState\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \bo_map|RNS|currentState\ : std_logic_vector(2 DOWNTO 0);
-SIGNAL \bo_map|RP|currentState\ : std_logic_vector(1 DOWNTO 0);
+SIGNAL \Rtime|currentState[1]~7_combout\ : std_logic;
+SIGNAL \rsttime~combout\ : std_logic;
+SIGNAL \rsttime~clkctrl_outclk\ : std_logic;
+SIGNAL \etime~combout\ : std_logic;
+SIGNAL \Rtime|currentState[1]~8\ : std_logic;
+SIGNAL \Rtime|currentState[2]~10\ : std_logic;
+SIGNAL \Rtime|currentState[3]~11_combout\ : std_logic;
+SIGNAL \Cs105|Equal0~1_combout\ : std_logic;
+SIGNAL \Rtime|currentState[3]~12\ : std_logic;
+SIGNAL \Rtime|currentState[4]~14\ : std_logic;
+SIGNAL \Rtime|currentState[5]~15_combout\ : std_logic;
+SIGNAL \Rtime|currentState[5]~16\ : std_logic;
+SIGNAL \Rtime|currentState[6]~17_combout\ : std_logic;
+SIGNAL \Rtime|currentState[2]~9_combout\ : std_logic;
+SIGNAL \Rtime|currentState[4]~13_combout\ : std_logic;
+SIGNAL \Rtime|currentState[6]~18\ : std_logic;
+SIGNAL \Rtime|currentState[7]~19_combout\ : std_logic;
+SIGNAL \Cs105|Equal0~0_combout\ : std_logic;
+SIGNAL \Cs45|Equal0~0_combout\ : std_logic;
+SIGNAL \Cs55|Equal0~1_combout\ : std_logic;
+SIGNAL \Rtime|currentState[0]~21_combout\ : std_logic;
+SIGNAL \Cs55|Equal0~0_combout\ : std_logic;
+SIGNAL \Cs50|Equal0~0_combout\ : std_logic;
+SIGNAL \Cs55|Equal0~2_combout\ : std_logic;
+SIGNAL \Cs100|Equal0~0_combout\ : std_logic;
+SIGNAL \Cs100|Equal0~1_combout\ : std_logic;
+SIGNAL \Cs105|Equal0~2_combout\ : std_logic;
+SIGNAL \Cs110|Equal0~0_combout\ : std_logic;
+SIGNAL \Cs140|Equal0~0_combout\ : std_logic;
+SIGNAL \Cs140|Equal0~1_combout\ : std_logic;
+SIGNAL \Cs135|Equal0~0_combout\ : std_logic;
+SIGNAL \Cs140|Equal0~2_combout\ : std_logic;
+SIGNAL \Rtime|currentState\ : std_logic_vector(7 DOWNTO 0);
 
 BEGIN
 
-ww_reset <= reset;
 ww_clock <= clock;
+ww_reset <= reset;
+ww_ecktimer <= ecktimer;
+ww_rstcktimer <= rstcktimer;
+ww_rsttime <= rsttime;
+ww_etime <= etime;
+ww_eNS <= eNS;
+ww_eP <= eP;
+ww_eEW <= eEW;
+ww_cMuxNS <= cMuxNS;
+ww_cMuxEW <= cMuxEW;
+ww_cMuxP <= cMuxP;
+s1 <= ww_s1;
+s45 <= ww_s45;
+s50 <= ww_s50;
+s55 <= ww_s55;
+s100 <= ww_s100;
+s105 <= ww_s105;
+s110 <= ww_s110;
+s135 <= ww_s135;
+s140 <= ww_s140;
 NS <= ww_NS;
 EW <= ww_EW;
 P <= ww_P;
@@ -213,273 +198,7 @@ ww_devpor <= devpor;
 
 \clock~clkctrl_INCLK_bus\ <= (gnd & gnd & gnd & \clock~combout\);
 
-\reset~clkctrl_INCLK_bus\ <= (gnd & gnd & gnd & \reset~combout\);
-
--- Location: LCFF_X46_Y34_N13
-\bo_map|Rcktimer|currentState[3]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[3]~30_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(3));
-
--- Location: LCFF_X46_Y34_N17
-\bo_map|Rcktimer|currentState[5]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[5]~34_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(5));
-
--- Location: LCFF_X46_Y33_N7
-\bo_map|Rcktimer|currentState[16]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[16]~56_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(16));
-
--- Location: LCFF_X46_Y33_N11
-\bo_map|Rcktimer|currentState[18]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[18]~60_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(18));
-
--- Location: LCFF_X46_Y33_N13
-\bo_map|Rcktimer|currentState[19]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[19]~62_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(19));
-
--- Location: LCFF_X46_Y33_N25
-\bo_map|Rcktimer|currentState[25]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[25]~74_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(25));
-
--- Location: LCCOMB_X46_Y34_N12
-\bo_map|Rcktimer|currentState[3]~30\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[3]~30_combout\ = (\bo_map|Rcktimer|currentState\(3) & (\bo_map|Rcktimer|currentState[2]~29\ $ (GND))) # (!\bo_map|Rcktimer|currentState\(3) & (!\bo_map|Rcktimer|currentState[2]~29\ & VCC))
--- \bo_map|Rcktimer|currentState[3]~31\ = CARRY((\bo_map|Rcktimer|currentState\(3) & !\bo_map|Rcktimer|currentState[2]~29\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(3),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[2]~29\,
-	combout => \bo_map|Rcktimer|currentState[3]~30_combout\,
-	cout => \bo_map|Rcktimer|currentState[3]~31\);
-
--- Location: LCCOMB_X46_Y34_N16
-\bo_map|Rcktimer|currentState[5]~34\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[5]~34_combout\ = (\bo_map|Rcktimer|currentState\(5) & (\bo_map|Rcktimer|currentState[4]~33\ $ (GND))) # (!\bo_map|Rcktimer|currentState\(5) & (!\bo_map|Rcktimer|currentState[4]~33\ & VCC))
--- \bo_map|Rcktimer|currentState[5]~35\ = CARRY((\bo_map|Rcktimer|currentState\(5) & !\bo_map|Rcktimer|currentState[4]~33\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(5),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[4]~33\,
-	combout => \bo_map|Rcktimer|currentState[5]~34_combout\,
-	cout => \bo_map|Rcktimer|currentState[5]~35\);
-
--- Location: LCCOMB_X46_Y33_N6
-\bo_map|Rcktimer|currentState[16]~56\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[16]~56_combout\ = (\bo_map|Rcktimer|currentState\(16) & (!\bo_map|Rcktimer|currentState[15]~55\)) # (!\bo_map|Rcktimer|currentState\(16) & ((\bo_map|Rcktimer|currentState[15]~55\) # (GND)))
--- \bo_map|Rcktimer|currentState[16]~57\ = CARRY((!\bo_map|Rcktimer|currentState[15]~55\) # (!\bo_map|Rcktimer|currentState\(16)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(16),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[15]~55\,
-	combout => \bo_map|Rcktimer|currentState[16]~56_combout\,
-	cout => \bo_map|Rcktimer|currentState[16]~57\);
-
--- Location: LCCOMB_X46_Y33_N10
-\bo_map|Rcktimer|currentState[18]~60\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[18]~60_combout\ = (\bo_map|Rcktimer|currentState\(18) & (!\bo_map|Rcktimer|currentState[17]~59\)) # (!\bo_map|Rcktimer|currentState\(18) & ((\bo_map|Rcktimer|currentState[17]~59\) # (GND)))
--- \bo_map|Rcktimer|currentState[18]~61\ = CARRY((!\bo_map|Rcktimer|currentState[17]~59\) # (!\bo_map|Rcktimer|currentState\(18)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(18),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[17]~59\,
-	combout => \bo_map|Rcktimer|currentState[18]~60_combout\,
-	cout => \bo_map|Rcktimer|currentState[18]~61\);
-
--- Location: LCCOMB_X46_Y33_N12
-\bo_map|Rcktimer|currentState[19]~62\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[19]~62_combout\ = (\bo_map|Rcktimer|currentState\(19) & (\bo_map|Rcktimer|currentState[18]~61\ $ (GND))) # (!\bo_map|Rcktimer|currentState\(19) & (!\bo_map|Rcktimer|currentState[18]~61\ & VCC))
--- \bo_map|Rcktimer|currentState[19]~63\ = CARRY((\bo_map|Rcktimer|currentState\(19) & !\bo_map|Rcktimer|currentState[18]~61\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(19),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[18]~61\,
-	combout => \bo_map|Rcktimer|currentState[19]~62_combout\,
-	cout => \bo_map|Rcktimer|currentState[19]~63\);
-
--- Location: LCCOMB_X46_Y33_N22
-\bo_map|Rcktimer|currentState[24]~72\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[24]~72_combout\ = (\bo_map|Rcktimer|currentState\(24) & (!\bo_map|Rcktimer|currentState[23]~71\)) # (!\bo_map|Rcktimer|currentState\(24) & ((\bo_map|Rcktimer|currentState[23]~71\) # (GND)))
--- \bo_map|Rcktimer|currentState[24]~73\ = CARRY((!\bo_map|Rcktimer|currentState[23]~71\) # (!\bo_map|Rcktimer|currentState\(24)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \bo_map|Rcktimer|currentState\(24),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[23]~71\,
-	combout => \bo_map|Rcktimer|currentState[24]~72_combout\,
-	cout => \bo_map|Rcktimer|currentState[24]~73\);
-
--- Location: LCCOMB_X46_Y33_N24
-\bo_map|Rcktimer|currentState[25]~74\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[25]~74_combout\ = \bo_map|Rcktimer|currentState\(25) $ (!\bo_map|Rcktimer|currentState[24]~73\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010110100101",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(25),
-	cin => \bo_map|Rcktimer|currentState[24]~73\,
-	combout => \bo_map|Rcktimer|currentState[25]~74_combout\);
-
--- Location: LCFF_X46_Y34_N5
-\bo_map|Rcktimer|currentState[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[0]~25_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(0));
-
--- Location: LCCOMB_X46_Y34_N6
-\bc_map|Selector0~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|Selector0~1_combout\ = (\bo_map|Rcktimer|currentState\(3)) # ((\bo_map|Rcktimer|currentState\(4)) # ((\bo_map|Rcktimer|currentState\(5)) # (\bo_map|Rcktimer|currentState\(6))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111111110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(3),
-	datab => \bo_map|Rcktimer|currentState\(4),
-	datac => \bo_map|Rcktimer|currentState\(5),
-	datad => \bo_map|Rcktimer|currentState\(6),
-	combout => \bc_map|Selector0~1_combout\);
-
--- Location: LCCOMB_X46_Y33_N30
-\bc_map|Selector0~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|Selector0~5_combout\ = (\bo_map|Rcktimer|currentState\(18)) # (((\bo_map|Rcktimer|currentState\(16)) # (!\bo_map|Rcktimer|currentState\(15))) # (!\bo_map|Rcktimer|currentState\(17)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111110111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(18),
-	datab => \bo_map|Rcktimer|currentState\(17),
-	datac => \bo_map|Rcktimer|currentState\(15),
-	datad => \bo_map|Rcktimer|currentState\(16),
-	combout => \bc_map|Selector0~5_combout\);
-
--- Location: LCCOMB_X43_Y34_N6
-\bc_map|NSL~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|NSL~1_combout\ = (\bo_map|Rtime|currentState\(6) & (!\bo_map|Rtime|currentState\(2) & (\bo_map|Rtime|currentState\(0) & !\bo_map|Rtime|currentState\(4)))) # (!\bo_map|Rtime|currentState\(6) & (\bo_map|Rtime|currentState\(2) $ 
--- (((\bo_map|Rtime|currentState\(4))))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000010001011010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(2),
-	datab => \bo_map|Rtime|currentState\(0),
-	datac => \bo_map|Rtime|currentState\(4),
-	datad => \bo_map|Rtime|currentState\(6),
-	combout => \bc_map|NSL~1_combout\);
-
--- Location: LCCOMB_X46_Y34_N4
-\bo_map|Rcktimer|currentState[0]~25\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[0]~25_combout\ = \bc_map|currentState.S0~regout\ $ (\bo_map|Rcktimer|currentState\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bc_map|currentState.S0~regout\,
-	datac => \bo_map|Rcktimer|currentState\(0),
-	combout => \bo_map|Rcktimer|currentState[0]~25_combout\);
+\rsttime~clkctrl_INCLK_bus\ <= (gnd & gnd & gnd & \rsttime~combout\);
 
 -- Location: PIN_P2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \clock~I\ : cycloneii_io
@@ -520,35 +239,545 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \clock~clkctrl_outclk\);
 
--- Location: LCCOMB_X43_Y34_N0
-\bo_map|Rtime|currentState[0]~13\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X43_Y35_N14
+\Rtime|currentState[1]~7\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bo_map|Rtime|currentState[0]~13_combout\ = \bc_map|currentState.S2~regout\ $ (\bo_map|Rtime|currentState\(0))
+-- \Rtime|currentState[1]~7_combout\ = (\Rtime|currentState\(0) & (\Rtime|currentState\(1) $ (VCC))) # (!\Rtime|currentState\(0) & (\Rtime|currentState\(1) & VCC))
+-- \Rtime|currentState[1]~8\ = CARRY((\Rtime|currentState\(0) & \Rtime|currentState\(1)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101101001011010",
+	lut_mask => "0110011010001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bc_map|currentState.S2~regout\,
-	datac => \bo_map|Rtime|currentState\(0),
-	combout => \bo_map|Rtime|currentState[0]~13_combout\);
-
--- Location: LCCOMB_X45_Y34_N0
-\bc_map|currentState.init~feeder\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|currentState.init~feeder_combout\ = VCC
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	combout => \bc_map|currentState.init~feeder_combout\);
+	dataa => \Rtime|currentState\(0),
+	datab => \Rtime|currentState\(1),
+	datad => VCC,
+	combout => \Rtime|currentState[1]~7_combout\,
+	cout => \Rtime|currentState[1]~8\);
 
 -- Location: PIN_P1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\rsttime~I\ : cycloneii_io
+-- pragma translate_off
+GENERIC MAP (
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "input",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
+-- pragma translate_on
+PORT MAP (
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	devoe => ww_devoe,
+	oe => GND,
+	padio => ww_rsttime,
+	combout => \rsttime~combout\);
+
+-- Location: CLKCTRL_G1
+\rsttime~clkctrl\ : cycloneii_clkctrl
+-- pragma translate_off
+GENERIC MAP (
+	clock_type => "global clock",
+	ena_register_mode => "none")
+-- pragma translate_on
+PORT MAP (
+	inclk => \rsttime~clkctrl_INCLK_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	outclk => \rsttime~clkctrl_outclk\);
+
+-- Location: PIN_F15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\etime~I\ : cycloneii_io
+-- pragma translate_off
+GENERIC MAP (
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "input",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
+-- pragma translate_on
+PORT MAP (
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	devoe => ww_devoe,
+	oe => GND,
+	padio => ww_etime,
+	combout => \etime~combout\);
+
+-- Location: LCFF_X43_Y35_N15
+\Rtime|currentState[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock~clkctrl_outclk\,
+	datain => \Rtime|currentState[1]~7_combout\,
+	aclr => \rsttime~clkctrl_outclk\,
+	ena => \etime~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \Rtime|currentState\(1));
+
+-- Location: LCCOMB_X43_Y35_N16
+\Rtime|currentState[2]~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Rtime|currentState[2]~9_combout\ = (\Rtime|currentState\(2) & (!\Rtime|currentState[1]~8\)) # (!\Rtime|currentState\(2) & ((\Rtime|currentState[1]~8\) # (GND)))
+-- \Rtime|currentState[2]~10\ = CARRY((!\Rtime|currentState[1]~8\) # (!\Rtime|currentState\(2)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Rtime|currentState\(2),
+	datad => VCC,
+	cin => \Rtime|currentState[1]~8\,
+	combout => \Rtime|currentState[2]~9_combout\,
+	cout => \Rtime|currentState[2]~10\);
+
+-- Location: LCCOMB_X43_Y35_N18
+\Rtime|currentState[3]~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Rtime|currentState[3]~11_combout\ = (\Rtime|currentState\(3) & (\Rtime|currentState[2]~10\ $ (GND))) # (!\Rtime|currentState\(3) & (!\Rtime|currentState[2]~10\ & VCC))
+-- \Rtime|currentState[3]~12\ = CARRY((\Rtime|currentState\(3) & !\Rtime|currentState[2]~10\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \Rtime|currentState\(3),
+	datad => VCC,
+	cin => \Rtime|currentState[2]~10\,
+	combout => \Rtime|currentState[3]~11_combout\,
+	cout => \Rtime|currentState[3]~12\);
+
+-- Location: LCFF_X43_Y35_N19
+\Rtime|currentState[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock~clkctrl_outclk\,
+	datain => \Rtime|currentState[3]~11_combout\,
+	aclr => \rsttime~clkctrl_outclk\,
+	ena => \etime~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \Rtime|currentState\(3));
+
+-- Location: LCCOMB_X42_Y35_N24
+\Cs105|Equal0~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Cs105|Equal0~1_combout\ = (\Rtime|currentState\(0) & (!\Rtime|currentState\(1) & \Rtime|currentState\(3)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Rtime|currentState\(0),
+	datac => \Rtime|currentState\(1),
+	datad => \Rtime|currentState\(3),
+	combout => \Cs105|Equal0~1_combout\);
+
+-- Location: LCCOMB_X43_Y35_N20
+\Rtime|currentState[4]~13\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Rtime|currentState[4]~13_combout\ = (\Rtime|currentState\(4) & (!\Rtime|currentState[3]~12\)) # (!\Rtime|currentState\(4) & ((\Rtime|currentState[3]~12\) # (GND)))
+-- \Rtime|currentState[4]~14\ = CARRY((!\Rtime|currentState[3]~12\) # (!\Rtime|currentState\(4)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Rtime|currentState\(4),
+	datad => VCC,
+	cin => \Rtime|currentState[3]~12\,
+	combout => \Rtime|currentState[4]~13_combout\,
+	cout => \Rtime|currentState[4]~14\);
+
+-- Location: LCCOMB_X43_Y35_N22
+\Rtime|currentState[5]~15\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Rtime|currentState[5]~15_combout\ = (\Rtime|currentState\(5) & (\Rtime|currentState[4]~14\ $ (GND))) # (!\Rtime|currentState\(5) & (!\Rtime|currentState[4]~14\ & VCC))
+-- \Rtime|currentState[5]~16\ = CARRY((\Rtime|currentState\(5) & !\Rtime|currentState[4]~14\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \Rtime|currentState\(5),
+	datad => VCC,
+	cin => \Rtime|currentState[4]~14\,
+	combout => \Rtime|currentState[5]~15_combout\,
+	cout => \Rtime|currentState[5]~16\);
+
+-- Location: LCFF_X43_Y35_N23
+\Rtime|currentState[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock~clkctrl_outclk\,
+	datain => \Rtime|currentState[5]~15_combout\,
+	aclr => \rsttime~clkctrl_outclk\,
+	ena => \etime~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \Rtime|currentState\(5));
+
+-- Location: LCCOMB_X43_Y35_N24
+\Rtime|currentState[6]~17\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Rtime|currentState[6]~17_combout\ = (\Rtime|currentState\(6) & (!\Rtime|currentState[5]~16\)) # (!\Rtime|currentState\(6) & ((\Rtime|currentState[5]~16\) # (GND)))
+-- \Rtime|currentState[6]~18\ = CARRY((!\Rtime|currentState[5]~16\) # (!\Rtime|currentState\(6)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Rtime|currentState\(6),
+	datad => VCC,
+	cin => \Rtime|currentState[5]~16\,
+	combout => \Rtime|currentState[6]~17_combout\,
+	cout => \Rtime|currentState[6]~18\);
+
+-- Location: LCFF_X43_Y35_N25
+\Rtime|currentState[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock~clkctrl_outclk\,
+	datain => \Rtime|currentState[6]~17_combout\,
+	aclr => \rsttime~clkctrl_outclk\,
+	ena => \etime~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \Rtime|currentState\(6));
+
+-- Location: LCFF_X43_Y35_N17
+\Rtime|currentState[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock~clkctrl_outclk\,
+	datain => \Rtime|currentState[2]~9_combout\,
+	aclr => \rsttime~clkctrl_outclk\,
+	ena => \etime~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \Rtime|currentState\(2));
+
+-- Location: LCFF_X43_Y35_N21
+\Rtime|currentState[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock~clkctrl_outclk\,
+	datain => \Rtime|currentState[4]~13_combout\,
+	aclr => \rsttime~clkctrl_outclk\,
+	ena => \etime~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \Rtime|currentState\(4));
+
+-- Location: LCCOMB_X43_Y35_N26
+\Rtime|currentState[7]~19\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Rtime|currentState[7]~19_combout\ = \Rtime|currentState[6]~18\ $ (!\Rtime|currentState\(7))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => \Rtime|currentState\(7),
+	cin => \Rtime|currentState[6]~18\,
+	combout => \Rtime|currentState[7]~19_combout\);
+
+-- Location: LCFF_X43_Y35_N27
+\Rtime|currentState[7]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock~clkctrl_outclk\,
+	datain => \Rtime|currentState[7]~19_combout\,
+	aclr => \rsttime~clkctrl_outclk\,
+	ena => \etime~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \Rtime|currentState\(7));
+
+-- Location: LCCOMB_X43_Y35_N4
+\Cs105|Equal0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Cs105|Equal0~0_combout\ = (\Rtime|currentState\(5) & (!\Rtime|currentState\(4) & !\Rtime|currentState\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \Rtime|currentState\(5),
+	datac => \Rtime|currentState\(4),
+	datad => \Rtime|currentState\(7),
+	combout => \Cs105|Equal0~0_combout\);
+
+-- Location: LCCOMB_X42_Y35_N22
+\Cs45|Equal0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Cs45|Equal0~0_combout\ = (\Cs105|Equal0~1_combout\ & (!\Rtime|currentState\(6) & (\Rtime|currentState\(2) & \Cs105|Equal0~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0010000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Cs105|Equal0~1_combout\,
+	datab => \Rtime|currentState\(6),
+	datac => \Rtime|currentState\(2),
+	datad => \Cs105|Equal0~0_combout\,
+	combout => \Cs45|Equal0~0_combout\);
+
+-- Location: LCCOMB_X43_Y35_N30
+\Cs55|Equal0~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Cs55|Equal0~1_combout\ = (\Rtime|currentState\(4) & !\Rtime|currentState\(6))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000101000001010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Rtime|currentState\(4),
+	datac => \Rtime|currentState\(6),
+	combout => \Cs55|Equal0~1_combout\);
+
+-- Location: LCCOMB_X43_Y35_N6
+\Rtime|currentState[0]~21\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Rtime|currentState[0]~21_combout\ = \Rtime|currentState\(0) $ (\etime~combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \Rtime|currentState\(0),
+	datad => \etime~combout\,
+	combout => \Rtime|currentState[0]~21_combout\);
+
+-- Location: LCFF_X43_Y35_N7
+\Rtime|currentState[0]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock~clkctrl_outclk\,
+	datain => \Rtime|currentState[0]~21_combout\,
+	aclr => \rsttime~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \Rtime|currentState\(0));
+
+-- Location: LCCOMB_X43_Y35_N12
+\Cs55|Equal0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Cs55|Equal0~0_combout\ = (\Rtime|currentState\(1) & (\Rtime|currentState\(5) & (!\Rtime|currentState\(3) & !\Rtime|currentState\(7))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Rtime|currentState\(1),
+	datab => \Rtime|currentState\(5),
+	datac => \Rtime|currentState\(3),
+	datad => \Rtime|currentState\(7),
+	combout => \Cs55|Equal0~0_combout\);
+
+-- Location: LCCOMB_X43_Y35_N0
+\Cs50|Equal0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Cs50|Equal0~0_combout\ = (!\Rtime|currentState\(2) & (\Cs55|Equal0~1_combout\ & (!\Rtime|currentState\(0) & \Cs55|Equal0~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000010000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Rtime|currentState\(2),
+	datab => \Cs55|Equal0~1_combout\,
+	datac => \Rtime|currentState\(0),
+	datad => \Cs55|Equal0~0_combout\,
+	combout => \Cs50|Equal0~0_combout\);
+
+-- Location: LCCOMB_X43_Y35_N2
+\Cs55|Equal0~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Cs55|Equal0~2_combout\ = (\Rtime|currentState\(2) & (\Cs55|Equal0~1_combout\ & (\Rtime|currentState\(0) & \Cs55|Equal0~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Rtime|currentState\(2),
+	datab => \Cs55|Equal0~1_combout\,
+	datac => \Rtime|currentState\(0),
+	datad => \Cs55|Equal0~0_combout\,
+	combout => \Cs55|Equal0~2_combout\);
+
+-- Location: LCCOMB_X42_Y35_N12
+\Cs100|Equal0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Cs100|Equal0~0_combout\ = (!\Rtime|currentState\(0) & (\Rtime|currentState\(2) & \Rtime|currentState\(6)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Rtime|currentState\(0),
+	datac => \Rtime|currentState\(2),
+	datad => \Rtime|currentState\(6),
+	combout => \Cs100|Equal0~0_combout\);
+
+-- Location: LCCOMB_X42_Y35_N18
+\Cs100|Equal0~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Cs100|Equal0~1_combout\ = (\Cs100|Equal0~0_combout\ & (!\Rtime|currentState\(3) & (!\Rtime|currentState\(1) & \Cs105|Equal0~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000001000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Cs100|Equal0~0_combout\,
+	datab => \Rtime|currentState\(3),
+	datac => \Rtime|currentState\(1),
+	datad => \Cs105|Equal0~0_combout\,
+	combout => \Cs100|Equal0~1_combout\);
+
+-- Location: LCCOMB_X42_Y35_N16
+\Cs105|Equal0~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Cs105|Equal0~2_combout\ = (\Cs105|Equal0~1_combout\ & (\Rtime|currentState\(6) & (!\Rtime|currentState\(2) & \Cs105|Equal0~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000100000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Cs105|Equal0~1_combout\,
+	datab => \Rtime|currentState\(6),
+	datac => \Rtime|currentState\(2),
+	datad => \Cs105|Equal0~0_combout\,
+	combout => \Cs105|Equal0~2_combout\);
+
+-- Location: LCCOMB_X42_Y35_N10
+\Cs110|Equal0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Cs110|Equal0~0_combout\ = (\Cs100|Equal0~0_combout\ & (\Rtime|currentState\(3) & (\Rtime|currentState\(1) & \Cs105|Equal0~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Cs100|Equal0~0_combout\,
+	datab => \Rtime|currentState\(3),
+	datac => \Rtime|currentState\(1),
+	datad => \Cs105|Equal0~0_combout\,
+	combout => \Cs110|Equal0~0_combout\);
+
+-- Location: LCCOMB_X43_Y35_N8
+\Cs140|Equal0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Cs140|Equal0~0_combout\ = (!\Rtime|currentState\(4) & (\Rtime|currentState\(2) & (!\Rtime|currentState\(6) & !\Rtime|currentState\(5))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Rtime|currentState\(4),
+	datab => \Rtime|currentState\(2),
+	datac => \Rtime|currentState\(6),
+	datad => \Rtime|currentState\(5),
+	combout => \Cs140|Equal0~0_combout\);
+
+-- Location: LCCOMB_X43_Y35_N28
+\Cs140|Equal0~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Cs140|Equal0~1_combout\ = (\Cs140|Equal0~0_combout\ & \Rtime|currentState\(7))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \Cs140|Equal0~0_combout\,
+	datad => \Rtime|currentState\(7),
+	combout => \Cs140|Equal0~1_combout\);
+
+-- Location: LCCOMB_X42_Y35_N0
+\Cs135|Equal0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Cs135|Equal0~0_combout\ = (\Cs140|Equal0~1_combout\ & (!\Rtime|currentState\(3) & (\Rtime|currentState\(1) & \Rtime|currentState\(0))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0010000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Cs140|Equal0~1_combout\,
+	datab => \Rtime|currentState\(3),
+	datac => \Rtime|currentState\(1),
+	datad => \Rtime|currentState\(0),
+	combout => \Cs135|Equal0~0_combout\);
+
+-- Location: LCCOMB_X43_Y35_N10
+\Cs140|Equal0~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Cs140|Equal0~2_combout\ = (!\Rtime|currentState\(1) & (\Rtime|currentState\(3) & (!\Rtime|currentState\(0) & \Cs140|Equal0~1_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000010000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Rtime|currentState\(1),
+	datab => \Rtime|currentState\(3),
+	datac => \Rtime|currentState\(0),
+	datad => \Cs140|Equal0~1_combout\,
+	combout => \Cs140|Equal0~2_combout\);
+
+-- Location: PIN_C13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \reset~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
@@ -571,1624 +800,493 @@ PORT MAP (
 	devpor => ww_devpor,
 	devoe => ww_devoe,
 	oe => GND,
-	padio => ww_reset,
-	combout => \reset~combout\);
+	padio => ww_reset);
 
--- Location: CLKCTRL_G1
-\reset~clkctrl\ : cycloneii_clkctrl
+-- Location: PIN_D13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\ecktimer~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
-	clock_type => "global clock",
-	ena_register_mode => "none")
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "input",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	inclk => \reset~clkctrl_INCLK_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	outclk => \reset~clkctrl_outclk\);
+	devoe => ww_devoe,
+	oe => GND,
+	padio => ww_ecktimer);
 
--- Location: LCFF_X45_Y34_N1
-\bc_map|currentState.init\ : cycloneii_lcell_ff
+-- Location: PIN_H10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\rstcktimer~I\ : cycloneii_io
+-- pragma translate_off
+GENERIC MAP (
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "input",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
+-- pragma translate_on
 PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bc_map|currentState.init~feeder_combout\,
-	aclr => \reset~clkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bc_map|currentState.init~regout\);
+	devoe => ww_devoe,
+	oe => GND,
+	padio => ww_rstcktimer);
 
--- Location: LCCOMB_X44_Y34_N30
-\bc_map|rstcktimer~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|rstcktimer~0_combout\ = (\bc_map|currentState.S8~regout\) # (!\bc_map|currentState.init~regout\)
-
+-- Location: PIN_J6,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\eNS~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
-	sum_lutc_input => "datac")
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "input",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datac => \bc_map|currentState.init~regout\,
-	datad => \bc_map|currentState.S8~regout\,
-	combout => \bc_map|rstcktimer~0_combout\);
-
--- Location: LCFF_X43_Y34_N1
-\bo_map|Rtime|currentState[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rtime|currentState[0]~13_combout\,
-	aclr => \bc_map|rstcktimer~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bo_map|Rtime|currentState\(0));
+	devoe => ww_devoe,
+	oe => GND,
+	padio => ww_eNS);
 
--- Location: LCCOMB_X43_Y34_N8
-\bo_map|Rtime|currentState[1]~7\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rtime|currentState[1]~7_combout\ = (\bo_map|Rtime|currentState\(0) & (\bo_map|Rtime|currentState\(1) $ (VCC))) # (!\bo_map|Rtime|currentState\(0) & (\bo_map|Rtime|currentState\(1) & VCC))
--- \bo_map|Rtime|currentState[1]~8\ = CARRY((\bo_map|Rtime|currentState\(0) & \bo_map|Rtime|currentState\(1)))
-
+-- Location: PIN_K23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\eP~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0110011010001000",
-	sum_lutc_input => "datac")
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "input",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(0),
-	datab => \bo_map|Rtime|currentState\(1),
-	datad => VCC,
-	combout => \bo_map|Rtime|currentState[1]~7_combout\,
-	cout => \bo_map|Rtime|currentState[1]~8\);
-
--- Location: LCCOMB_X46_Y34_N8
-\bo_map|Rcktimer|currentState[1]~26\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[1]~26_combout\ = (\bo_map|Rcktimer|currentState\(0) & (\bo_map|Rcktimer|currentState\(1) $ (VCC))) # (!\bo_map|Rcktimer|currentState\(0) & (\bo_map|Rcktimer|currentState\(1) & VCC))
--- \bo_map|Rcktimer|currentState[1]~27\ = CARRY((\bo_map|Rcktimer|currentState\(0) & \bo_map|Rcktimer|currentState\(1)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0110011010001000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(0),
-	datab => \bo_map|Rcktimer|currentState\(1),
-	datad => VCC,
-	combout => \bo_map|Rcktimer|currentState[1]~26_combout\,
-	cout => \bo_map|Rcktimer|currentState[1]~27\);
-
--- Location: LCCOMB_X45_Y34_N16
-\bc_map|rstcktimer\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|rstcktimer~combout\ = (\bc_map|currentState.S2~regout\) # ((\bc_map|currentState.S8~regout\) # (!\bc_map|currentState.init~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110111011111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bc_map|currentState.S2~regout\,
-	datab => \bc_map|currentState.S8~regout\,
-	datad => \bc_map|currentState.init~regout\,
-	combout => \bc_map|rstcktimer~combout\);
-
--- Location: LCCOMB_X43_Y34_N14
-\bo_map|Rtime|currentState[4]~14\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rtime|currentState[4]~14_combout\ = (\bo_map|Rtime|currentState\(4) & (!\bo_map|Rtime|currentState[3]~12\)) # (!\bo_map|Rtime|currentState\(4) & ((\bo_map|Rtime|currentState[3]~12\) # (GND)))
--- \bo_map|Rtime|currentState[4]~15\ = CARRY((!\bo_map|Rtime|currentState[3]~12\) # (!\bo_map|Rtime|currentState\(4)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \bo_map|Rtime|currentState\(4),
-	datad => VCC,
-	cin => \bo_map|Rtime|currentState[3]~12\,
-	combout => \bo_map|Rtime|currentState[4]~14_combout\,
-	cout => \bo_map|Rtime|currentState[4]~15\);
-
--- Location: LCCOMB_X43_Y34_N16
-\bo_map|Rtime|currentState[5]~16\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rtime|currentState[5]~16_combout\ = (\bo_map|Rtime|currentState\(5) & (\bo_map|Rtime|currentState[4]~15\ $ (GND))) # (!\bo_map|Rtime|currentState\(5) & (!\bo_map|Rtime|currentState[4]~15\ & VCC))
--- \bo_map|Rtime|currentState[5]~17\ = CARRY((\bo_map|Rtime|currentState\(5) & !\bo_map|Rtime|currentState[4]~15\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(5),
-	datad => VCC,
-	cin => \bo_map|Rtime|currentState[4]~15\,
-	combout => \bo_map|Rtime|currentState[5]~16_combout\,
-	cout => \bo_map|Rtime|currentState[5]~17\);
-
--- Location: LCCOMB_X43_Y34_N18
-\bo_map|Rtime|currentState[6]~18\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rtime|currentState[6]~18_combout\ = (\bo_map|Rtime|currentState\(6) & (!\bo_map|Rtime|currentState[5]~17\)) # (!\bo_map|Rtime|currentState\(6) & ((\bo_map|Rtime|currentState[5]~17\) # (GND)))
--- \bo_map|Rtime|currentState[6]~19\ = CARRY((!\bo_map|Rtime|currentState[5]~17\) # (!\bo_map|Rtime|currentState\(6)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \bo_map|Rtime|currentState\(6),
-	datad => VCC,
-	cin => \bo_map|Rtime|currentState[5]~17\,
-	combout => \bo_map|Rtime|currentState[6]~18_combout\,
-	cout => \bo_map|Rtime|currentState[6]~19\);
-
--- Location: LCFF_X43_Y34_N19
-\bo_map|Rtime|currentState[6]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rtime|currentState[6]~18_combout\,
-	aclr => \bc_map|rstcktimer~0_combout\,
-	ena => \bc_map|currentState.S2~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bo_map|Rtime|currentState\(6));
+	devoe => ww_devoe,
+	oe => GND,
+	padio => ww_eP);
 
--- Location: LCCOMB_X43_Y34_N10
-\bo_map|Rtime|currentState[2]~9\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rtime|currentState[2]~9_combout\ = (\bo_map|Rtime|currentState\(2) & (!\bo_map|Rtime|currentState[1]~8\)) # (!\bo_map|Rtime|currentState\(2) & ((\bo_map|Rtime|currentState[1]~8\) # (GND)))
--- \bo_map|Rtime|currentState[2]~10\ = CARRY((!\bo_map|Rtime|currentState[1]~8\) # (!\bo_map|Rtime|currentState\(2)))
-
+-- Location: PIN_Y23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\eEW~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "input",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(2),
-	datad => VCC,
-	cin => \bo_map|Rtime|currentState[1]~8\,
-	combout => \bo_map|Rtime|currentState[2]~9_combout\,
-	cout => \bo_map|Rtime|currentState[2]~10\);
-
--- Location: LCFF_X43_Y34_N11
-\bo_map|Rtime|currentState[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rtime|currentState[2]~9_combout\,
-	aclr => \bc_map|rstcktimer~0_combout\,
-	ena => \bc_map|currentState.S2~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bo_map|Rtime|currentState\(2));
+	devoe => ww_devoe,
+	oe => GND,
+	padio => ww_eEW);
 
--- Location: LCCOMB_X43_Y34_N26
-\bo_map|Cs55|Equal0~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Cs55|Equal0~0_combout\ = (!\bo_map|Rtime|currentState\(3) & (!\bo_map|Rtime|currentState\(6) & (\bo_map|Rtime|currentState\(0) & \bo_map|Rtime|currentState\(2))))
-
+-- Location: PIN_AC9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\cMuxNS[0]~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0001000000000000",
-	sum_lutc_input => "datac")
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "input",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(3),
-	datab => \bo_map|Rtime|currentState\(6),
-	datac => \bo_map|Rtime|currentState\(0),
-	datad => \bo_map|Rtime|currentState\(2),
-	combout => \bo_map|Cs55|Equal0~0_combout\);
-
--- Location: LCCOMB_X43_Y34_N20
-\bo_map|Rtime|currentState[7]~20\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rtime|currentState[7]~20_combout\ = \bo_map|Rtime|currentState\(7) $ (!\bo_map|Rtime|currentState[6]~19\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010110100101",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(7),
-	cin => \bo_map|Rtime|currentState[6]~19\,
-	combout => \bo_map|Rtime|currentState[7]~20_combout\);
-
--- Location: LCFF_X43_Y34_N21
-\bo_map|Rtime|currentState[7]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rtime|currentState[7]~20_combout\,
-	aclr => \bc_map|rstcktimer~0_combout\,
-	ena => \bc_map|currentState.S2~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bo_map|Rtime|currentState\(7));
+	devoe => ww_devoe,
+	oe => GND,
+	padio => ww_cMuxNS(0));
 
--- Location: LCFF_X43_Y34_N17
-\bo_map|Rtime|currentState[5]\ : cycloneii_lcell_ff
+-- Location: PIN_H1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\cMuxNS[1]~I\ : cycloneii_io
+-- pragma translate_off
+GENERIC MAP (
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "input",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
+-- pragma translate_on
 PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rtime|currentState[5]~16_combout\,
-	aclr => \bc_map|rstcktimer~0_combout\,
-	ena => \bc_map|currentState.S2~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bo_map|Rtime|currentState\(5));
+	devoe => ww_devoe,
+	oe => GND,
+	padio => ww_cMuxNS(1));
 
--- Location: LCCOMB_X44_Y34_N24
-\bo_map|Cs100|Equal0~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Cs100|Equal0~0_combout\ = (!\bo_map|Rtime|currentState\(7) & \bo_map|Rtime|currentState\(5))
-
+-- Location: PIN_AB4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\cMuxEW[0]~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000111100000000",
-	sum_lutc_input => "datac")
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "input",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datac => \bo_map|Rtime|currentState\(7),
-	datad => \bo_map|Rtime|currentState\(5),
-	combout => \bo_map|Cs100|Equal0~0_combout\);
-
--- Location: LCCOMB_X44_Y34_N4
-\bo_map|Cs55|Equal0~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Cs55|Equal0~1_combout\ = (\bo_map|Rtime|currentState\(4) & (\bo_map|Cs55|Equal0~0_combout\ & (\bo_map|Cs100|Equal0~0_combout\ & \bo_map|Rtime|currentState\(1))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(4),
-	datab => \bo_map|Cs55|Equal0~0_combout\,
-	datac => \bo_map|Cs100|Equal0~0_combout\,
-	datad => \bo_map|Rtime|currentState\(1),
-	combout => \bo_map|Cs55|Equal0~1_combout\);
-
--- Location: LCCOMB_X44_Y34_N22
-\bo_map|Cs110|Equal0~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Cs110|Equal0~0_combout\ = (\bo_map|Rtime|currentState\(1) & (\bo_map|Rtime|currentState\(6) & (\bo_map|Cs100|Equal0~0_combout\ & \bo_map|Cs140|Equal0~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(1),
-	datab => \bo_map|Rtime|currentState\(6),
-	datac => \bo_map|Cs100|Equal0~0_combout\,
-	datad => \bo_map|Cs140|Equal0~0_combout\,
-	combout => \bo_map|Cs110|Equal0~0_combout\);
-
--- Location: LCCOMB_X44_Y34_N0
-\bc_map|Selector0~10\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|Selector0~10_combout\ = (!\bo_map|Cs55|Equal0~1_combout\ & (!\bo_map|Cs110|Equal0~0_combout\ & ((!\bo_map|Cs140|Equal0~0_combout\) # (!\bo_map|Cs140|Equal0~1_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Cs140|Equal0~1_combout\,
-	datab => \bo_map|Cs140|Equal0~0_combout\,
-	datac => \bo_map|Cs55|Equal0~1_combout\,
-	datad => \bo_map|Cs110|Equal0~0_combout\,
-	combout => \bc_map|Selector0~10_combout\);
-
--- Location: LCCOMB_X43_Y34_N4
-\bo_map|Cs45|Equal0~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Cs45|Equal0~1_combout\ = (\bo_map|Rtime|currentState\(2) & (\bo_map|Rtime|currentState\(0) & !\bo_map|Rtime|currentState\(6)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000010001000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(2),
-	datab => \bo_map|Rtime|currentState\(0),
-	datad => \bo_map|Rtime|currentState\(6),
-	combout => \bo_map|Cs45|Equal0~1_combout\);
-
--- Location: LCCOMB_X43_Y34_N2
-\bc_map|NSL~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|NSL~0_combout\ = (\bo_map|Rtime|currentState\(5) & (!\bo_map|Rtime|currentState\(0) & (!\bo_map|Rtime|currentState\(7) & !\bo_map|Rtime|currentState\(2)))) # (!\bo_map|Rtime|currentState\(5) & (\bo_map|Rtime|currentState\(0) & 
--- (\bo_map|Rtime|currentState\(7) & \bo_map|Rtime|currentState\(2))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0100000000000010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(5),
-	datab => \bo_map|Rtime|currentState\(0),
-	datac => \bo_map|Rtime|currentState\(7),
-	datad => \bo_map|Rtime|currentState\(2),
-	combout => \bc_map|NSL~0_combout\);
-
--- Location: LCCOMB_X43_Y34_N24
-\bc_map|NSL~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|NSL~2_combout\ = (\bo_map|Rtime|currentState\(3) & (\bo_map|Rtime|currentState\(6) & (!\bo_map|Rtime|currentState\(1)))) # (!\bo_map|Rtime|currentState\(3) & (((\bo_map|Rtime|currentState\(1) & \bc_map|NSL~0_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101100000001000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(3),
-	datab => \bo_map|Rtime|currentState\(6),
-	datac => \bo_map|Rtime|currentState\(1),
-	datad => \bc_map|NSL~0_combout\,
-	combout => \bc_map|NSL~2_combout\);
-
--- Location: LCCOMB_X43_Y34_N30
-\bc_map|NSL~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|NSL~3_combout\ = (\bc_map|NSL~1_combout\ & (\bc_map|NSL~2_combout\ & ((\bc_map|NSL~0_combout\) # (\bo_map|Cs100|Equal0~0_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000010000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bc_map|NSL~1_combout\,
-	datab => \bc_map|NSL~0_combout\,
-	datac => \bc_map|NSL~2_combout\,
-	datad => \bo_map|Cs100|Equal0~0_combout\,
-	combout => \bc_map|NSL~3_combout\);
-
--- Location: LCCOMB_X43_Y34_N12
-\bo_map|Rtime|currentState[3]~11\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rtime|currentState[3]~11_combout\ = (\bo_map|Rtime|currentState\(3) & (\bo_map|Rtime|currentState[2]~10\ $ (GND))) # (!\bo_map|Rtime|currentState\(3) & (!\bo_map|Rtime|currentState[2]~10\ & VCC))
--- \bo_map|Rtime|currentState[3]~12\ = CARRY((\bo_map|Rtime|currentState\(3) & !\bo_map|Rtime|currentState[2]~10\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(3),
-	datad => VCC,
-	cin => \bo_map|Rtime|currentState[2]~10\,
-	combout => \bo_map|Rtime|currentState[3]~11_combout\,
-	cout => \bo_map|Rtime|currentState[3]~12\);
-
--- Location: LCFF_X43_Y34_N13
-\bo_map|Rtime|currentState[3]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rtime|currentState[3]~11_combout\,
-	aclr => \bc_map|rstcktimer~0_combout\,
-	ena => \bc_map|currentState.S2~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bo_map|Rtime|currentState\(3));
+	devoe => ww_devoe,
+	oe => GND,
+	padio => ww_cMuxEW(0));
 
--- Location: LCCOMB_X44_Y34_N18
-\bo_map|Cs45|Equal0~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Cs45|Equal0~0_combout\ = (!\bo_map|Rtime|currentState\(4) & (!\bo_map|Rtime|currentState\(1) & (\bo_map|Cs100|Equal0~0_combout\ & \bo_map|Rtime|currentState\(3))))
-
+-- Location: PIN_G10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\cMuxEW[1]~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0001000000000000",
-	sum_lutc_input => "datac")
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "input",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(4),
-	datab => \bo_map|Rtime|currentState\(1),
-	datac => \bo_map|Cs100|Equal0~0_combout\,
-	datad => \bo_map|Rtime|currentState\(3),
-	combout => \bo_map|Cs45|Equal0~0_combout\);
-
--- Location: LCCOMB_X44_Y34_N2
-\bc_map|Selector0~9\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|Selector0~9_combout\ = (!\bo_map|Cs100|Equal0~2_combout\ & (!\bc_map|NSL~3_combout\ & ((!\bo_map|Cs45|Equal0~0_combout\) # (!\bo_map|Cs45|Equal0~1_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000100000101",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Cs100|Equal0~2_combout\,
-	datab => \bo_map|Cs45|Equal0~1_combout\,
-	datac => \bc_map|NSL~3_combout\,
-	datad => \bo_map|Cs45|Equal0~0_combout\,
-	combout => \bc_map|Selector0~9_combout\);
-
--- Location: LCCOMB_X44_Y34_N12
-\bc_map|Selector0~11\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|Selector0~11_combout\ = (!\bc_map|Selector0~8_combout\ & (((\bc_map|Selector0~10_combout\ & \bc_map|Selector0~9_combout\)) # (!\bc_map|currentState.S2~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000110100000101",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bc_map|currentState.S2~regout\,
-	datab => \bc_map|Selector0~10_combout\,
-	datac => \bc_map|Selector0~8_combout\,
-	datad => \bc_map|Selector0~9_combout\,
-	combout => \bc_map|Selector0~11_combout\);
-
--- Location: LCFF_X44_Y34_N13
-\bc_map|currentState.S0\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bc_map|Selector0~11_combout\,
-	aclr => \reset~clkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bc_map|currentState.S0~regout\);
+	devoe => ww_devoe,
+	oe => GND,
+	padio => ww_cMuxEW(1));
 
--- Location: LCFF_X46_Y34_N9
-\bo_map|Rcktimer|currentState[1]\ : cycloneii_lcell_ff
+-- Location: PIN_J2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\cMuxP[0]~I\ : cycloneii_io
+-- pragma translate_off
+GENERIC MAP (
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "input",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
+-- pragma translate_on
 PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[1]~26_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(1));
+	devoe => ww_devoe,
+	oe => GND,
+	padio => ww_cMuxP(0));
 
--- Location: LCCOMB_X46_Y34_N10
-\bo_map|Rcktimer|currentState[2]~28\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[2]~28_combout\ = (\bo_map|Rcktimer|currentState\(2) & (!\bo_map|Rcktimer|currentState[1]~27\)) # (!\bo_map|Rcktimer|currentState\(2) & ((\bo_map|Rcktimer|currentState[1]~27\) # (GND)))
--- \bo_map|Rcktimer|currentState[2]~29\ = CARRY((!\bo_map|Rcktimer|currentState[1]~27\) # (!\bo_map|Rcktimer|currentState\(2)))
-
+-- Location: PIN_AC22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+\s1~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "output",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(2),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[1]~27\,
-	combout => \bo_map|Rcktimer|currentState[2]~28_combout\,
-	cout => \bo_map|Rcktimer|currentState[2]~29\);
-
--- Location: LCCOMB_X46_Y34_N14
-\bo_map|Rcktimer|currentState[4]~32\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[4]~32_combout\ = (\bo_map|Rcktimer|currentState\(4) & (!\bo_map|Rcktimer|currentState[3]~31\)) # (!\bo_map|Rcktimer|currentState\(4) & ((\bo_map|Rcktimer|currentState[3]~31\) # (GND)))
--- \bo_map|Rcktimer|currentState[4]~33\ = CARRY((!\bo_map|Rcktimer|currentState[3]~31\) # (!\bo_map|Rcktimer|currentState\(4)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \bo_map|Rcktimer|currentState\(4),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[3]~31\,
-	combout => \bo_map|Rcktimer|currentState[4]~32_combout\,
-	cout => \bo_map|Rcktimer|currentState[4]~33\);
-
--- Location: LCFF_X46_Y34_N15
-\bo_map|Rcktimer|currentState[4]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[4]~32_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
+	datain => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(4));
+	devoe => ww_devoe,
+	oe => VCC,
+	padio => ww_s1);
 
--- Location: LCCOMB_X46_Y34_N18
-\bo_map|Rcktimer|currentState[6]~36\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[6]~36_combout\ = (\bo_map|Rcktimer|currentState\(6) & (!\bo_map|Rcktimer|currentState[5]~35\)) # (!\bo_map|Rcktimer|currentState\(6) & ((\bo_map|Rcktimer|currentState[5]~35\) # (GND)))
--- \bo_map|Rcktimer|currentState[6]~37\ = CARRY((!\bo_map|Rcktimer|currentState[5]~35\) # (!\bo_map|Rcktimer|currentState\(6)))
-
+-- Location: PIN_E15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+\s45~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "output",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datab => \bo_map|Rcktimer|currentState\(6),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[5]~35\,
-	combout => \bo_map|Rcktimer|currentState[6]~36_combout\,
-	cout => \bo_map|Rcktimer|currentState[6]~37\);
-
--- Location: LCFF_X46_Y34_N19
-\bo_map|Rcktimer|currentState[6]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[6]~36_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
+	datain => \Cs45|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(6));
+	devoe => ww_devoe,
+	oe => VCC,
+	padio => ww_s45);
 
--- Location: LCCOMB_X46_Y34_N20
-\bo_map|Rcktimer|currentState[7]~38\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[7]~38_combout\ = (\bo_map|Rcktimer|currentState\(7) & (\bo_map|Rcktimer|currentState[6]~37\ $ (GND))) # (!\bo_map|Rcktimer|currentState\(7) & (!\bo_map|Rcktimer|currentState[6]~37\ & VCC))
--- \bo_map|Rcktimer|currentState[7]~39\ = CARRY((\bo_map|Rcktimer|currentState\(7) & !\bo_map|Rcktimer|currentState[6]~37\))
-
+-- Location: PIN_A17,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+\s50~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "output",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datab => \bo_map|Rcktimer|currentState\(7),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[6]~37\,
-	combout => \bo_map|Rcktimer|currentState[7]~38_combout\,
-	cout => \bo_map|Rcktimer|currentState[7]~39\);
-
--- Location: LCFF_X46_Y34_N21
-\bo_map|Rcktimer|currentState[7]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[7]~38_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
+	datain => \Cs50|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(7));
+	devoe => ww_devoe,
+	oe => VCC,
+	padio => ww_s50);
 
--- Location: LCCOMB_X46_Y34_N22
-\bo_map|Rcktimer|currentState[8]~40\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[8]~40_combout\ = (\bo_map|Rcktimer|currentState\(8) & (!\bo_map|Rcktimer|currentState[7]~39\)) # (!\bo_map|Rcktimer|currentState\(8) & ((\bo_map|Rcktimer|currentState[7]~39\) # (GND)))
--- \bo_map|Rcktimer|currentState[8]~41\ = CARRY((!\bo_map|Rcktimer|currentState[7]~39\) # (!\bo_map|Rcktimer|currentState\(8)))
-
+-- Location: PIN_G15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+\s55~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "output",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datab => \bo_map|Rcktimer|currentState\(8),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[7]~39\,
-	combout => \bo_map|Rcktimer|currentState[8]~40_combout\,
-	cout => \bo_map|Rcktimer|currentState[8]~41\);
-
--- Location: LCFF_X46_Y34_N23
-\bo_map|Rcktimer|currentState[8]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[8]~40_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
+	datain => \Cs55|Equal0~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(8));
+	devoe => ww_devoe,
+	oe => VCC,
+	padio => ww_s55);
 
--- Location: LCCOMB_X46_Y34_N24
-\bo_map|Rcktimer|currentState[9]~42\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[9]~42_combout\ = (\bo_map|Rcktimer|currentState\(9) & (\bo_map|Rcktimer|currentState[8]~41\ $ (GND))) # (!\bo_map|Rcktimer|currentState\(9) & (!\bo_map|Rcktimer|currentState[8]~41\ & VCC))
--- \bo_map|Rcktimer|currentState[9]~43\ = CARRY((\bo_map|Rcktimer|currentState\(9) & !\bo_map|Rcktimer|currentState[8]~41\))
-
+-- Location: PIN_H16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+\s100~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "output",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(9),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[8]~41\,
-	combout => \bo_map|Rcktimer|currentState[9]~42_combout\,
-	cout => \bo_map|Rcktimer|currentState[9]~43\);
-
--- Location: LCCOMB_X46_Y34_N26
-\bo_map|Rcktimer|currentState[10]~44\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[10]~44_combout\ = (\bo_map|Rcktimer|currentState\(10) & (!\bo_map|Rcktimer|currentState[9]~43\)) # (!\bo_map|Rcktimer|currentState\(10) & ((\bo_map|Rcktimer|currentState[9]~43\) # (GND)))
--- \bo_map|Rcktimer|currentState[10]~45\ = CARRY((!\bo_map|Rcktimer|currentState[9]~43\) # (!\bo_map|Rcktimer|currentState\(10)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \bo_map|Rcktimer|currentState\(10),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[9]~43\,
-	combout => \bo_map|Rcktimer|currentState[10]~44_combout\,
-	cout => \bo_map|Rcktimer|currentState[10]~45\);
-
--- Location: LCFF_X46_Y34_N27
-\bo_map|Rcktimer|currentState[10]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[10]~44_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
+	datain => \Cs100|Equal0~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(10));
+	devoe => ww_devoe,
+	oe => VCC,
+	padio => ww_s100);
 
--- Location: LCCOMB_X46_Y34_N28
-\bo_map|Rcktimer|currentState[11]~46\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[11]~46_combout\ = (\bo_map|Rcktimer|currentState\(11) & (\bo_map|Rcktimer|currentState[10]~45\ $ (GND))) # (!\bo_map|Rcktimer|currentState\(11) & (!\bo_map|Rcktimer|currentState[10]~45\ & VCC))
--- \bo_map|Rcktimer|currentState[11]~47\ = CARRY((\bo_map|Rcktimer|currentState\(11) & !\bo_map|Rcktimer|currentState[10]~45\))
-
+-- Location: PIN_D15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+\s105~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "output",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datab => \bo_map|Rcktimer|currentState\(11),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[10]~45\,
-	combout => \bo_map|Rcktimer|currentState[11]~46_combout\,
-	cout => \bo_map|Rcktimer|currentState[11]~47\);
-
--- Location: LCFF_X46_Y34_N29
-\bo_map|Rcktimer|currentState[11]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[11]~46_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
+	datain => \Cs105|Equal0~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(11));
+	devoe => ww_devoe,
+	oe => VCC,
+	padio => ww_s105);
 
--- Location: LCCOMB_X46_Y34_N30
-\bo_map|Rcktimer|currentState[12]~48\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[12]~48_combout\ = (\bo_map|Rcktimer|currentState\(12) & (!\bo_map|Rcktimer|currentState[11]~47\)) # (!\bo_map|Rcktimer|currentState\(12) & ((\bo_map|Rcktimer|currentState[11]~47\) # (GND)))
--- \bo_map|Rcktimer|currentState[12]~49\ = CARRY((!\bo_map|Rcktimer|currentState[11]~47\) # (!\bo_map|Rcktimer|currentState\(12)))
-
+-- Location: PIN_D16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+\s110~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "output",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datab => \bo_map|Rcktimer|currentState\(12),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[11]~47\,
-	combout => \bo_map|Rcktimer|currentState[12]~48_combout\,
-	cout => \bo_map|Rcktimer|currentState[12]~49\);
-
--- Location: LCFF_X46_Y34_N31
-\bo_map|Rcktimer|currentState[12]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[12]~48_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
+	datain => \Cs110|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(12));
+	devoe => ww_devoe,
+	oe => VCC,
+	padio => ww_s110);
 
--- Location: LCCOMB_X46_Y33_N0
-\bo_map|Rcktimer|currentState[13]~50\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[13]~50_combout\ = (\bo_map|Rcktimer|currentState\(13) & (\bo_map|Rcktimer|currentState[12]~49\ $ (GND))) # (!\bo_map|Rcktimer|currentState\(13) & (!\bo_map|Rcktimer|currentState[12]~49\ & VCC))
--- \bo_map|Rcktimer|currentState[13]~51\ = CARRY((\bo_map|Rcktimer|currentState\(13) & !\bo_map|Rcktimer|currentState[12]~49\))
-
+-- Location: PIN_H15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+\s135~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "output",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datab => \bo_map|Rcktimer|currentState\(13),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[12]~49\,
-	combout => \bo_map|Rcktimer|currentState[13]~50_combout\,
-	cout => \bo_map|Rcktimer|currentState[13]~51\);
-
--- Location: LCFF_X46_Y33_N1
-\bo_map|Rcktimer|currentState[13]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[13]~50_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
+	datain => \Cs135|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(13));
+	devoe => ww_devoe,
+	oe => VCC,
+	padio => ww_s135);
 
--- Location: LCCOMB_X46_Y33_N2
-\bo_map|Rcktimer|currentState[14]~52\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[14]~52_combout\ = (\bo_map|Rcktimer|currentState\(14) & (!\bo_map|Rcktimer|currentState[13]~51\)) # (!\bo_map|Rcktimer|currentState\(14) & ((\bo_map|Rcktimer|currentState[13]~51\) # (GND)))
--- \bo_map|Rcktimer|currentState[14]~53\ = CARRY((!\bo_map|Rcktimer|currentState[13]~51\) # (!\bo_map|Rcktimer|currentState\(14)))
-
+-- Location: PIN_B17,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+\s140~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "output",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datab => \bo_map|Rcktimer|currentState\(14),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[13]~51\,
-	combout => \bo_map|Rcktimer|currentState[14]~52_combout\,
-	cout => \bo_map|Rcktimer|currentState[14]~53\);
-
--- Location: LCFF_X46_Y33_N3
-\bo_map|Rcktimer|currentState[14]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[14]~52_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
+	datain => \Cs140|Equal0~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(14));
-
--- Location: LCCOMB_X46_Y33_N4
-\bo_map|Rcktimer|currentState[15]~54\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[15]~54_combout\ = (\bo_map|Rcktimer|currentState\(15) & (\bo_map|Rcktimer|currentState[14]~53\ $ (GND))) # (!\bo_map|Rcktimer|currentState\(15) & (!\bo_map|Rcktimer|currentState[14]~53\ & VCC))
--- \bo_map|Rcktimer|currentState[15]~55\ = CARRY((\bo_map|Rcktimer|currentState\(15) & !\bo_map|Rcktimer|currentState[14]~53\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \bo_map|Rcktimer|currentState\(15),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[14]~53\,
-	combout => \bo_map|Rcktimer|currentState[15]~54_combout\,
-	cout => \bo_map|Rcktimer|currentState[15]~55\);
-
--- Location: LCFF_X46_Y33_N5
-\bo_map|Rcktimer|currentState[15]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[15]~54_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(15));
-
--- Location: LCCOMB_X46_Y33_N8
-\bo_map|Rcktimer|currentState[17]~58\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[17]~58_combout\ = (\bo_map|Rcktimer|currentState\(17) & (\bo_map|Rcktimer|currentState[16]~57\ $ (GND))) # (!\bo_map|Rcktimer|currentState\(17) & (!\bo_map|Rcktimer|currentState[16]~57\ & VCC))
--- \bo_map|Rcktimer|currentState[17]~59\ = CARRY((\bo_map|Rcktimer|currentState\(17) & !\bo_map|Rcktimer|currentState[16]~57\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \bo_map|Rcktimer|currentState\(17),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[16]~57\,
-	combout => \bo_map|Rcktimer|currentState[17]~58_combout\,
-	cout => \bo_map|Rcktimer|currentState[17]~59\);
-
--- Location: LCFF_X46_Y33_N9
-\bo_map|Rcktimer|currentState[17]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[17]~58_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(17));
-
--- Location: LCCOMB_X46_Y33_N14
-\bo_map|Rcktimer|currentState[20]~64\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[20]~64_combout\ = (\bo_map|Rcktimer|currentState\(20) & (!\bo_map|Rcktimer|currentState[19]~63\)) # (!\bo_map|Rcktimer|currentState\(20) & ((\bo_map|Rcktimer|currentState[19]~63\) # (GND)))
--- \bo_map|Rcktimer|currentState[20]~65\ = CARRY((!\bo_map|Rcktimer|currentState[19]~63\) # (!\bo_map|Rcktimer|currentState\(20)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \bo_map|Rcktimer|currentState\(20),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[19]~63\,
-	combout => \bo_map|Rcktimer|currentState[20]~64_combout\,
-	cout => \bo_map|Rcktimer|currentState[20]~65\);
-
--- Location: LCFF_X46_Y33_N15
-\bo_map|Rcktimer|currentState[20]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[20]~64_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(20));
-
--- Location: LCCOMB_X46_Y33_N16
-\bo_map|Rcktimer|currentState[21]~66\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[21]~66_combout\ = (\bo_map|Rcktimer|currentState\(21) & (\bo_map|Rcktimer|currentState[20]~65\ $ (GND))) # (!\bo_map|Rcktimer|currentState\(21) & (!\bo_map|Rcktimer|currentState[20]~65\ & VCC))
--- \bo_map|Rcktimer|currentState[21]~67\ = CARRY((\bo_map|Rcktimer|currentState\(21) & !\bo_map|Rcktimer|currentState[20]~65\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(21),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[20]~65\,
-	combout => \bo_map|Rcktimer|currentState[21]~66_combout\,
-	cout => \bo_map|Rcktimer|currentState[21]~67\);
-
--- Location: LCCOMB_X46_Y33_N18
-\bo_map|Rcktimer|currentState[22]~68\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[22]~68_combout\ = (\bo_map|Rcktimer|currentState\(22) & (!\bo_map|Rcktimer|currentState[21]~67\)) # (!\bo_map|Rcktimer|currentState\(22) & ((\bo_map|Rcktimer|currentState[21]~67\) # (GND)))
--- \bo_map|Rcktimer|currentState[22]~69\ = CARRY((!\bo_map|Rcktimer|currentState[21]~67\) # (!\bo_map|Rcktimer|currentState\(22)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \bo_map|Rcktimer|currentState\(22),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[21]~67\,
-	combout => \bo_map|Rcktimer|currentState[22]~68_combout\,
-	cout => \bo_map|Rcktimer|currentState[22]~69\);
-
--- Location: LCFF_X46_Y33_N19
-\bo_map|Rcktimer|currentState[22]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[22]~68_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(22));
-
--- Location: LCCOMB_X46_Y33_N20
-\bo_map|Rcktimer|currentState[23]~70\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Rcktimer|currentState[23]~70_combout\ = (\bo_map|Rcktimer|currentState\(23) & (\bo_map|Rcktimer|currentState[22]~69\ $ (GND))) # (!\bo_map|Rcktimer|currentState\(23) & (!\bo_map|Rcktimer|currentState[22]~69\ & VCC))
--- \bo_map|Rcktimer|currentState[23]~71\ = CARRY((\bo_map|Rcktimer|currentState\(23) & !\bo_map|Rcktimer|currentState[22]~69\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(23),
-	datad => VCC,
-	cin => \bo_map|Rcktimer|currentState[22]~69\,
-	combout => \bo_map|Rcktimer|currentState[23]~70_combout\,
-	cout => \bo_map|Rcktimer|currentState[23]~71\);
-
--- Location: LCFF_X46_Y33_N21
-\bo_map|Rcktimer|currentState[23]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[23]~70_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(23));
-
--- Location: LCFF_X46_Y33_N23
-\bo_map|Rcktimer|currentState[24]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[24]~72_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(24));
-
--- Location: LCCOMB_X46_Y33_N26
-\bc_map|Selector0~7\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|Selector0~7_combout\ = ((\bo_map|Rcktimer|currentState\(24)) # (!\bo_map|Rcktimer|currentState\(23))) # (!\bo_map|Rcktimer|currentState\(25))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111101011111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(25),
-	datac => \bo_map|Rcktimer|currentState\(23),
-	datad => \bo_map|Rcktimer|currentState\(24),
-	combout => \bc_map|Selector0~7_combout\);
-
--- Location: LCFF_X46_Y33_N17
-\bo_map|Rcktimer|currentState[21]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[21]~66_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(21));
-
--- Location: LCCOMB_X46_Y33_N28
-\bc_map|Selector0~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|Selector0~6_combout\ = (((!\bo_map|Rcktimer|currentState\(22)) # (!\bo_map|Rcktimer|currentState\(21))) # (!\bo_map|Rcktimer|currentState\(20))) # (!\bo_map|Rcktimer|currentState\(19))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0111111111111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(19),
-	datab => \bo_map|Rcktimer|currentState\(20),
-	datac => \bo_map|Rcktimer|currentState\(21),
-	datad => \bo_map|Rcktimer|currentState\(22),
-	combout => \bc_map|Selector0~6_combout\);
-
--- Location: LCFF_X46_Y34_N25
-\bo_map|Rcktimer|currentState[9]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[9]~42_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(9));
-
--- Location: LCCOMB_X46_Y34_N0
-\bc_map|Selector0~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|Selector0~2_combout\ = (\bo_map|Rcktimer|currentState\(10)) # ((\bo_map|Rcktimer|currentState\(9)) # ((\bo_map|Rcktimer|currentState\(8)) # (!\bo_map|Rcktimer|currentState\(7))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111011111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(10),
-	datab => \bo_map|Rcktimer|currentState\(9),
-	datac => \bo_map|Rcktimer|currentState\(8),
-	datad => \bo_map|Rcktimer|currentState\(7),
-	combout => \bc_map|Selector0~2_combout\);
-
--- Location: LCFF_X46_Y34_N11
-\bo_map|Rcktimer|currentState[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rcktimer|currentState[2]~28_combout\,
-	aclr => \bc_map|rstcktimer~combout\,
-	ena => \bc_map|currentState.S0~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rcktimer|currentState\(2));
-
--- Location: LCCOMB_X45_Y34_N24
-\bc_map|Selector0~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|Selector0~0_combout\ = (\bo_map|Rcktimer|currentState\(0)) # ((\bo_map|Rcktimer|currentState\(1)) # ((\bo_map|Rcktimer|currentState\(2)) # (!\bc_map|currentState.S0~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111011111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(0),
-	datab => \bo_map|Rcktimer|currentState\(1),
-	datac => \bo_map|Rcktimer|currentState\(2),
-	datad => \bc_map|currentState.S0~regout\,
-	combout => \bc_map|Selector0~0_combout\);
-
--- Location: LCCOMB_X45_Y34_N10
-\bc_map|Selector0~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|Selector0~3_combout\ = (((\bo_map|Rcktimer|currentState\(11)) # (!\bo_map|Rcktimer|currentState\(14))) # (!\bo_map|Rcktimer|currentState\(12))) # (!\bo_map|Rcktimer|currentState\(13))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111011111111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rcktimer|currentState\(13),
-	datab => \bo_map|Rcktimer|currentState\(12),
-	datac => \bo_map|Rcktimer|currentState\(11),
-	datad => \bo_map|Rcktimer|currentState\(14),
-	combout => \bc_map|Selector0~3_combout\);
-
--- Location: LCCOMB_X45_Y34_N12
-\bc_map|Selector0~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|Selector0~4_combout\ = (\bc_map|Selector0~1_combout\) # ((\bc_map|Selector0~2_combout\) # ((\bc_map|Selector0~0_combout\) # (\bc_map|Selector0~3_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111111110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bc_map|Selector0~1_combout\,
-	datab => \bc_map|Selector0~2_combout\,
-	datac => \bc_map|Selector0~0_combout\,
-	datad => \bc_map|Selector0~3_combout\,
-	combout => \bc_map|Selector0~4_combout\);
-
--- Location: LCCOMB_X45_Y34_N14
-\bc_map|Selector0~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|Selector0~8_combout\ = (!\bc_map|Selector0~5_combout\ & (!\bc_map|Selector0~7_combout\ & (!\bc_map|Selector0~6_combout\ & !\bc_map|Selector0~4_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bc_map|Selector0~5_combout\,
-	datab => \bc_map|Selector0~7_combout\,
-	datac => \bc_map|Selector0~6_combout\,
-	datad => \bc_map|Selector0~4_combout\,
-	combout => \bc_map|Selector0~8_combout\);
-
--- Location: LCFF_X45_Y34_N27
-\bc_map|currentState.S2\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	sdata => \bc_map|Selector0~8_combout\,
-	aclr => \reset~clkctrl_outclk\,
-	sload => VCC,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bc_map|currentState.S2~regout\);
-
--- Location: LCFF_X43_Y34_N9
-\bo_map|Rtime|currentState[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rtime|currentState[1]~7_combout\,
-	aclr => \bc_map|rstcktimer~0_combout\,
-	ena => \bc_map|currentState.S2~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rtime|currentState\(1));
-
--- Location: LCFF_X43_Y34_N15
-\bo_map|Rtime|currentState[4]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|Rtime|currentState[4]~14_combout\,
-	aclr => \bc_map|rstcktimer~0_combout\,
-	ena => \bc_map|currentState.S2~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|Rtime|currentState\(4));
-
--- Location: LCCOMB_X43_Y34_N22
-\bo_map|Cs140|Equal0~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Cs140|Equal0~0_combout\ = (\bo_map|Rtime|currentState\(2) & (!\bo_map|Rtime|currentState\(0) & (!\bo_map|Rtime|currentState\(4) & \bo_map|Rtime|currentState\(3))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000001000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(2),
-	datab => \bo_map|Rtime|currentState\(0),
-	datac => \bo_map|Rtime|currentState\(4),
-	datad => \bo_map|Rtime|currentState\(3),
-	combout => \bo_map|Cs140|Equal0~0_combout\);
-
--- Location: LCCOMB_X44_Y34_N26
-\bo_map|Cs140|Equal0~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Cs140|Equal0~1_combout\ = (!\bo_map|Rtime|currentState\(1) & (!\bo_map|Rtime|currentState\(5) & (\bo_map|Rtime|currentState\(7) & !\bo_map|Rtime|currentState\(6))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000010000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(1),
-	datab => \bo_map|Rtime|currentState\(5),
-	datac => \bo_map|Rtime|currentState\(7),
-	datad => \bo_map|Rtime|currentState\(6),
-	combout => \bo_map|Cs140|Equal0~1_combout\);
-
--- Location: LCCOMB_X45_Y34_N4
-\bc_map|nextState.S8~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|nextState.S8~0_combout\ = (\bo_map|Cs140|Equal0~0_combout\ & (\bc_map|currentState.S2~regout\ & \bo_map|Cs140|Equal0~1_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bo_map|Cs140|Equal0~0_combout\,
-	datac => \bc_map|currentState.S2~regout\,
-	datad => \bo_map|Cs140|Equal0~1_combout\,
-	combout => \bc_map|nextState.S8~0_combout\);
-
--- Location: LCFF_X45_Y34_N5
-\bc_map|currentState.S8\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bc_map|nextState.S8~0_combout\,
-	aclr => \reset~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bc_map|currentState.S8~regout\);
-
--- Location: LCCOMB_X45_Y34_N2
-\bc_map|cMuxNS~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|cMuxNS~0_combout\ = ((\bc_map|currentState.S8~regout\) # ((\bc_map|currentState.S2~regout\) # (\bc_map|currentState.S0~regout\))) # (!\bc_map|currentState.init~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111111101",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bc_map|currentState.init~regout\,
-	datab => \bc_map|currentState.S8~regout\,
-	datac => \bc_map|currentState.S2~regout\,
-	datad => \bc_map|currentState.S0~regout\,
-	combout => \bc_map|cMuxNS~0_combout\);
-
--- Location: LCCOMB_X45_Y34_N28
-\bo_map|MNS|Mux2~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|MNS|Mux2~0_combout\ = (!\bc_map|currentState.S3~regout\ & !\bc_map|cMuxNS~0_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000010100000101",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bc_map|currentState.S3~regout\,
-	datac => \bc_map|cMuxNS~0_combout\,
-	combout => \bo_map|MNS|Mux2~0_combout\);
-
--- Location: LCCOMB_X44_Y34_N14
-\bc_map|nextState.S3~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|nextState.S3~0_combout\ = (\bo_map|Cs45|Equal0~1_combout\ & (\bc_map|currentState.S2~regout\ & \bo_map|Cs45|Equal0~0_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bo_map|Cs45|Equal0~1_combout\,
-	datac => \bc_map|currentState.S2~regout\,
-	datad => \bo_map|Cs45|Equal0~0_combout\,
-	combout => \bc_map|nextState.S3~0_combout\);
-
--- Location: LCFF_X44_Y34_N15
-\bc_map|currentState.S3\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bc_map|nextState.S3~0_combout\,
-	aclr => \reset~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bc_map|currentState.S3~regout\);
-
--- Location: LCCOMB_X45_Y34_N20
-\bc_map|eNS~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|eNS~0_combout\ = (\bc_map|currentState.S4~regout\) # ((\bc_map|currentState.S8~regout\) # ((\bc_map|currentState.S3~regout\) # (!\bc_map|currentState.init~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111101111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bc_map|currentState.S4~regout\,
-	datab => \bc_map|currentState.S8~regout\,
-	datac => \bc_map|currentState.init~regout\,
-	datad => \bc_map|currentState.S3~regout\,
-	combout => \bc_map|eNS~0_combout\);
-
--- Location: LCFF_X45_Y34_N29
-\bo_map|RNS|currentState[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|MNS|Mux2~0_combout\,
-	aclr => \reset~clkctrl_outclk\,
-	ena => \bc_map|eNS~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|RNS|currentState\(0));
-
--- Location: LCCOMB_X45_Y34_N18
-\bc_map|cMuxNS[0]~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|cMuxNS[0]~1_combout\ = (\bc_map|currentState.S3~regout\ & !\bc_map|cMuxNS~0_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000101000001010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bc_map|currentState.S3~regout\,
-	datac => \bc_map|cMuxNS~0_combout\,
-	combout => \bc_map|cMuxNS[0]~1_combout\);
-
--- Location: LCFF_X45_Y34_N19
-\bo_map|RNS|currentState[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bc_map|cMuxNS[0]~1_combout\,
-	aclr => \reset~clkctrl_outclk\,
-	ena => \bc_map|eNS~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|RNS|currentState\(1));
-
--- Location: LCFF_X45_Y34_N17
-\bo_map|RNS|currentState[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	sdata => \bc_map|cMuxNS~0_combout\,
-	aclr => \reset~clkctrl_outclk\,
-	sload => VCC,
-	ena => \bc_map|eNS~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|RNS|currentState\(2));
-
--- Location: LCCOMB_X43_Y34_N28
-\bo_map|Cs100|Equal0~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Cs100|Equal0~1_combout\ = (!\bo_map|Rtime|currentState\(3) & (\bo_map|Rtime|currentState\(6) & (!\bo_map|Rtime|currentState\(0) & \bo_map|Rtime|currentState\(2))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000010000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(3),
-	datab => \bo_map|Rtime|currentState\(6),
-	datac => \bo_map|Rtime|currentState\(0),
-	datad => \bo_map|Rtime|currentState\(2),
-	combout => \bo_map|Cs100|Equal0~1_combout\);
-
--- Location: LCCOMB_X44_Y34_N16
-\bo_map|Cs100|Equal0~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|Cs100|Equal0~2_combout\ = (!\bo_map|Rtime|currentState\(1) & (\bo_map|Cs100|Equal0~1_combout\ & (\bo_map|Cs100|Equal0~0_combout\ & !\bo_map|Rtime|currentState\(4))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000001000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bo_map|Rtime|currentState\(1),
-	datab => \bo_map|Cs100|Equal0~1_combout\,
-	datac => \bo_map|Cs100|Equal0~0_combout\,
-	datad => \bo_map|Rtime|currentState\(4),
-	combout => \bo_map|Cs100|Equal0~2_combout\);
-
--- Location: LCCOMB_X45_Y34_N6
-\bc_map|nextState.S6~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|nextState.S6~0_combout\ = (\bc_map|currentState.S2~regout\ & \bo_map|Cs100|Equal0~2_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \bc_map|currentState.S2~regout\,
-	datad => \bo_map|Cs100|Equal0~2_combout\,
-	combout => \bc_map|nextState.S6~0_combout\);
-
--- Location: LCFF_X45_Y34_N7
-\bc_map|currentState.S6\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bc_map|nextState.S6~0_combout\,
-	aclr => \reset~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bc_map|currentState.S6~regout\);
-
--- Location: LCCOMB_X44_Y34_N28
-\bo_map|MEW|Mux2~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|MEW|Mux2~0_combout\ = (!\bc_map|currentState.S5~regout\ & (!\bc_map|currentState.S0~regout\ & (!\bc_map|currentState.S2~regout\ & !\bc_map|currentState.S6~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bc_map|currentState.S5~regout\,
-	datab => \bc_map|currentState.S0~regout\,
-	datac => \bc_map|currentState.S2~regout\,
-	datad => \bc_map|currentState.S6~regout\,
-	combout => \bo_map|MEW|Mux2~0_combout\);
-
--- Location: LCCOMB_X44_Y34_N8
-\bc_map|nextState.S4~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|nextState.S4~0_combout\ = (\bc_map|currentState.S2~regout\ & \bc_map|NSL~3_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000010100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bc_map|currentState.S2~regout\,
-	datac => \bc_map|NSL~3_combout\,
-	combout => \bc_map|nextState.S4~0_combout\);
-
--- Location: LCFF_X44_Y34_N9
-\bc_map|currentState.S4\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bc_map|nextState.S4~0_combout\,
-	aclr => \reset~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bc_map|currentState.S4~regout\);
-
--- Location: LCCOMB_X44_Y34_N20
-\bc_map|eEW~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|eEW~0_combout\ = (\bc_map|currentState.S5~regout\) # (((\bc_map|currentState.S4~regout\) # (\bc_map|currentState.S6~regout\)) # (!\bc_map|currentState.init~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111111011",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bc_map|currentState.S5~regout\,
-	datab => \bc_map|currentState.init~regout\,
-	datac => \bc_map|currentState.S4~regout\,
-	datad => \bc_map|currentState.S6~regout\,
-	combout => \bc_map|eEW~0_combout\);
-
--- Location: LCFF_X44_Y34_N29
-\bo_map|REW|currentState[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|MEW|Mux2~0_combout\,
-	aclr => \reset~clkctrl_outclk\,
-	ena => \bc_map|eEW~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|REW|currentState\(0));
-
--- Location: LCCOMB_X44_Y34_N10
-\bc_map|cMuxEW[0]~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|cMuxEW[0]~0_combout\ = (!\bc_map|currentState.S5~regout\ & (!\bc_map|currentState.S0~regout\ & (!\bc_map|currentState.S2~regout\ & \bc_map|currentState.S6~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bc_map|currentState.S5~regout\,
-	datab => \bc_map|currentState.S0~regout\,
-	datac => \bc_map|currentState.S2~regout\,
-	datad => \bc_map|currentState.S6~regout\,
-	combout => \bc_map|cMuxEW[0]~0_combout\);
-
--- Location: LCFF_X44_Y34_N11
-\bo_map|REW|currentState[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bc_map|cMuxEW[0]~0_combout\,
-	aclr => \reset~clkctrl_outclk\,
-	ena => \bc_map|eEW~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|REW|currentState\(1));
-
--- Location: LCCOMB_X44_Y34_N6
-\bc_map|nextState.S5~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|nextState.S5~0_combout\ = (\bc_map|currentState.S2~regout\ & \bo_map|Cs55|Equal0~1_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bc_map|currentState.S2~regout\,
-	datad => \bo_map|Cs55|Equal0~1_combout\,
-	combout => \bc_map|nextState.S5~0_combout\);
-
--- Location: LCFF_X44_Y34_N7
-\bc_map|currentState.S5\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bc_map|nextState.S5~0_combout\,
-	aclr => \reset~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bc_map|currentState.S5~regout\);
-
--- Location: LCCOMB_X42_Y34_N28
-\bc_map|cMuxEW~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|cMuxEW~1_combout\ = (\bc_map|currentState.S0~regout\) # ((\bc_map|currentState.S2~regout\) # (\bc_map|currentState.S5~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111111100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bc_map|currentState.S0~regout\,
-	datac => \bc_map|currentState.S2~regout\,
-	datad => \bc_map|currentState.S5~regout\,
-	combout => \bc_map|cMuxEW~1_combout\);
-
--- Location: LCFF_X42_Y34_N29
-\bo_map|REW|currentState[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bc_map|cMuxEW~1_combout\,
-	aclr => \reset~clkctrl_outclk\,
-	ena => \bc_map|eEW~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|REW|currentState\(2));
-
--- Location: LCCOMB_X45_Y34_N8
-\bo_map|RP|currentState[1]~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|RP|currentState[1]~0_combout\ = (!\bc_map|currentState.S2~regout\ & !\bc_map|currentState.S0~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000001111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \bc_map|currentState.S2~regout\,
-	datad => \bc_map|currentState.S0~regout\,
-	combout => \bo_map|RP|currentState[1]~0_combout\);
-
--- Location: LCCOMB_X45_Y34_N30
-\bc_map|nextState.S7~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|nextState.S7~0_combout\ = (\bc_map|currentState.S2~regout\ & \bo_map|Cs110|Equal0~0_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \bc_map|currentState.S2~regout\,
-	datad => \bo_map|Cs110|Equal0~0_combout\,
-	combout => \bc_map|nextState.S7~0_combout\);
-
--- Location: LCFF_X45_Y34_N31
-\bc_map|currentState.S7\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bc_map|nextState.S7~0_combout\,
-	aclr => \reset~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bc_map|currentState.S7~regout\);
-
--- Location: LCCOMB_X45_Y34_N26
-\bc_map|eP\ : cycloneii_lcell_comb
--- Equation(s):
--- \bc_map|eP~combout\ = ((\bc_map|currentState.S7~regout\) # (\bc_map|currentState.S4~regout\)) # (!\bc_map|currentState.init~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111011101",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bc_map|currentState.init~regout\,
-	datab => \bc_map|currentState.S7~regout\,
-	datad => \bc_map|currentState.S4~regout\,
-	combout => \bc_map|eP~combout\);
-
--- Location: LCCOMB_X45_Y34_N22
-\bo_map|RP|currentState[1]~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \bo_map|RP|currentState[1]~1_combout\ = (\bc_map|eP~combout\ & (!\bc_map|currentState.S7~regout\ & (\bo_map|RP|currentState[1]~0_combout\))) # (!\bc_map|eP~combout\ & (((\bo_map|RP|currentState\(1)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0100010011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bc_map|currentState.S7~regout\,
-	datab => \bo_map|RP|currentState[1]~0_combout\,
-	datac => \bo_map|RP|currentState\(1),
-	datad => \bc_map|eP~combout\,
-	combout => \bo_map|RP|currentState[1]~1_combout\);
-
--- Location: LCFF_X45_Y34_N23
-\bo_map|RP|currentState[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock~clkctrl_outclk\,
-	datain => \bo_map|RP|currentState[1]~1_combout\,
-	aclr => \reset~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \bo_map|RP|currentState\(1));
-
--- Location: PIN_G16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+	devoe => ww_devoe,
+	oe => VCC,
+	padio => ww_s140);
+
+-- Location: PIN_AF17,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 \NS[0]~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
@@ -2207,14 +1305,14 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \bo_map|RNS|currentState\(0),
+	datain => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
 	oe => VCC,
 	padio => ww_NS(0));
 
--- Location: PIN_B18,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- Location: PIN_AC16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 \NS[1]~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
@@ -2233,14 +1331,14 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \bo_map|RNS|currentState\(1),
+	datain => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
 	oe => VCC,
 	padio => ww_NS(1));
 
--- Location: PIN_G15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- Location: PIN_F26,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 \NS[2]~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
@@ -2259,14 +1357,14 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \bo_map|RNS|currentState\(2),
+	datain => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
 	oe => VCC,
 	padio => ww_NS(2));
 
--- Location: PIN_F15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- Location: PIN_C8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 \EW[0]~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
@@ -2285,14 +1383,14 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \bo_map|REW|currentState\(0),
+	datain => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
 	oe => VCC,
 	padio => ww_EW(0));
 
--- Location: PIN_A17,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- Location: PIN_T23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 \EW[1]~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
@@ -2311,14 +1409,14 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \bo_map|REW|currentState\(1),
+	datain => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
 	oe => VCC,
 	padio => ww_EW(1));
 
--- Location: PIN_H16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- Location: PIN_AF13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 \EW[2]~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
@@ -2337,14 +1435,14 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \bo_map|REW|currentState\(2),
+	datain => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
 	oe => VCC,
 	padio => ww_EW(2));
 
--- Location: PIN_C5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- Location: PIN_AA16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 \P[0]~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
@@ -2370,7 +1468,7 @@ PORT MAP (
 	oe => VCC,
 	padio => ww_P(0));
 
--- Location: PIN_F16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- Location: PIN_B22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 \P[1]~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
@@ -2389,7 +1487,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \bo_map|RP|currentState\(1),
+	datain => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,

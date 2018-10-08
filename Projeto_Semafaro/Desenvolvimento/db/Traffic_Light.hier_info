@@ -71,12 +71,11 @@ etime <= etime.DB_MAX_OUTPUT_PORT_TYPE
 eNS <= eNS.DB_MAX_OUTPUT_PORT_TYPE
 eP <= eP.DB_MAX_OUTPUT_PORT_TYPE
 eEW <= eEW.DB_MAX_OUTPUT_PORT_TYPE
-cMuxP[0] <= cMuxP.DB_MAX_OUTPUT_PORT_TYPE
-cMuxP[1] <= <GND>
 cMuxNS[0] <= cMuxNS[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 cMuxNS[1] <= cMuxNS[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 cMuxEW[0] <= cMuxEW[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 cMuxEW[1] <= cMuxEW[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+cMuxP[0] <= cMuxP.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |traffic_light_top|BO:bo_map
@@ -95,13 +94,12 @@ etime => register_n_bits:Rtime.enable
 eNS => register_n_bits:RNS.enable
 eP => register_n_bits:RP.enable
 eEW => register_n_bits:REW.enable
-cMuxP[0] => mux_nxm:MP.sel[0]
-cMuxP[1] => mux_nxm:MP.sel[1]
 cMuxNS[0] => mux_nxm:MNS.sel[0]
 cMuxNS[1] => mux_nxm:MNS.sel[1]
 cMuxEW[0] => mux_nxm:MEW.sel[0]
 cMuxEW[1] => mux_nxm:MEW.sel[1]
-s1 <= compareIfEqual_n_bits:Cs1.outpt
+cMuxP[0] => mux_nxm:MP.sel[0]
+s1 <= s1.DB_MAX_OUTPUT_PORT_TYPE
 s45 <= compareIfEqual_n_bits:Cs45.outpt
 s50 <= compareIfEqual_n_bits:Cs50.outpt
 s55 <= compareIfEqual_n_bits:Cs55.outpt
@@ -110,14 +108,14 @@ s105 <= compareIfEqual_n_bits:Cs105.outpt
 s110 <= compareIfEqual_n_bits:Cs110.outpt
 s135 <= compareIfEqual_n_bits:Cs135.outpt
 s140 <= compareIfEqual_n_bits:Cs140.outpt
-NS[0] <= register_n_bits:RNS.outpt[0]
-NS[1] <= register_n_bits:RNS.outpt[1]
-NS[2] <= register_n_bits:RNS.outpt[2]
-EW[0] <= register_n_bits:REW.outpt[0]
-EW[1] <= register_n_bits:REW.outpt[1]
-EW[2] <= register_n_bits:REW.outpt[2]
-P[0] <= register_n_bits:RP.outpt[0]
-P[1] <= register_n_bits:RP.outpt[1]
+NS[0] <= NS[0].DB_MAX_OUTPUT_PORT_TYPE
+NS[1] <= NS[1].DB_MAX_OUTPUT_PORT_TYPE
+NS[2] <= NS[2].DB_MAX_OUTPUT_PORT_TYPE
+EW[0] <= EW[0].DB_MAX_OUTPUT_PORT_TYPE
+EW[1] <= EW[1].DB_MAX_OUTPUT_PORT_TYPE
+EW[2] <= EW[2].DB_MAX_OUTPUT_PORT_TYPE
+P[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+P[1] <= P[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |traffic_light_top|BO:bo_map|register_n_bits:Rcktimer
@@ -678,16 +676,12 @@ outpt[2] <= currentState[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |traffic_light_top|BO:bo_map|mux_nxm:MP
-inpt[0] => Mux1.IN7
-inpt[1] => Mux0.IN7
-inpt[2] => Mux1.IN5
-inpt[3] => Mux0.IN5
-inpt[4] => Mux1.IN3
-inpt[5] => Mux0.IN3
-sel[0] => Mux0.IN10
-sel[0] => Mux1.IN10
-sel[1] => Mux0.IN9
-sel[1] => Mux1.IN9
+inpt[0] => Mux1.IN3
+inpt[1] => Mux0.IN3
+inpt[2] => Mux1.IN1
+inpt[3] => Mux0.IN1
+sel[0] => Mux0.IN5
+sel[0] => Mux1.IN5
 outpt[0] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 outpt[1] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 

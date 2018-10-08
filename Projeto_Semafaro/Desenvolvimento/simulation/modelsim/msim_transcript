@@ -1,4 +1,5 @@
 # Reading E:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# ERROR: No extended dataflow license exists
 # do Traffic_Light_run_msim_gate_vhdl.do 
 # if {[file exists gate_work]} {
 # 	vdel -lib gate_work -all
@@ -19,183 +20,52 @@
 # -- Loading package VITAL_Primitives
 # -- Loading package cycloneii_atom_pack
 # -- Loading package cycloneii_components
-# -- Compiling entity traffic_light_top
-# -- Compiling architecture structure of traffic_light_top
+# -- Compiling entity BO
+# -- Compiling architecture structure of BO
 # 
-vsim rtl_work.bo
-# vsim rtl_work.bo 
+vsim +altera -do Traffic_Light_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp /=C:/Users/HsMatheus/Desktop/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/simulation/modelsim/Traffic_Light_vhd.sdo work.bo
+# vsim +altera -do Traffic_Light_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp /=C:/Users/HsMatheus/Desktop/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/simulation/modelsim/Traffic_Light_vhd.sdo work.bo 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading ieee.math_real(body)
-# Loading rtl_work.bo(archbo)
-# Loading rtl_work.clock_x(archclock)
-# Loading rtl_work.register_n_bits(archregister)
-# Loading rtl_work.adder_n_bits(archadder)
-# Loading rtl_work.compareifequal_n_bits(archcompareifequal)
-# Loading rtl_work.mux_nxm(behavioral)
-add wave -position insertpoint  \
-sim:/bo/clock \
-sim:/bo/reset \
-sim:/bo/ecktimer \
-sim:/bo/rstcktimer \
-sim:/bo/rsttime \
-sim:/bo/etime \
-sim:/bo/eNS \
-sim:/bo/eP \
-sim:/bo/eEW \
-sim:/bo/cMuxP \
-sim:/bo/cMuxNS \
-sim:/bo/cMuxEW \
-sim:/bo/s1 \
-sim:/bo/s45 \
-sim:/bo/s50 \
-sim:/bo/s55 \
-sim:/bo/s100 \
-sim:/bo/s105 \
-sim:/bo/s110 \
-sim:/bo/s135 \
-sim:/bo/s140 \
-sim:/bo/NS \
-sim:/bo/EW \
-sim:/bo/P
-force sim:/bo/clock 1 0, 0 {25 ps} -r 50
-force sim:/bo/reset 0 0
-force sim:/bo/ecktimer 0 0
-force sim:/bo/rstcktimer 1 0
-force sim:/bo/rsttime 1 0
-force sim:/bo/etime 0 0
-force sim:/bo/eNS 1 0
-force sim:/bo/cMuxNS 00 0
-force sim:/bo/cMuxP 01 0
-force sim:/bo/eP 1 0
-force sim:/bo/cMuxEW 10 0
-force sim:/bo/eEW 1 0
-
-force sim:/bo/reset 0 500
-force sim:/bo/ecktimer 1 500
-force sim:/bo/rstcktimer 0 500
-force sim:/bo/rsttime 0 500
-force sim:/bo/etime 0 500
-force sim:/bo/eNS 0 500
-force sim:/bo/cMuxNS 00 500
-force sim:/bo/cMuxP 00 500
-force sim:/bo/eP 0 500
-force sim:/bo/cMuxEW 00 500
-force sim:/bo/eEW 0 500
-
-force sim:/bo/reset 0 1000
-force sim:/bo/ecktimer 0 1000
-force sim:/bo/rstcktimer 1 1000
-force sim:/bo/rsttime 0 1000
-force sim:/bo/etime 1 1000
-force sim:/bo/eNS 0 1000
-force sim:/bo/cMuxNS 00 1000
-force sim:/bo/cMuxP 00 1000
-force sim:/bo/eP 0 1000
-force sim:/bo/cMuxEW 00 1000
-force sim:/bo/eEW 0 1000
-
-force sim:/bo/reset 0 1500
-force sim:/bo/ecktimer 0 1500
-force sim:/bo/rstcktimer 0 1500
-force sim:/bo/rsttime 0 1500
-force sim:/bo/etime 0 1500
-force sim:/bo/eNS 1 1500
-force sim:/bo/cMuxNS 01 1500
-force sim:/bo/cMuxP 00 1500
-force sim:/bo/eP 0 1500
-force sim:/bo/cMuxEW 00 1500
-force sim:/bo/eEW 0 1500
-
-force sim:/bo/reset 0 2000
-force sim:/bo/ecktimer 0 2000
-force sim:/bo/rstcktimer 0 2000
-force sim:/bo/rsttime 0 2000
-force sim:/bo/etime 0 2000
-force sim:/bo/eNS 1 2000
-force sim:/bo/cMuxNS 10 2000
-force sim:/bo/cMuxP 01 2000
-force sim:/bo/eP 1 2000
-force sim:/bo/cMuxEW 10 2000
-force sim:/bo/eEW 1 2000
-
-force sim:/bo/reset 0 2500
-force sim:/bo/ecktimer 0 2500
-force sim:/bo/rstcktimer 0 2500
-force sim:/bo/rsttime 0 2500
-force sim:/bo/etime 0 2500
-force sim:/bo/eNS 0 2500
-force sim:/bo/cMuxNS 00 2500
-force sim:/bo/cMuxP 00 2500
-force sim:/bo/eP 0 2500
-force sim:/bo/cMuxEW 00 2500
-force sim:/bo/eEW 1 2500
-
-force sim:/bo/reset 0 3000
-force sim:/bo/ecktimer 0 3000
-force sim:/bo/rstcktimer 0 3000
-force sim:/bo/rsttime 0 3000
-force sim:/bo/etime 0 3000
-force sim:/bo/eNS 0 3000
-force sim:/bo/cMuxNS 00 3000
-force sim:/bo/cMuxP 00 3000
-force sim:/bo/eP 0 3000
-force sim:/bo/cMuxEW 01 3000
-force sim:/bo/eEW 1 3000
-
-force sim:/bo/reset 0 3500
-force sim:/bo/ecktimer 0 3500
-force sim:/bo/rstcktimer 0 3500
-force sim:/bo/rsttime 0 3500
-force sim:/bo/etime 0 3500
-force sim:/bo/eNS 0 3500
-force sim:/bo/cMuxNS 00 3500
-force sim:/bo/cMuxP 00 3500
-force sim:/bo/eP 1 3500
-force sim:/bo/cMuxEW 00 3500
-force sim:/bo/eEW 0 3500
-
-force sim:/bo/reset 0 4000
-force sim:/bo/ecktimer 0 4000
-force sim:/bo/rstcktimer 1 4000
-force sim:/bo/rsttime 1 4000
-force sim:/bo/etime 0 4000
-force sim:/bo/eNS 1 4000
-force sim:/bo/cMuxNS 00 4000
-force sim:/bo/cMuxP 00 4000
-force sim:/bo/eP 0 4000
-force sim:/bo/cMuxEW 00 4000
-force sim:/bo/eEW 0 4000
-run -all
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Region: /bo/MEW/V(0)
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Region: /bo/MEW/V(1)
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Region: /bo/MEW/V(2)
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Region: /bo/MP/V(0)
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Region: /bo/MP/V(1)
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Region: /bo/MNS/V(0)
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Region: /bo/MNS/V(1)
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Region: /bo/MNS/V(2)
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /bo/clocktime
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /bo/clocktimer
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 500 ps  Iteration: 0  Instance: /bo/clocktimer
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 550 ps  Iteration: 1  Instance: /bo/clocktimer
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 1 ns  Iteration: 0  Instance: /bo/clocktime
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 1050 ps  Iteration: 1  Instance: /bo/clocktime
-run -all
-force -freeze sim:/bo/clock 1 0, 0 {5 ps} -r 10 -can 500000000
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.bo(structure)
+# SDF 10.1d Compiler 2012.11 Nov  2 2012
+# 
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Loading instances from C:/Users/HsMatheus/Desktop/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/simulation/modelsim/Traffic_Light_vhd.sdo
+# Loading timing data from C:/Users/HsMatheus/Desktop/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/simulation/modelsim/Traffic_Light_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /bo File: Traffic_Light.vho
+# do Traffic_Light_run_msim_gate_vhdl.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {Traffic_Light.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity BO
+# -- Compiling architecture structure of BO
+# 

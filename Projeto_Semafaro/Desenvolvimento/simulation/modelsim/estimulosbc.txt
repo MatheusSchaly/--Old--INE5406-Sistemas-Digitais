@@ -3,6 +3,7 @@ force sim:/bc/reset 0 0
 force sim:/bc/s1 0 0
 force sim:/bc/s45 0 0
 force sim:/bc/s50 0 0
+force sim:/bc/s55 0 0
 force sim:/bc/s100 0 0
 force sim:/bc/s105 0 0
 force sim:/bc/s110 0 0
@@ -10,7 +11,10 @@ force sim:/bc/s135 0 0
 force sim:/bc/s140 0 0
 
 force sim:/bc/s1 1 100
-force sim:/bc/s1 0 300
+force sim:/bc/s1 0 200
+
+force sim:/bc/s140 1 180
+force sim:/bc/s140 0 280
 
 force sim:/bc/s45 1 325
 force sim:/bc/s45 0 400

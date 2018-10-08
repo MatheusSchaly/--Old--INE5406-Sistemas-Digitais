@@ -8,7 +8,8 @@ entity BO is
 		-- operative inputs
 		clock, reset: in std_logic;
 		ecktimer, rstcktimer, rsttime, etime, eNS, eP, eEW: in std_logic;
-		cMuxP, cMuxNS, cMuxEW: in std_logic_vector(1 downto 0);
+		cMuxNS, cMuxEW: in std_logic_vector(1 downto 0);
+		cMuxP : in std_logic_vector(0 downto 0);
 
 		-- operative outputs
 		s1, s45, s50, s55, s100, s105, s110, s135, s140: out std_logic;
@@ -20,21 +21,6 @@ entity BO is
 end entity;
 
 architecture archBO of BO is
-
---components:
---	register_n_bits            done!
--- adder_n_bits               done!
--- compareIfEqual_n_bits      done!
--- mux_nxm                    done!
--- clock_x                    done!
-
-component clock_x is
-	generic(maxValue: integer := 140);
-	port(
-		clock, reset, enable: in std_logic;
-		outpt: out std_logic_vector(integer(ceil(log2(real(maxValue))))-1 downto 0)
-	);
-end component;
 
 component adder_n_bits
 	generic(N: positive := 8);
@@ -81,15 +67,15 @@ signal saitime, saisomatime: std_logic_vector (7 DOWNTO 0);
 signal saimuxNS, saimuxEW, sairegNS, sairegEW: std_logic_vector (2 DOWNTO 0);
 signal saimuxP, sairegP: std_logic_vector (1 DOWNTO 0);
 
--- signal clock_50: std_logic_vector (25 DOWNTO 0); -- talvez esteja errado
--- signal clock_140: std_logic_vector (7 DOWNTO 0); -- talvez esteja errado
+signal sig_s1, sig_s45, sig_s50, sig_s55, sig_s100, sig_s105, sig_s110, sig_s135, sig_s140: std_logic;
 
 begin
 	
 	Rcktimer : register_n_bits GENERIC MAP (26) PORT MAP(clock, rstcktimer, ecktimer, saisomacktimer, saicktimer); -- talvez clock errado(clock_50 ao inves de clock)
 	Acktimer : adder_n_bits GENERIC MAP (26) PORT MAP(saicktimer, "00000000000000000000000001", saisomacktimer);
-	Cs1 : compareIfEqual_n_bits GENERIC MAP (26) PORT MAP(saicktimer, "10111110101111000010000000", s1);
-	
+	Cs1 : compareIfEqual_n_bits GENERIC MAP (26) PORT MAP(saicktimer, "00000000000000000111110100", sig_s1);
+	--Cs1 : compareIfEqual_n_bits GENERIC MAP (26) PORT MAP(saicktimer, "10111110101111000010000000", sig_s1);
+
 	Rtime : register_n_bits PORT MAP(clock, rsttime, etime, saisomatime, saitime); -- talvez clock errado(clock_140 ao inves de clock)
 	Atime : adder_n_bits PORT MAP(saitime, "00000001", saisomatime);
 	Cs45 : compareIfEqual_n_bits PORT MAP(saitime, "00101101", s45);
@@ -102,23 +88,17 @@ begin
 	Cs140 : compareIfEqual_n_bits PORT MAP(saitime, "10001100", s140);
 	
 	MNS: mux_nxm GENERIC MAP (qtdInputs => 3, lenght => 3) PORT MAP("001010100", cMuxNS, saiMuxNS);
-																						--10  01  00				
+																						--10  01  00
 	RNS : register_n_bits GENERIC MAP (3) PORT MAP(clock, reset, eNS, saimuxNS, sairegNS);
 	
-	--MP: mux_nxm GENERIC MAP (qtdInputs => 2, lenght => 2) PORT MAP("0100", cMuxP, saiMuxP); --error: expression has 2 elements, but must have 1 elements
+	MP: mux_nxm GENERIC MAP (qtdInputs => 2, lenght => 2) PORT MAP("0100", cMuxP, saiMuxP); --error: expression has 2 elements, but must have 1 elements
 	--parameter sel must have actual or default value
-	MP: mux_nxm GENERIC MAP (qtdInputs => 2) PORT MAP("001000", cMuxP, saiMuxP); --error: expression has 2 elements, but must have 1 elements
+	--MP: mux_nxm GENERIC MAP (qtdInputs => 2) PORT MAP("001000", cMuxP, saiMuxP); --error: expression has 2 elements, but must have 1 elements
 	RP : register_n_bits GENERIC MAP (2) PORT MAP(clock, reset, eP, saiMuxP, sairegP);
 	
 	MEW: mux_nxm GENERIC MAP (qtdInputs =>3, lenght => 3) PORT MAP("001010100", cMuxEW, saiMuxEW);
-																						--10  01  00				
-
+																					  --10  01  00			
 	REW : register_n_bits GENERIC MAP (3) PORT MAP(clock, reset, eEW, saiMuxEW, sairegEW);
-
-	-- output logic
 	
-	NS <= sairegNS;
-	P <= sairegP;
-	EW <= sairegEW;
 	
 end architecture;

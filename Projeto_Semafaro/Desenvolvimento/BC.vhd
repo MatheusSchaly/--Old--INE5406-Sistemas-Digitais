@@ -10,7 +10,8 @@ entity BC is
 		-- control outputs
 		ecktimer, rstcktimer, rsttime, etime, eNS, eP, eEW: out std_logic;
 		
-		cMuxP, cMuxNS, cMuxEW: out std_logic_vector(1 downto 0)
+		cMuxNS, cMuxEW: out std_logic_vector(1 downto 0);
+		cMuxP: out std_logic_vector(0 downto 0)
 	);
 end entity;
 
@@ -108,9 +109,9 @@ architecture archBC of BC  is
 							or currentState = S6
 							or currentState = S7);
 				 
-	cMuxP <= "00" when (currentState = S0
+	cMuxP <= "0" when (currentState = S0
 							or currentState = S2
-							or currentState = S7) else "01";
+							or currentState = S7) else "1";
 	
 	eP <= '1' when (currentState = init
 						or currentState = S4
