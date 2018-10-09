@@ -1,6 +1,6 @@
 TimeQuest Timing Analyzer report for Traffic_Light
-Mon Oct 08 18:13:11 2018
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Tue Oct  9 18:10:16 2018
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
 ---------------------
@@ -68,17 +68,17 @@ applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------------+
-; TimeQuest Timing Analyzer Summary                                                      ;
-+--------------------+-------------------------------------------------------------------+
-; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
-; Revision Name      ; Traffic_Light                                                     ;
-; Device Family      ; Cyclone II                                                        ;
-; Device Name        ; EP2C35F672C6                                                      ;
-; Timing Models      ; Final                                                             ;
-; Delay Model        ; Combined                                                          ;
-; Rise/Fall Delays   ; Unavailable                                                       ;
-+--------------------+-------------------------------------------------------------------+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name      ; Traffic_Light                                      ;
+; Device Family      ; Cyclone II                                         ;
+; Device Name        ; EP2C35F672C6                                       ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
 
 
 Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
@@ -116,7 +116,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; clock ; -2.512 ; -69.107       ;
+; clock ; -2.512 ; -69.175       ;
 +-------+--------+---------------+
 
 
@@ -164,8 +164,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; -2.512 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[25] ; clock        ; clock       ; 1.000        ; -0.001     ; 3.547      ;
 ; -2.441 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[24] ; clock        ; clock       ; 1.000        ; -0.001     ; 3.476      ;
 ; -2.370 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[23] ; clock        ; clock       ; 1.000        ; -0.001     ; 3.405      ;
-; -2.336 ; BC:bc_map|currentState.S0                           ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; -0.002     ; 3.370      ;
-; -2.317 ; BC:bc_map|currentState.S0                           ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.000      ; 3.353      ;
+; -2.360 ; BC:bc_map|currentState.S0                           ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; -0.002     ; 3.394      ;
+; -2.341 ; BC:bc_map|currentState.S0                           ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.000      ; 3.377      ;
 ; -2.299 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[22] ; clock        ; clock       ; 1.000        ; -0.001     ; 3.334      ;
 ; -2.298 ; BO:bo_map|register_n_bits:Rcktimer|currentState[0]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[25] ; clock        ; clock       ; 1.000        ; -0.001     ; 3.333      ;
 ; -2.269 ; BO:bo_map|register_n_bits:Rcktimer|currentState[2]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[25] ; clock        ; clock       ; 1.000        ; -0.001     ; 3.304      ;
@@ -185,9 +185,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; -2.140 ; BO:bo_map|register_n_bits:Rtime|currentState[7]     ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.001      ; 3.177      ;
 ; -2.127 ; BO:bo_map|register_n_bits:Rcktimer|currentState[2]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[23] ; clock        ; clock       ; 1.000        ; -0.001     ; 3.162      ;
 ; -2.126 ; BO:bo_map|register_n_bits:Rcktimer|currentState[3]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[24] ; clock        ; clock       ; 1.000        ; -0.001     ; 3.161      ;
-; -2.117 ; BO:bo_map|register_n_bits:Rcktimer|currentState[13] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.003      ; 3.156      ;
-; -2.098 ; BO:bo_map|register_n_bits:Rcktimer|currentState[13] ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.005      ; 3.139      ;
+; -2.105 ; BO:bo_map|register_n_bits:Rcktimer|currentState[13] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.003      ; 3.144      ;
 ; -2.091 ; BO:bo_map|register_n_bits:Rcktimer|currentState[4]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[25] ; clock        ; clock       ; 1.000        ; -0.001     ; 3.126      ;
+; -2.086 ; BO:bo_map|register_n_bits:Rcktimer|currentState[13] ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.005      ; 3.127      ;
 ; -2.086 ; BO:bo_map|register_n_bits:Rcktimer|currentState[7]  ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.002      ; 3.124      ;
 ; -2.085 ; BO:bo_map|register_n_bits:Rcktimer|currentState[0]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[22] ; clock        ; clock       ; 1.000        ; -0.001     ; 3.120      ;
 ; -2.083 ; BO:bo_map|register_n_bits:Rcktimer|currentState[18] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.003      ; 3.122      ;
@@ -226,11 +226,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; -1.947 ; BO:bo_map|register_n_bits:Rcktimer|currentState[10] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.002      ; 2.985      ;
 ; -1.928 ; BO:bo_map|register_n_bits:Rcktimer|currentState[10] ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.004      ; 2.968      ;
 ; -1.927 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[18] ; clock        ; clock       ; 1.000        ; -0.001     ; 2.962      ;
-; -1.923 ; BO:bo_map|register_n_bits:Rcktimer|currentState[11] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.002      ; 2.961      ;
+; -1.917 ; BO:bo_map|register_n_bits:Rcktimer|currentState[11] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.002      ; 2.955      ;
 ; -1.913 ; BO:bo_map|register_n_bits:Rcktimer|currentState[3]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[21] ; clock        ; clock       ; 1.000        ; -0.001     ; 2.948      ;
 ; -1.907 ; BO:bo_map|register_n_bits:Rcktimer|currentState[12] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.002      ; 2.945      ;
-; -1.904 ; BO:bo_map|register_n_bits:Rcktimer|currentState[11] ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.004      ; 2.944      ;
 ; -1.902 ; BO:bo_map|register_n_bits:Rcktimer|currentState[5]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[24] ; clock        ; clock       ; 1.000        ; -0.001     ; 2.937      ;
+; -1.898 ; BO:bo_map|register_n_bits:Rcktimer|currentState[11] ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.004      ; 2.938      ;
 ; -1.889 ; BO:bo_map|register_n_bits:Rcktimer|currentState[24] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.003      ; 2.928      ;
 ; -1.888 ; BO:bo_map|register_n_bits:Rcktimer|currentState[12] ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.004      ; 2.928      ;
 ; -1.879 ; BO:bo_map|register_n_bits:Rtime|currentState[6]     ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.001      ; 2.916      ;
@@ -289,9 +289,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 0.810 ; BO:bo_map|register_n_bits:Rcktimer|currentState[11] ; BO:bo_map|register_n_bits:Rcktimer|currentState[11] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.076      ;
 ; 0.810 ; BO:bo_map|register_n_bits:Rcktimer|currentState[12] ; BO:bo_map|register_n_bits:Rcktimer|currentState[12] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.076      ;
 ; 0.816 ; BO:bo_map|register_n_bits:Rtime|currentState[4]     ; BO:bo_map|register_n_bits:Rtime|currentState[4]     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.082      ;
-; 0.824 ; BC:bc_map|currentState.S0                           ; BO:bo_map|register_n_bits:REW|currentState[0]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.090      ;
+; 0.816 ; BC:bc_map|currentState.S0                           ; BO:bo_map|register_n_bits:REW|currentState[0]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.082      ;
+; 0.821 ; BC:bc_map|currentState.S0                           ; BO:bo_map|register_n_bits:REW|currentState[1]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.087      ;
 ; 0.826 ; BO:bo_map|register_n_bits:Rtime|currentState[6]     ; BO:bo_map|register_n_bits:Rtime|currentState[6]     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.092      ;
-; 0.829 ; BC:bc_map|currentState.S0                           ; BO:bo_map|register_n_bits:REW|currentState[1]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.095      ;
 ; 0.831 ; BC:bc_map|currentState.S5                           ; BO:bo_map|register_n_bits:REW|currentState[2]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.097      ;
 ; 0.838 ; BO:bo_map|register_n_bits:Rcktimer|currentState[3]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[3]  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.104      ;
 ; 0.838 ; BO:bo_map|register_n_bits:Rcktimer|currentState[16] ; BO:bo_map|register_n_bits:Rcktimer|currentState[16] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.104      ;
@@ -306,9 +306,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 0.846 ; BO:bo_map|register_n_bits:Rcktimer|currentState[9]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[9]  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.112      ;
 ; 0.856 ; BO:bo_map|register_n_bits:Rtime|currentState[5]     ; BO:bo_map|register_n_bits:Rtime|currentState[5]     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.122      ;
 ; 0.857 ; BO:bo_map|register_n_bits:Rtime|currentState[7]     ; BO:bo_map|register_n_bits:Rtime|currentState[7]     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.123      ;
+; 0.861 ; BC:bc_map|currentState.S0                           ; BO:bo_map|register_n_bits:REW|currentState[2]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.127      ;
 ; 0.866 ; BO:bo_map|register_n_bits:Rtime|currentState[3]     ; BO:bo_map|register_n_bits:Rtime|currentState[3]     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.132      ;
 ; 0.868 ; BO:bo_map|register_n_bits:Rtime|currentState[2]     ; BO:bo_map|register_n_bits:Rtime|currentState[2]     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.134      ;
-; 0.869 ; BC:bc_map|currentState.S0                           ; BO:bo_map|register_n_bits:REW|currentState[2]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.135      ;
 ; 0.984 ; BC:bc_map|currentState.S2                           ; BO:bo_map|register_n_bits:RNS|currentState[0]       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.250      ;
 ; 1.004 ; BC:bc_map|currentState.S2                           ; BC:bc_map|currentState.S7                           ; clock        ; clock       ; 0.000        ; -0.002     ; 1.268      ;
 ; 1.010 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.276      ;
@@ -348,10 +348,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 1.232 ; BO:bo_map|register_n_bits:Rcktimer|currentState[9]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[10] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.498      ;
 ; 1.242 ; BO:bo_map|register_n_bits:Rtime|currentState[5]     ; BO:bo_map|register_n_bits:Rtime|currentState[6]     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.508      ;
 ; 1.249 ; BO:bo_map|register_n_bits:Rcktimer|currentState[13] ; BO:bo_map|register_n_bits:Rcktimer|currentState[15] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.515      ;
-; 1.252 ; BC:bc_map|currentState.S0                           ; BO:bo_map|register_n_bits:Rcktimer|currentState[0]  ; clock        ; clock       ; 0.000        ; -0.004     ; 1.514      ;
 ; 1.252 ; BO:bo_map|register_n_bits:Rtime|currentState[3]     ; BO:bo_map|register_n_bits:Rtime|currentState[4]     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.518      ;
 ; 1.254 ; BO:bo_map|register_n_bits:Rtime|currentState[2]     ; BO:bo_map|register_n_bits:Rtime|currentState[3]     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.520      ;
 ; 1.254 ; BO:bo_map|register_n_bits:Rcktimer|currentState[0]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[3]  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.520      ;
+; 1.259 ; BC:bc_map|currentState.S0                           ; BO:bo_map|register_n_bits:Rcktimer|currentState[0]  ; clock        ; clock       ; 0.000        ; -0.004     ; 1.521      ;
 ; 1.259 ; BO:bo_map|register_n_bits:Rcktimer|currentState[14] ; BO:bo_map|register_n_bits:Rcktimer|currentState[16] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.525      ;
 ; 1.259 ; BO:bo_map|register_n_bits:Rcktimer|currentState[6]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[8]  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.525      ;
 ; 1.260 ; BO:bo_map|register_n_bits:Rcktimer|currentState[10] ; BO:bo_map|register_n_bits:Rcktimer|currentState[12] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.526      ;
@@ -727,7 +727,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; clock ; -0.684 ; -8.609        ;
+; clock ; -0.683 ; -8.622        ;
 +-------+--------+---------------+
 
 
@@ -772,36 +772,36 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+-----------------------------------------------------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                                           ; To Node                                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-----------------------------------------------------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; -0.684 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[25] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.715      ;
-; -0.649 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[24] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.680      ;
-; -0.614 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[23] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.645      ;
+; -0.683 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[25] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.714      ;
+; -0.648 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[24] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.679      ;
+; -0.613 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[23] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.644      ;
 ; -0.593 ; BO:bo_map|register_n_bits:Rcktimer|currentState[0]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[25] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.624      ;
-; -0.579 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[22] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.610      ;
+; -0.578 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[22] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.609      ;
 ; -0.575 ; BO:bo_map|register_n_bits:Rcktimer|currentState[2]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[25] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.606      ;
 ; -0.558 ; BO:bo_map|register_n_bits:Rcktimer|currentState[0]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[24] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.589      ;
-; -0.544 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[21] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.575      ;
+; -0.543 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[21] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.574      ;
 ; -0.540 ; BO:bo_map|register_n_bits:Rcktimer|currentState[3]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[25] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.571      ;
 ; -0.540 ; BO:bo_map|register_n_bits:Rcktimer|currentState[2]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[24] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.571      ;
+; -0.527 ; BC:bc_map|currentState.S0                           ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; -0.002     ; 1.557      ;
 ; -0.523 ; BO:bo_map|register_n_bits:Rcktimer|currentState[0]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[23] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.554      ;
-; -0.512 ; BC:bc_map|currentState.S0                           ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; -0.002     ; 1.542      ;
 ; -0.505 ; BO:bo_map|register_n_bits:Rcktimer|currentState[3]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[24] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.536      ;
 ; -0.505 ; BO:bo_map|register_n_bits:Rcktimer|currentState[2]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[23] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.536      ;
 ; -0.488 ; BO:bo_map|register_n_bits:Rcktimer|currentState[0]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[22] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.519      ;
 ; -0.486 ; BO:bo_map|register_n_bits:Rcktimer|currentState[4]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[25] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.517      ;
+; -0.480 ; BC:bc_map|currentState.S0                           ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.000      ; 1.512      ;
 ; -0.470 ; BO:bo_map|register_n_bits:Rcktimer|currentState[3]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[23] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.501      ;
 ; -0.470 ; BO:bo_map|register_n_bits:Rcktimer|currentState[2]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[22] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.501      ;
-; -0.465 ; BC:bc_map|currentState.S0                           ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.000      ; 1.497      ;
 ; -0.453 ; BO:bo_map|register_n_bits:Rcktimer|currentState[0]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[21] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.484      ;
 ; -0.451 ; BO:bo_map|register_n_bits:Rcktimer|currentState[4]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[24] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.482      ;
-; -0.450 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[20] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.481      ;
 ; -0.450 ; BO:bo_map|register_n_bits:Rcktimer|currentState[9]  ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.001      ; 1.483      ;
+; -0.449 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[20] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.480      ;
 ; -0.435 ; BO:bo_map|register_n_bits:Rcktimer|currentState[3]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[22] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.466      ;
 ; -0.435 ; BO:bo_map|register_n_bits:Rcktimer|currentState[2]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[21] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.466      ;
 ; -0.434 ; BO:bo_map|register_n_bits:Rcktimer|currentState[2]  ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.001      ; 1.467      ;
 ; -0.434 ; BO:bo_map|register_n_bits:Rcktimer|currentState[8]  ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.001      ; 1.467      ;
 ; -0.418 ; BO:bo_map|register_n_bits:Rcktimer|currentState[0]  ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.001      ; 1.451      ;
 ; -0.416 ; BO:bo_map|register_n_bits:Rcktimer|currentState[4]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[23] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.447      ;
-; -0.415 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[19] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.446      ;
+; -0.414 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[19] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.445      ;
 ; -0.413 ; BO:bo_map|register_n_bits:Rcktimer|currentState[5]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[25] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.444      ;
 ; -0.413 ; BO:bo_map|register_n_bits:Rtime|currentState[7]     ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.001      ; 1.446      ;
 ; -0.407 ; BO:bo_map|register_n_bits:Rcktimer|currentState[22] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.002      ; 1.441      ;
@@ -809,13 +809,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; -0.403 ; BO:bo_map|register_n_bits:Rcktimer|currentState[9]  ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.003      ; 1.438      ;
 ; -0.400 ; BO:bo_map|register_n_bits:Rcktimer|currentState[3]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[21] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.431      ;
 ; -0.398 ; BO:bo_map|register_n_bits:Rtime|currentState[0]     ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.001      ; 1.431      ;
-; -0.395 ; BO:bo_map|register_n_bits:Rcktimer|currentState[13] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.002      ; 1.429      ;
 ; -0.389 ; BO:bo_map|register_n_bits:Rcktimer|currentState[15] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.002      ; 1.423      ;
+; -0.388 ; BO:bo_map|register_n_bits:Rcktimer|currentState[13] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.002      ; 1.422      ;
 ; -0.387 ; BO:bo_map|register_n_bits:Rcktimer|currentState[2]  ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.003      ; 1.422      ;
 ; -0.387 ; BO:bo_map|register_n_bits:Rcktimer|currentState[8]  ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.003      ; 1.422      ;
 ; -0.384 ; BO:bo_map|register_n_bits:Rtime|currentState[5]     ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.001      ; 1.417      ;
 ; -0.381 ; BO:bo_map|register_n_bits:Rcktimer|currentState[4]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[22] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.412      ;
-; -0.380 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[18] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.411      ;
+; -0.379 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[18] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.410      ;
 ; -0.378 ; BO:bo_map|register_n_bits:Rcktimer|currentState[5]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[24] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.409      ;
 ; -0.378 ; BO:bo_map|register_n_bits:Rcktimer|currentState[20] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.002      ; 1.412      ;
 ; -0.378 ; BO:bo_map|register_n_bits:Rcktimer|currentState[21] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.002      ; 1.412      ;
@@ -829,13 +829,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; -0.357 ; BO:bo_map|register_n_bits:Rcktimer|currentState[6]  ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.001      ; 1.390      ;
 ; -0.356 ; BO:bo_map|register_n_bits:Rcktimer|currentState[18] ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.004      ; 1.392      ;
 ; -0.353 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.001      ; 1.386      ;
-; -0.348 ; BO:bo_map|register_n_bits:Rcktimer|currentState[13] ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.004      ; 1.384      ;
 ; -0.346 ; BO:bo_map|register_n_bits:Rcktimer|currentState[4]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[21] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.377      ;
-; -0.345 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[17] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.376      ;
 ; -0.345 ; BO:bo_map|register_n_bits:Rcktimer|currentState[7]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[25] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.376      ;
 ; -0.345 ; BO:bo_map|register_n_bits:Rcktimer|currentState[14] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.002      ; 1.379      ;
+; -0.344 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[17] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.375      ;
 ; -0.343 ; BO:bo_map|register_n_bits:Rcktimer|currentState[5]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[23] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.374      ;
 ; -0.342 ; BO:bo_map|register_n_bits:Rcktimer|currentState[15] ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.004      ; 1.378      ;
+; -0.341 ; BO:bo_map|register_n_bits:Rcktimer|currentState[13] ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.004      ; 1.377      ;
 ; -0.341 ; BO:bo_map|register_n_bits:Rcktimer|currentState[2]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[20] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.372      ;
 ; -0.332 ; BO:bo_map|register_n_bits:Rtime|currentState[3]     ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.001      ; 1.365      ;
 ; -0.331 ; BO:bo_map|register_n_bits:Rtime|currentState[6]     ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.001      ; 1.364      ;
@@ -847,25 +847,25 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; -0.324 ; BO:bo_map|register_n_bits:Rcktimer|currentState[0]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[19] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.355      ;
 ; -0.321 ; BO:bo_map|register_n_bits:Rcktimer|currentState[16] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.002      ; 1.355      ;
 ; -0.315 ; BO:bo_map|register_n_bits:Rcktimer|currentState[10] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.001      ; 1.348      ;
-; -0.310 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[16] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.341      ;
 ; -0.310 ; BO:bo_map|register_n_bits:Rcktimer|currentState[7]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[24] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.341      ;
-; -0.310 ; BO:bo_map|register_n_bits:Rcktimer|currentState[11] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.001      ; 1.343      ;
 ; -0.310 ; BO:bo_map|register_n_bits:Rcktimer|currentState[6]  ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.003      ; 1.345      ;
+; -0.309 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[16] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.340      ;
 ; -0.308 ; BO:bo_map|register_n_bits:Rcktimer|currentState[5]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[22] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.339      ;
 ; -0.306 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.003      ; 1.341      ;
 ; -0.306 ; BO:bo_map|register_n_bits:Rcktimer|currentState[3]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[20] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.337      ;
 ; -0.306 ; BO:bo_map|register_n_bits:Rcktimer|currentState[2]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[19] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.337      ;
 ; -0.306 ; BO:bo_map|register_n_bits:Rcktimer|currentState[12] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.001      ; 1.339      ;
+; -0.306 ; BO:bo_map|register_n_bits:Rcktimer|currentState[11] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.001      ; 1.339      ;
 ; -0.298 ; BO:bo_map|register_n_bits:Rcktimer|currentState[14] ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.004      ; 1.334      ;
 ; -0.294 ; BO:bo_map|register_n_bits:Rcktimer|currentState[24] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.002      ; 1.328      ;
 ; -0.292 ; BO:bo_map|register_n_bits:Rcktimer|currentState[8]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[25] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.323      ;
 ; -0.292 ; BO:bo_map|register_n_bits:Rcktimer|currentState[6]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[23] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.323      ;
 ; -0.289 ; BO:bo_map|register_n_bits:Rcktimer|currentState[0]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[18] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.320      ;
 ; -0.283 ; BO:bo_map|register_n_bits:Rcktimer|currentState[4]  ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.001      ; 1.316      ;
-; -0.275 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[15] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.306      ;
 ; -0.275 ; BO:bo_map|register_n_bits:Rcktimer|currentState[9]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[25] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.306      ;
 ; -0.275 ; BO:bo_map|register_n_bits:Rcktimer|currentState[7]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[23] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.306      ;
 ; -0.275 ; BO:bo_map|register_n_bits:Rcktimer|currentState[17] ; BC:bc_map|currentState.S2                           ; clock        ; clock       ; 1.000        ; 0.002      ; 1.309      ;
+; -0.274 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[15] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.305      ;
 ; -0.274 ; BO:bo_map|register_n_bits:Rcktimer|currentState[16] ; BC:bc_map|currentState.S0                           ; clock        ; clock       ; 1.000        ; 0.004      ; 1.310      ;
 ; -0.273 ; BO:bo_map|register_n_bits:Rcktimer|currentState[5]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[21] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.304      ;
 ; -0.271 ; BO:bo_map|register_n_bits:Rcktimer|currentState[3]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[19] ; clock        ; clock       ; 1.000        ; -0.001     ; 1.302      ;
@@ -916,11 +916,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 0.382 ; BO:bo_map|register_n_bits:Rtime|currentState[5]     ; BO:bo_map|register_n_bits:Rtime|currentState[5]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.534      ;
 ; 0.386 ; BO:bo_map|register_n_bits:Rtime|currentState[3]     ; BO:bo_map|register_n_bits:Rtime|currentState[3]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.538      ;
 ; 0.386 ; BC:bc_map|currentState.S5                           ; BO:bo_map|register_n_bits:REW|currentState[0]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.538      ;
+; 0.386 ; BC:bc_map|currentState.S0                           ; BO:bo_map|register_n_bits:REW|currentState[2]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.538      ;
+; 0.387 ; BC:bc_map|currentState.S0                           ; BO:bo_map|register_n_bits:REW|currentState[1]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.539      ;
 ; 0.388 ; BO:bo_map|register_n_bits:Rtime|currentState[2]     ; BO:bo_map|register_n_bits:Rtime|currentState[2]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.540      ;
-; 0.389 ; BC:bc_map|currentState.S0                           ; BO:bo_map|register_n_bits:REW|currentState[2]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.541      ;
-; 0.390 ; BC:bc_map|currentState.S0                           ; BO:bo_map|register_n_bits:REW|currentState[1]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.542      ;
-; 0.392 ; BC:bc_map|currentState.S0                           ; BO:bo_map|register_n_bits:REW|currentState[0]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.544      ;
-; 0.448 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.600      ;
+; 0.389 ; BC:bc_map|currentState.S0                           ; BO:bo_map|register_n_bits:REW|currentState[0]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.541      ;
+; 0.447 ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[1]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.599      ;
 ; 0.453 ; BC:bc_map|currentState.S2                           ; BC:bc_map|currentState.S7                           ; clock        ; clock       ; 0.000        ; -0.001     ; 0.604      ;
 ; 0.468 ; BC:bc_map|currentState.S2                           ; BO:bo_map|register_n_bits:RNS|currentState[0]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.620      ;
 ; 0.470 ; BO:bo_map|register_n_bits:Rtime|currentState[1]     ; BO:bo_map|register_n_bits:Rtime|currentState[1]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.622      ;
@@ -977,9 +977,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 0.562 ; BC:bc_map|currentState.S3                           ; BO:bo_map|register_n_bits:RNS|currentState[0]       ; clock        ; clock       ; 0.000        ; -0.002     ; 0.712      ;
 ; 0.563 ; BO:bo_map|register_n_bits:Rtime|currentState[2]     ; BO:bo_map|register_n_bits:Rtime|currentState[4]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.715      ;
 ; 0.563 ; BO:bo_map|register_n_bits:Rcktimer|currentState[13] ; BO:bo_map|register_n_bits:Rcktimer|currentState[16] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.715      ;
-; 0.565 ; BC:bc_map|currentState.S0                           ; BO:bo_map|register_n_bits:Rcktimer|currentState[0]  ; clock        ; clock       ; 0.000        ; -0.003     ; 0.714      ;
 ; 0.567 ; BO:bo_map|register_n_bits:Rcktimer|currentState[14] ; BO:bo_map|register_n_bits:Rcktimer|currentState[17] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.719      ;
 ; 0.567 ; BO:bo_map|register_n_bits:Rcktimer|currentState[0]  ; BO:bo_map|register_n_bits:Rcktimer|currentState[4]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.719      ;
+; 0.568 ; BO:bo_map|register_n_bits:Rcktimer|currentState[22] ; BO:bo_map|register_n_bits:Rcktimer|currentState[25] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.720      ;
 +-------+-----------------------------------------------------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -1340,8 +1340,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------+---------+-------+----------+---------+---------------------+
 ; Worst-case Slack ; -2.512  ; 0.215 ; -1.404   ; 0.837   ; -1.380              ;
 ;  clock           ; -2.512  ; 0.215 ; -1.404   ; 0.837   ; -1.380              ;
-; Design-wide TNS  ; -69.107 ; 0.0   ; -41.6    ; 0.0     ; -52.38              ;
-;  clock           ; -69.107 ; 0.000 ; -41.600  ; 0.000   ; -52.380             ;
+; Design-wide TNS  ; -69.175 ; 0.0   ; -41.6    ; 0.0     ; -52.38              ;
+;  clock           ; -69.175 ; 0.000 ; -41.600  ; 0.000   ; -52.380             ;
 +------------------+---------+-------+----------+---------+---------------------+
 
 
@@ -1454,8 +1454,8 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +------------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Oct 08 18:13:10 2018
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Tue Oct  9 18:10:15 2018
 Info: Command: quartus_sta Traffic_Light -c Traffic_Light
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -1471,7 +1471,7 @@ Critical Warning (332148): Timing requirements not met
 Info (332146): Worst-case setup slack is -2.512
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -2.512       -69.107 clock 
+    Info (332119):    -2.512       -69.175 clock 
 Info (332146): Worst-case hold slack is 0.391
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1491,10 +1491,10 @@ Info (332146): Worst-case minimum pulse width slack is -1.380
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -0.684
+Info (332146): Worst-case setup slack is -0.683
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.684        -8.609 clock 
+    Info (332119):    -0.683        -8.622 clock 
 Info (332146): Worst-case hold slack is 0.215
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1515,8 +1515,8 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4560 megabytes
-    Info: Processing ended: Mon Oct 08 18:13:11 2018
+    Info: Peak virtual memory: 516 megabytes
+    Info: Processing ended: Tue Oct  9 18:10:16 2018
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

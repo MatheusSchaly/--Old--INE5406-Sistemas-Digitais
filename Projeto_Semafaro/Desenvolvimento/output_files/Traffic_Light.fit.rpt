@@ -1,6 +1,6 @@
 Fitter report for Traffic_Light
-Mon Oct 08 18:13:06 2018
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Tue Oct  9 18:10:09 2018
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
 ---------------------
@@ -59,26 +59,26 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Fitter Summary                                                                       ;
-+------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Mon Oct 08 18:13:06 2018           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
-; Revision Name                      ; Traffic_Light                                   ;
-; Top-level Entity Name              ; traffic_light_top                               ;
-; Family                             ; Cyclone II                                      ;
-; Device                             ; EP2C35F672C6                                    ;
-; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 79 / 33,216 ( < 1 % )                           ;
-;     Total combinational functions  ; 79 / 33,216 ( < 1 % )                           ;
-;     Dedicated logic registers      ; 51 / 33,216 ( < 1 % )                           ;
-; Total registers                    ; 51                                              ;
-; Total pins                         ; 10 / 475 ( 2 % )                                ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
-; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
-+------------------------------------+-------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Fitter Summary                                                                  ;
++------------------------------------+--------------------------------------------+
+; Fitter Status                      ; Successful - Tue Oct  9 18:10:09 2018      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; Traffic_Light                              ;
+; Top-level Entity Name              ; traffic_light_top                          ;
+; Family                             ; Cyclone II                                 ;
+; Device                             ; EP2C35F672C6                               ;
+; Timing Models                      ; Final                                      ;
+; Total logic elements               ; 79 / 33,216 ( < 1 % )                      ;
+;     Total combinational functions  ; 79 / 33,216 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 51 / 33,216 ( < 1 % )                      ;
+; Total registers                    ; 51                                         ;
+; Total pins                         ; 10 / 475 ( 2 % )                           ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0 / 483,840 ( 0 % )                        ;
+; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
++------------------------------------+--------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -180,7 +180,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/HsMatheus/Desktop/INE5406-Sistemas-Digitais/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/output_files/Traffic_Light.pin.
+The pin-out file can be found in /home/allu/cco/projeto_semaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/output_files/Traffic_Light.pin.
 
 
 +---------------------------------------------------------------------+
@@ -1067,21 +1067,21 @@ Note: User assignments will override these defaults. The user specified values a
 +-------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node          ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                      ; Library Name ;
 +-------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------+--------------+
-; |traffic_light_top                  ; 79 (0)      ; 51 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 10   ; 0            ; 28 (0)       ; 0 (0)             ; 51 (0)           ; |traffic_light_top                                       ; work         ;
-;    |BC:bc_map|                      ; 31 (31)     ; 9 (9)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 13 (13)          ; |traffic_light_top|BC:bc_map                             ; work         ;
-;    |BO:bo_map|                      ; 52 (0)      ; 42 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (0)       ; 0 (0)             ; 42 (0)           ; |traffic_light_top|BO:bo_map                             ; work         ;
-;       |compareIfEqual_n_bits:Cs100| ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 1 (1)            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs100 ; work         ;
-;       |compareIfEqual_n_bits:Cs110| ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs110 ; work         ;
-;       |compareIfEqual_n_bits:Cs140| ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs140 ; work         ;
-;       |compareIfEqual_n_bits:Cs45|  ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs45  ; work         ;
-;       |compareIfEqual_n_bits:Cs55|  ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs55  ; work         ;
-;       |mux4x1_n_bits:MEW|           ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |traffic_light_top|BO:bo_map|mux4x1_n_bits:MEW           ; work         ;
-;       |mux4x1_n_bits:MNS|           ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |traffic_light_top|BO:bo_map|mux4x1_n_bits:MNS           ; work         ;
-;       |register_n_bits:REW|         ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |traffic_light_top|BO:bo_map|register_n_bits:REW         ; work         ;
-;       |register_n_bits:RNS|         ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |traffic_light_top|BO:bo_map|register_n_bits:RNS         ; work         ;
-;       |register_n_bits:RP|          ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |traffic_light_top|BO:bo_map|register_n_bits:RP          ; work         ;
-;       |register_n_bits:Rcktimer|    ; 26 (26)     ; 26 (26)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 26 (26)          ; |traffic_light_top|BO:bo_map|register_n_bits:Rcktimer    ; work         ;
-;       |register_n_bits:Rtime|       ; 9 (9)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 8 (8)            ; |traffic_light_top|BO:bo_map|register_n_bits:Rtime       ; work         ;
+; |traffic_light_top                  ; 79 (0)      ; 51 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 10   ; 0            ; 28 (0)       ; 0 (0)             ; 51 (0)           ; |traffic_light_top                                       ;              ;
+;    |BC:bc_map|                      ; 31 (31)     ; 9 (9)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 13 (13)          ; |traffic_light_top|BC:bc_map                             ;              ;
+;    |BO:bo_map|                      ; 52 (0)      ; 42 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (0)       ; 0 (0)             ; 42 (0)           ; |traffic_light_top|BO:bo_map                             ;              ;
+;       |compareIfEqual_n_bits:Cs100| ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 1 (1)            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs100 ;              ;
+;       |compareIfEqual_n_bits:Cs110| ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs110 ;              ;
+;       |compareIfEqual_n_bits:Cs140| ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs140 ;              ;
+;       |compareIfEqual_n_bits:Cs45|  ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs45  ;              ;
+;       |compareIfEqual_n_bits:Cs55|  ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |traffic_light_top|BO:bo_map|compareIfEqual_n_bits:Cs55  ;              ;
+;       |mux4x1_n_bits:MEW|           ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |traffic_light_top|BO:bo_map|mux4x1_n_bits:MEW           ;              ;
+;       |mux4x1_n_bits:MNS|           ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |traffic_light_top|BO:bo_map|mux4x1_n_bits:MNS           ;              ;
+;       |register_n_bits:REW|         ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |traffic_light_top|BO:bo_map|register_n_bits:REW         ;              ;
+;       |register_n_bits:RNS|         ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |traffic_light_top|BO:bo_map|register_n_bits:RNS         ;              ;
+;       |register_n_bits:RP|          ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |traffic_light_top|BO:bo_map|register_n_bits:RP          ;              ;
+;       |register_n_bits:Rcktimer|    ; 26 (26)     ; 26 (26)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 26 (26)          ; |traffic_light_top|BO:bo_map|register_n_bits:Rcktimer    ;              ;
+;       |register_n_bits:Rtime|       ; 9 (9)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 8 (8)            ; |traffic_light_top|BO:bo_map|register_n_bits:Rtime       ;              ;
 +-------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1321,7 +1321,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Global clocks               ; 2 / 16 ( 13 % )       ;
 ; Local interconnects         ; 57 / 33,216 ( < 1 % ) ;
 ; R24 interconnects           ; 0 / 3,091 ( 0 % )     ;
-; R4 interconnects            ; 17 / 81,294 ( < 1 % ) ;
+; R4 interconnects            ; 15 / 81,294 ( < 1 % ) ;
 +-----------------------------+-----------------------+
 
 
@@ -1530,7 +1530,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  58 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  58 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  56 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -1542,7 +1542,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.19 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.20 seconds.
 Info (306004): Started post-fitting delay annotation
 Warning (306006): Found 8 output pins without output pin load capacitance assignment
     Info (306007): Pin "NS[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -1556,19 +1556,19 @@ Warning (306006): Found 8 output pins without output pin load capacitance assign
 Info (306005): Delay annotation completed successfully
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info (144001): Generated suppressed messages file C:/Users/HsMatheus/Desktop/INE5406-Sistemas-Digitais/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/output_files/Traffic_Light.fit.smsg
+Info (144001): Generated suppressed messages file /home/allu/cco/projeto_semaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/output_files/Traffic_Light.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4897 megabytes
-    Info: Processing ended: Mon Oct 08 18:13:06 2018
+    Info: Peak virtual memory: 724 megabytes
+    Info: Processing ended: Tue Oct  9 18:10:09 2018
     Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Total CPU time (on all processors): 00:00:07
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/HsMatheus/Desktop/INE5406-Sistemas-Digitais/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/output_files/Traffic_Light.fit.smsg.
+The suppressed messages can be found in /home/allu/cco/projeto_semaforo/INE5406-Sistemas-Digitais/Projeto_Semafaro/Desenvolvimento/output_files/Traffic_Light.fit.smsg.
 
 
