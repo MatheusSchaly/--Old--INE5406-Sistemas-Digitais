@@ -17,10 +17,10 @@ architecture archRegister of register_n_bits is
 	subtype InternalState is std_logic_vector(N-1 downto 0);
 	signal nextState, currentState: InternalState;
 	begin
-		
+
 	-- next state logic (combinatorial)
 		nextState <= inpt;
-	
+
 	-- memory element (sequential)
 	ME: process (clock, reset) is
 	begin
@@ -32,8 +32,8 @@ architecture archRegister of register_n_bits is
 			end if;
 		end if;
 	end process;
-	
+
 	-- output logic (combinatorial)
 	outpt <= currentState;
-	
+
 end architecture;
