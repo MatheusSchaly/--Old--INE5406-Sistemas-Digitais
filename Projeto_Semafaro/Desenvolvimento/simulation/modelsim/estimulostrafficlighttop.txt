@@ -1,2 +1,0 @@
-force sim:/traffic_light_top/clock 1 0, 0 {25 ps} -r 50
-force sim:/traffic_light_top/reset 0 0 
