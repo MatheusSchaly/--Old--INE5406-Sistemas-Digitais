@@ -1,0 +1,10 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity nios2_project_wrapper_de2 is
+	port();
+end entity;
+
+architecture inst of nios2_project_wrapper_de2 is
+begin
+end architecture;
