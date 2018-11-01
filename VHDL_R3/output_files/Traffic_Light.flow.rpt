@@ -1,6 +1,6 @@
 Flow report for Traffic_Light
-Tue Oct 30 19:12:53 2018
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Thu Nov  1 12:27:20 2018
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -37,26 +37,26 @@ applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------+
-; Flow Summary                                                                    ;
-+------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Tue Oct 30 19:12:53 2018      ;
-; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
-; Revision Name                      ; Traffic_Light                              ;
-; Top-level Entity Name              ; traffic_light_top                          ;
-; Family                             ; Cyclone II                                 ;
-; Device                             ; EP2C35F672C6                               ;
-; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 82 / 33,216 ( < 1 % )                      ;
-;     Total combinational functions  ; 79 / 33,216 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 51 / 33,216 ( < 1 % )                      ;
-; Total registers                    ; 51                                         ;
-; Total pins                         ; 10 / 475 ( 2 % )                           ;
-; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 0 / 483,840 ( 0 % )                        ;
-; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
-+------------------------------------+--------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Flow Summary                                                                         ;
++------------------------------------+-------------------------------------------------+
+; Flow Status                        ; Successful - Thu Nov  1 12:27:20 2018           ;
+; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Traffic_Light                                   ;
+; Top-level Entity Name              ; interface                                       ;
+; Family                             ; Cyclone II                                      ;
+; Device                             ; EP2C35F672C6                                    ;
+; Timing Models                      ; Final                                           ;
+; Total logic elements               ; 81 / 33,216 ( < 1 % )                           ;
+;     Total combinational functions  ; 79 / 33,216 ( < 1 % )                           ;
+;     Dedicated logic registers      ; 51 / 33,216 ( < 1 % )                           ;
+; Total registers                    ; 51                                              ;
+; Total pins                         ; 10 / 475 ( 2 % )                                ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
+; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
++------------------------------------+-------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -64,30 +64,30 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/30/2018 19:12:31 ;
+; Start date & time ; 11/01/2018 12:27:03 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Traffic_Light       ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                 ;
-+-------------------------------------+---------------------------------------+---------------+-------------------+----------------+
-; Assignment Name                     ; Value                                 ; Default Value ; Entity Name       ; Section Id     ;
-+-------------------------------------+---------------------------------------+---------------+-------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 53849994312407.154093755101972        ; --            ; --                ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --                ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --                ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --                ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --                ; --             ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; traffic_light_top ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; traffic_light_top ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; traffic_light_top ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --                ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --                ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --                ; --             ;
-; TOP_LEVEL_ENTITY                    ; traffic_light_top                     ; Traffic_Light ; --                ; --             ;
-+-------------------------------------+---------------------------------------+---------------+-------------------+----------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                           ;
++-------------------------------------+---------------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+---------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 0.154108242306960                     ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; interface   ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; interface   ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; interface   ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; interface                             ; Traffic_Light ; --          ; --             ;
++-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -95,26 +95,26 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 4648 MB             ; 00:00:03                           ;
-; Fitter                    ; 00:00:10     ; 1.0                     ; 4808 MB             ; 00:00:09                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 4573 MB             ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4548 MB             ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4516 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:19     ; --                      ; --                  ; 00:00:18                           ;
+; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 371 MB              ; 00:00:01                           ;
+; Fitter                    ; 00:00:06     ; 1.0                     ; 474 MB              ; 00:00:07                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 334 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 298 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 310 MB              ; 00:00:00                           ;
+; Total                     ; 00:00:11     ; --                      ; --                  ; 00:00:11                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; allu-win         ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; allu-win         ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; allu-win         ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; allu-win         ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; allu-win         ; Windows 7 ; 6.2        ; x86_64         ;
-+---------------------------+------------------+-----------+------------+----------------+
++---------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                             ;
++---------------------------+------------------+----------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
++---------------------------+------------------+----------------+------------+----------------+
+; Analysis & Synthesis      ; ine              ; Ubuntu 16.04.1 ; 16         ; x86_64         ;
+; Fitter                    ; ine              ; Ubuntu 16.04.1 ; 16         ; x86_64         ;
+; Assembler                 ; ine              ; Ubuntu 16.04.1 ; 16         ; x86_64         ;
+; TimeQuest Timing Analyzer ; ine              ; Ubuntu 16.04.1 ; 16         ; x86_64         ;
+; EDA Netlist Writer        ; ine              ; Ubuntu 16.04.1 ; 16         ; x86_64         ;
++---------------------------+------------------+----------------+------------+----------------+
 
 
 ------------

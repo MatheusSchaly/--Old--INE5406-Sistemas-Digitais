@@ -101,5 +101,4 @@ begin
 	MEW: mux4x1_n_bits GENERIC MAP (3) PORT MAP("100", "010", "001", "000",  cMuxEW, saiMuxEW);
 	REW : register_n_bits GENERIC MAP (3) PORT MAP(clock, reset, eEW, saiMuxEW, EW);
 	
-	
 end architecture;
