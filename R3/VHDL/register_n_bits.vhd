@@ -27,9 +27,7 @@ architecture archRegister of register_n_bits is
 		if reset='1' then
 			currentState <= (others=>'0'); -- reset state
 		elsif rising_edge(clock) then
-			if(enable = '1') then
-				currentState <= nextState;
-			end if;
+			currentState <= nextState;
 		end if;
 	end process;
 	

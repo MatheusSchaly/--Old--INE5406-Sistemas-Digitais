@@ -107,7 +107,7 @@ architecture archBC of BC  is
 				"10" when (currentState = S4
 							or currentState = S5
 							or currentState = S6
-							or currentState = S7) else "00";
+							or currentState = S7);
 				 
 	cMuxP <= '0' when (currentState = S0
 							or currentState = S2
@@ -125,7 +125,7 @@ architecture archBC of BC  is
 							or currentState = S3
 							or currentState = S4
 							or currentState = S7
-							or currentState = S8) else "00";
+							or currentState = S8);      
 				 
 	eEW <= '1' when (currentState = init
 						or currentState = S4

@@ -52,12 +52,12 @@ architecture archTop of traffic_light_top is
 	
 	begin
 		
-	bc_map : BC PORT MAP(clock, reset,
+	bc_map : BC PORT MAP(clock, not reset,
 							sig_s1, sig_s45, sig_s50, sig_s55, sig_s100, sig_s105, sig_s110, sig_s135, sig_s140,
 							sig_ecktimer, sig_rstcktimer, sig_rsttime, sig_etime, sig_eNS, sig_eP, sig_eEW,
 							sig_cMuxNS, sig_cMuxEW, sigcMuxP);
 						
-	bo_map : BO PORT MAP(clock, reset,
+	bo_map : BO PORT MAP(clock, not reset,
 							sig_ecktimer, sig_rstcktimer, sig_rsttime, sig_etime, sig_eNS, sig_eP, sig_eEW,
 							sig_cMuxNS, sig_cMuxEW, sigcMuxP,
 							sig_s1, sig_s45, sig_s50, sig_s55, sig_s100, sig_s105, sig_s110, sig_s135, sig_s140,
