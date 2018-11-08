@@ -4,9 +4,9 @@ use ieee.numeric_std.all;
 
 entity traffic_light_top is
 port(
-	reset, clock: in std_logic;
-	NS, EW: out std_logic_vector(2 downto 0);
-	P: out std_logic_vector(1 downto 0)
+	clock: in std_logic;
+	reset: in std_logic;
+	output: out std_logic_vector(7 downto 0)
 );
 end entity;
 --
@@ -51,17 +51,17 @@ architecture archTop of traffic_light_top is
 	signal sigcMuxP: std_logic;
 	
 	begin
-		
-	bc_map : BC PORT MAP(clock, not reset,
+	
+	bc_map : BC PORT MAP(clock, reset,
 							sig_s1, sig_s45, sig_s50, sig_s55, sig_s100, sig_s105, sig_s110, sig_s135, sig_s140,
 							sig_ecktimer, sig_rstcktimer, sig_rsttime, sig_etime, sig_eNS, sig_eP, sig_eEW,
 							sig_cMuxNS, sig_cMuxEW, sigcMuxP);
 						
-	bo_map : BO PORT MAP(clock, not reset,
+	bo_map : BO PORT MAP(clock, reset,
 							sig_ecktimer, sig_rstcktimer, sig_rsttime, sig_etime, sig_eNS, sig_eP, sig_eEW,
 							sig_cMuxNS, sig_cMuxEW, sigcMuxP,
 							sig_s1, sig_s45, sig_s50, sig_s55, sig_s100, sig_s105, sig_s110, sig_s135, sig_s140,
-							NS, EW,
-							P);
+							output(7 downto 5), output(4 downto 2),
+							output(1 downto 0));
 
 end architecture;

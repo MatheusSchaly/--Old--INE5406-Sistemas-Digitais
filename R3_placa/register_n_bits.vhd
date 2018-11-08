@@ -19,18 +19,15 @@ architecture archRegister of register_n_bits is
 	begin
 		
 	-- next state logic (combinatorial)
-	
-	nextState <= inpt;
-	
+	nextState <= inpt when enable = '1' else currentState;
+
 	-- memory element (sequential)
 	ME: process (clock, reset) is
 	begin
 		if reset='1' then
 			currentState <= (others=>'0'); -- reset state
 		elsif rising_edge(clock) then
-			--if enable = '1' then
-				currentState <= nextState;
-			--end if;
+			currentState <= nextState;
 		end if;
 	end process;
 	

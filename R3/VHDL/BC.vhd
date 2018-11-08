@@ -99,11 +99,7 @@ architecture archBC of BC  is
 						or currentState = S4
 						or currentState = S8) else '0';
 	
-	cMuxNS <= "00" when (currentState = init
-							or currentState = S0
-							or currentState = S2
-							or currentState = S8) else
-				"01" when (currentState = S3) else
+	cMuxNS <= "01" when (currentState = S3) else
 				"10" when (currentState = S4
 							or currentState = S5
 							or currentState = S6
@@ -117,11 +113,8 @@ architecture archBC of BC  is
 						or currentState = S4
 						or currentState = S7) else '0';
 	
-	cMuxEW <= "00" when (currentState = S0
-							or currentState = S2
-							or currentState = S5) else
-							"01" when (currentState = S6) else
-							"10" when (currentState = init
+	cMuxEW <= "01" when (currentState = S6) else
+				"10" when (currentState = init
 							or currentState = S3
 							or currentState = S4
 							or currentState = S7

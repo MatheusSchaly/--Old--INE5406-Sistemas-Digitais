@@ -77,7 +77,8 @@ begin
 	
 	Rcktimer : register_n_bits GENERIC MAP (26) PORT MAP(clock, rstcktimer, ecktimer, saisomacktimer, saicktimer);
 	Acktimer : adder_n_bits GENERIC MAP (26) PORT MAP(saicktimer, "00000000000000000000000001", saisomacktimer);
-	Cs1 : compareIfEqual_n_bits GENERIC MAP (26) PORT MAP(saicktimer, "00000000000000000111110100", s1);--500
+	--Cs1 : compareIfEqual_n_bits GENERIC MAP (26) PORT MAP(saicktimer, "00000000000000000111110100", s1);--500
+	Cs1 : compareIfEqual_n_bits GENERIC MAP (26) PORT MAP(saicktimer, "00010011000100101101000000", s1);--5000000
 	--Cs1 : compareIfEqual_n_bits GENERIC MAP (26) PORT MAP(saicktimer, "10111110101111000010000000", s1);--50000000000
 
 	Rtime : register_n_bits PORT MAP(clock, rsttime, etime, saisomatime, saitime);

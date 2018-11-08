@@ -5,7 +5,7 @@ entity register_n_bits is
 	generic (N: positive := 8);
 	port(
 		-- control inputs
-		clock, reset, enable: in std_logic;
+		clock, reset,enable: in std_logic;
 		-- data inputs
 		inpt: in std_logic_vector(N-1 downto 0);
 		-- data outputs
@@ -19,8 +19,8 @@ architecture archRegister of register_n_bits is
 	begin
 		
 	-- next state logic (combinatorial)
-		nextState <= inpt;
-	
+	nextState <= inpt when enable = '1' else currentState;
+
 	-- memory element (sequential)
 	ME: process (clock, reset) is
 	begin
